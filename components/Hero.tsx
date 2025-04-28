@@ -7,13 +7,13 @@ export default function Example() {
     <>
       <div className="my-2 border-y border-black py-10 text-[#0d2743] lg:py-0 xl:rounded-xl xl:border-hidden">
         {/* Hero content */}
-        <div className="space-y-5 px-10 lg:py-6 dark:text-white">
-          <h1 className="md:text-65l text-4xl">
-            <span className="font-bold decoration-white decoration-4">
+        <div className="item-center flex flex-col justify-center space-y-5 px-10 sm:items-start lg:py-6 dark:text-white">
+          <h1 className="text-4xl md:text-6xl">
+            <span className="font-bold underline decoration-black decoration-4">
               Empowering Scholars. Fostering Innovation.
             </span>
           </h1>
-          <h2 className="w-9/12 font-normal">
+          <h2 className="font-normal">
             Welcome to SMS Research Forum — a vibrant community dedicated to academic excellence,
             collaborative research, and professional development at CUSAT.
           </h2>
