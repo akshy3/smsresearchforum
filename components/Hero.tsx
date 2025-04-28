@@ -1,5 +1,7 @@
 'use client'
 
+import Image from "next/image"
+
 export default function Example() {
   return (
     <>
@@ -28,7 +30,7 @@ export default function Example() {
       </div>
 
       <div>
-        <img
+        <Image
           src={'/static/images/sms_cusat.jpg'}
           alt="Hero Image"
           className="mt-10 hidden h-96 w-full object-cover sm:block"
