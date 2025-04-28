@@ -6,8 +6,8 @@ const siteMetadata = {
   description: 'An initiative of School of Management Studies, CUSAT.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://smsresearchforum.vercel.app',
+  siteRepo: 'https://github.com/akshy3/smsresearchforum',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/socialbanner.png`,
   mastodon: 'https://mastodon.social/@mastodonuser',
