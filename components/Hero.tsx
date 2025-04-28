@@ -33,7 +33,9 @@ export default function Example() {
         <Image
           src={'/static/images/sms_cusat.jpg'}
           alt="Hero Image"
-          className="mt-10 hidden h-96 w-full object-cover sm:block"
+          className="mt-10 h-96 w-full object-cover sm:block"
+          width={1000}
+          height={1000}
         />
       </div>
     </>
