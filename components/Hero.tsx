@@ -53,13 +53,13 @@ export default function Hero() {
                     <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                       <Link
                         href="/about"
-                        className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-indigo-700 shadow-sm hover:bg-indigo-50 sm:px-8"
+                        className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100 sm:px-8"
                       >
                         Learn More
                       </Link>
                       <Link
                         href="/updates"
-                        className="bg-opacity-60 hover:bg-opacity-70 flex items-center justify-center rounded-md border border-transparent bg-indigo-800 px-4 py-3 text-base font-medium text-white shadow-sm sm:px-8"
+                        className="bg-opacity-60 hover:bg-opacity-70 flex items-center justify-center rounded-md border border-transparent bg-indigo-800 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 sm:px-8"
                       >
                         Updates
                       </Link>

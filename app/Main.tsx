@@ -31,7 +31,7 @@ export default function Home({ posts }) {
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>
                       <dt className="sr-only">Published on</dt>
-                      <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
+                      <dd className="text-base leading-6 font-medium text-gray-700 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                       </dd>
                     </dl>
@@ -52,14 +52,14 @@ export default function Home({ posts }) {
                             ))}
                           </div>
                         </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+                        <div className="prose max-w-none text-gray-700 dark:text-gray-300">
                           {summary}
                         </div>
                       </div>
                       <div className="text-base leading-6 font-medium">
                         <Link
                           href={`/updates/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                          className="text-primary-700 hover:text-primary-800 dark:hover:text-primary-600"
                           aria-label={`Read more: "${title}"`}
                         >
                           Read more &rarr;
