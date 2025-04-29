@@ -29,7 +29,7 @@ export default function Footer() {
           <Link href="/">{siteMetadata.title}</Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          Developed by digitalsoup
+          Developed by <Link href={'http://digitalsoup.in'}>digitalsoup</Link>
         </div>
       </div>
     </footer>
