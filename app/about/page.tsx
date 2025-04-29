@@ -3,6 +3,7 @@ import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import AuthorLayout from '@/layouts/AuthorLayout'
 import { coreContent } from 'pliny/utils/contentlayer'
 import { genPageMetadata } from 'app/seo'
+import Image from 'next/image'
 
 export const metadata = genPageMetadata({ title: 'About' })
 
@@ -59,6 +60,15 @@ export default function Page() {
               </ul>
             </div>
           </div>
+        </div>
+        <div>
+          <Image
+            src={'/static/images/iftar.jpg'}
+            alt="Iftar Image"
+            className="mt-10 w-full object-cover sm:block"
+            width={1000}
+            height={1000}
+          />
         </div>
       </section>
     </>
