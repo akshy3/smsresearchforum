@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Example() {
   return (
@@ -9,7 +10,7 @@ export default function Example() {
         {/* Hero content */}
         <div className="item-center flex flex-col justify-center space-y-5 px-10 sm:items-start lg:py-6 dark:text-white">
           <h1 className="text-4xl md:text-6xl">
-            <span className="font-bold underline decoration-black decoration-4">
+            <span className="font-bold underline decoration-black decoration-4 dark:decoration-white">
               Empowering Scholars. Fostering Innovation.
             </span>
           </h1>
@@ -17,7 +18,7 @@ export default function Example() {
             Welcome to SMS Research Forum — a vibrant community dedicated to academic excellence,
             collaborative research, and professional development at CUSAT.
           </h2>
-          <button className="rounded-full border border-black bg-white px-4 py-2 font-medium transition duration-100 hover:bg-blue-800 hover:text-white active:scale-90">
+          <button className="rounded-full border border-black bg-white px-4 py-2 font-medium text-black transition duration-100 hover:bg-blue-800 hover:text-white active:scale-90">
             Learn More About Us
           </button>
         </div>
