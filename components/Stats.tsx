@@ -38,6 +38,8 @@ export default function Stats() {
               className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
               src="/static/images/smslogo.jpg"
               alt="People working on laptops"
+              width={1000}
+              height={1000}
             />
             <div
               aria-hidden="true"
