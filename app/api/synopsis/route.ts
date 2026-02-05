@@ -1,7 +1,6 @@
 import { prisma } from '@/lib/prisma'
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { supabase } from '@/lib/supabase'
 
 export async function POST(req: Request) {
   const formData = await req.formData()
@@ -14,24 +13,21 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'No file' }, { status: 400 })
   }
 
-  const bytes = await file.arrayBuffer()
-  const buffer = Buffer.from(bytes)
+  const filePath = `synopsis/${Date.now()}-${file.name}`
 
-  const uploadDir = path.join(process.cwd(), 'public/uploads')
-  if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true })
+  const { error } = await supabase.storage
+    .from('your-bucket-name') // replace
+    .upload(filePath, file)
+
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 })
   }
-
-  const fileName = `${Date.now()}-${file.name}`
-  const filePath = `/uploads/${fileName}`
-
-  fs.writeFileSync(path.join(uploadDir, fileName), buffer)
 
   const synopsis = await prisma.synopsis.create({
     data: {
       title,
       studentName,
-      filePath,
+      filePath, // store path only (recommended)
     },
   })
 
