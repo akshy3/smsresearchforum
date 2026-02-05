@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   const filePath = `synopsis/${Date.now()}-${file.name}`
 
   const { error } = await supabase.storage
-    .from('your-bucket-name') // replace
+    .from('synopsis') // replace
     .upload(filePath, file)
 
   if (error) {
