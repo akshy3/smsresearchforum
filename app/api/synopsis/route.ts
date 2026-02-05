@@ -13,15 +13,17 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'No file' }, { status: 400 })
   }
 
-  const filePath = `synopsis/${Date.now()}-${file.name}`
+  let filePath = `${Date.now()}-${file.name}`
 
-  const { error } = await supabase.storage
+  const { data, error } = await supabase.storage
     .from('synopsis') // replace
     .upload(filePath, file)
 
   if (error) {
+    console.error('Supabase Storage Error:', error)
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
+  filePath = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/synopsis/${filePath}`
 
   const synopsis = await prisma.synopsis.create({
     data: {
