@@ -2,6 +2,7 @@
   "compilerOptions": {
     "incremental": true,
     "target": "ES6",
+    // "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -11,6 +12,7 @@
     "composite": true,
     "esModuleInterop": true,
     "module": "esnext",
+    // "module": "commonjs",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -22,7 +24,8 @@
       "@/layouts/*": ["layouts/*"],
       "@/css/*": ["css/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
-      "pliny/*": ["node_modules/pliny/*"]
+      "pliny/*": ["node_modules/pliny/*"],
+      "@/*": ["./*"]
     },
     "plugins": [
       {

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import globals from 'globals'
 import tsParser from '@typescript-eslint/parser'
@@ -12,9 +14,9 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 })
 
-export default [
+const conf = [
   {
-    ignores: [],
+    ignores: ['.next/**', 'node_modules/**', '.contentlayer/**', '.yarn/**', 'generated/**'],
   },
   js.configs.recommended,
   ...compat.extends(
@@ -68,3 +70,5 @@ export default [
     },
   },
 ]
+
+export default conf
