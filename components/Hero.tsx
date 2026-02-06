@@ -33,7 +33,7 @@ export default function Hero() {
                 <div className="absolute inset-0">
                   <Image
                     className="h-full w-full object-cover"
-                    src="/static/images/iftar.jpg"
+                    src="/static/images/SMS.jpg"
                     alt="People working on laptops"
                     width={1200}
                     height={1200}
