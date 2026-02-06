@@ -8,17 +8,23 @@ export async function POST(req: Request) {
   const formData = await req.formData()
   const title = formData.get('title') as string
   const studentName = formData.get('studentName') as string
+  const stream = formData.get('stream') as string
+  const year = parseInt(formData.get('year') as string)
+  const researchArea = formData.get('researchArea') as string
+  const advisor = formData.get('advisor') as string
   const file = formData.get('file') as File
 
   if (!file) {
     return NextResponse.json({ error: 'No file' }, { status: 400 })
   }
 
+  if (!title || !studentName || !stream || !year) {
+    return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
+  }
+
   let filePath = `${Date.now()}-${file.name}`
 
-  const { data, error } = await supabase.storage
-    .from('synopsis') // replace
-    .upload(filePath, file)
+  const { data, error } = await supabase.storage.from('synopsis').upload(filePath, file)
 
   if (error) {
     console.error('Supabase Storage Error:', error)
@@ -30,7 +36,12 @@ export async function POST(req: Request) {
     data: {
       title,
       studentName,
-      filePath, // store path only (recommended)
+      stream,
+      year,
+      researchArea: researchArea || null,
+      advisor: advisor || null,
+      status: 'submitted',
+      filePath,
     },
   })
 

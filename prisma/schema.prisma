@@ -26,6 +26,12 @@ model Synopsis {
   title       String
   studentName String
   description String?
-  filePath     String
+  stream      String   // e.g., Marketing, Finance, Operations, etc.
+  year        Int      // Batch year or submission year
+  researchArea String?  // e.g., Digital Marketing, Consumer Behavior, etc.
+  status      String   @default("submitted") // draft, submitted, approved, published
+  advisor     String?  // Faculty advisor name
+  filePath    String
   createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

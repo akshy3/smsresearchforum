@@ -1,0 +1,13 @@
+-- AlterTable
+ALTER TABLE "Synopsis" 
+ADD COLUMN "stream" TEXT NOT NULL DEFAULT 'Unspecified',
+ADD COLUMN "year" INTEGER NOT NULL DEFAULT 2026,
+ADD COLUMN "researchArea" TEXT,
+ADD COLUMN "status" TEXT NOT NULL DEFAULT 'submitted',
+ADD COLUMN "advisor" TEXT,
+ADD COLUMN "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+-- Drop defaults after data is populated
+ALTER TABLE "Synopsis" 
+ALTER COLUMN "stream" DROP DEFAULT,
+ALTER COLUMN "year" DROP DEFAULT;
