@@ -22,7 +22,7 @@ export default function SynopsisLibrary() {
   const [selectedStream, setSelectedStream] = useState<string>('')
   const [selectedYear, setSelectedYear] = useState<string>('')
   const [selectedAdvisor, setSelectedAdvisor] = useState<string>('')
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('list')
 
   // Fetch synopses
   useEffect(() => {
@@ -359,7 +359,7 @@ export default function SynopsisLibrary() {
                   <div className="min-w-0 flex-1">
                     <div className="flex items-start gap-3">
                       <div className="flex-1">
-                        <h3 className="mb-2 line-clamp-2 text-base font-semibold text-slate-900">
+                        <h3 className="mb-2 text-base font-semibold text-slate-900">
                           {synopsis.title}
                         </h3>
                         <div className="space-y-1 text-sm text-slate-600">
