@@ -14,7 +14,7 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 })
 
-const conf = [
+const config = [
   {
     ignores: ['.next/**', 'node_modules/**', '.contentlayer/**', '.yarn/**', 'generated/**'],
   },
@@ -71,4 +71,4 @@ const conf = [
   },
 ]
 
-export default conf
+export default config
