@@ -155,15 +155,15 @@ export default function SynopsisPage() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl p-6">
-      <h1 className="mb-4 text-2xl font-semibold">Add PhD Synopsis</h1>
+    <div className="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6">
+      <h1 className="mb-4 text-xl font-semibold sm:text-2xl">Add PhD Synopsis</h1>
 
-      <div className="rounded-lg bg-white p-6 shadow-sm">
+      <div className="rounded-lg bg-white p-4 shadow-sm sm:p-6">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <label className="flex flex-col">
             <span className="mb-1 text-sm font-medium text-gray-700">Title</span>
             <input
-              className="block w-full rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+              className="block w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="Thesis title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -173,7 +173,7 @@ export default function SynopsisPage() {
           <label className="flex flex-col">
             <span className="mb-1 text-sm font-medium text-gray-700">Student</span>
             <input
-              className="block w-full rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+              className="block w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="Student name"
               value={studentName}
               onChange={(e) => setStudentName(e.target.value)}
@@ -183,7 +183,7 @@ export default function SynopsisPage() {
           <label className="flex flex-col">
             <span className="mb-1 text-sm font-medium text-gray-700">Stream</span>
             <input
-              className="block w-full rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+              className="block w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="e.g., Marketing, Finance, Operations"
               value={stream}
               onChange={(e) => setStream(e.target.value)}
@@ -194,27 +194,27 @@ export default function SynopsisPage() {
             <span className="mb-1 text-sm font-medium text-gray-700">Year</span>
             <input
               type="number"
-              className="block w-full rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+              className="block w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="2026"
               value={year}
               onChange={(e) => setYear(parseInt(e.target.value))}
             />
           </label>
 
-          <label className="flex flex-col">
+          <label className="flex flex-col sm:col-span-2">
             <span className="mb-1 text-sm font-medium text-gray-700">Research Area</span>
             <input
-              className="block w-full rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+              className="block w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="e.g., Digital Marketing, Consumer Behavior"
               value={researchArea}
               onChange={(e) => setResearchArea(e.target.value)}
             />
           </label>
 
-          <label className="flex flex-col">
+          <label className="flex flex-col sm:col-span-2">
             <span className="mb-1 text-sm font-medium text-gray-700">Advisor</span>
             <input
-              className="block w-full rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+              className="block w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="Faculty advisor name"
               value={advisor}
               onChange={(e) => setAdvisor(e.target.value)}
@@ -223,7 +223,7 @@ export default function SynopsisPage() {
         </div>
 
         <div className="mt-4">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <input
               id="synopsis-file"
               type="file"
@@ -234,7 +234,7 @@ export default function SynopsisPage() {
 
             <label
               htmlFor="synopsis-file"
-              className="inline-flex cursor-pointer items-center gap-2 rounded-md bg-gray-100 px-3 py-2 text-gray-700 hover:bg-gray-200"
+              className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-md bg-gray-100 px-3 py-2 text-sm text-gray-700 hover:bg-gray-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -245,7 +245,7 @@ export default function SynopsisPage() {
               >
                 <path d="M8 2a1 1 0 00-1 1v6H5a1 1 0 000 2h2v6a1 1 0 102 0v-6h2a1 1 0 100-2H9V3a1 1 0 00-1-1z" />
               </svg>
-              <span className="text-sm">Choose file</span>
+              <span>Choose file</span>
             </label>
 
             <div className="min-w-0 flex-1">
@@ -270,7 +270,7 @@ export default function SynopsisPage() {
         <div className="mt-6">
           <button
             onClick={handleSubmit}
-            className="inline-flex items-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-white hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-medium text-white hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
             disabled={!title || !studentName || !stream || !file || isSubmitting}
           >
             {isSubmitting ? (
@@ -285,26 +285,28 @@ export default function SynopsisPage() {
         </div>
       </div>
 
-      <h2 className="mt-8 mb-4 text-xl font-semibold">Submitted Synopsis</h2>
+      <h2 className="mt-8 mb-4 text-lg font-semibold sm:text-xl">Submitted Synopsis</h2>
 
       {isLoading ? (
         <div className="flex items-center justify-center gap-2 py-8 text-gray-500">
           <div className="h-5 w-5 animate-spin rounded-full border-2 border-gray-300 border-t-sky-600"></div>
-          <span>Loading synopsis...</span>
+          <span className="text-sm">Loading synopsis...</span>
         </div>
       ) : list.length === 0 ? (
-        <div className="text-gray-500">No synopsis submitted yet.</div>
+        <div className="text-sm text-gray-500">No synopsis submitted yet.</div>
       ) : (
         <div className="grid gap-4">
           {list.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-between rounded-lg bg-white p-4 shadow"
+              className="flex flex-col gap-4 rounded-lg bg-white p-4 shadow sm:flex-row sm:items-start sm:justify-between"
             >
-              <div className="flex-1">
-                <div className="font-medium text-gray-800">{item.title}</div>
+              <div className="min-w-0 flex-1">
+                <div className="line-clamp-2 text-sm font-medium text-gray-800 sm:text-base">
+                  {item.title}
+                </div>
                 <div className="text-sm text-gray-500">{item.studentName}</div>
-                <div className="mt-2 flex flex-wrap gap-4 text-xs text-gray-600">
+                <div className="mt-2 flex flex-col gap-2 text-xs text-gray-600 sm:flex-row sm:flex-wrap sm:gap-4">
                   <span>
                     <strong>Stream:</strong> {item.stream}
                   </span>
@@ -312,36 +314,36 @@ export default function SynopsisPage() {
                     <strong>Year:</strong> {item.year}
                   </span>
                   {item.researchArea && (
-                    <span>
+                    <span className="line-clamp-1">
                       <strong>Area:</strong> {item.researchArea}
                     </span>
                   )}
                   {item.advisor && (
-                    <span>
+                    <span className="line-clamp-1">
                       <strong>Advisor:</strong> {item.advisor}
                     </span>
                   )}
                 </div>
               </div>
 
-              <div className="ml-4 flex items-center gap-2">
+              <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
                 <a
                   href={item.filePath}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center rounded-md bg-gray-100 px-3 py-1.5 text-gray-700 hover:bg-gray-200"
+                  className="inline-flex items-center justify-center rounded-md bg-gray-100 px-3 py-1.5 text-center text-xs font-medium text-gray-700 hover:bg-gray-200 sm:whitespace-nowrap"
                 >
                   View File
                 </a>
                 <button
                   onClick={() => openEdit(item)}
-                  className="inline-flex items-center rounded-md bg-blue-100 px-3 py-1.5 text-blue-700 hover:bg-blue-200"
+                  className="inline-flex items-center justify-center rounded-md bg-blue-100 px-3 py-1.5 text-center text-xs font-medium text-blue-700 hover:bg-blue-200 sm:whitespace-nowrap"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => openDeleteConfirm(item.id)}
-                  className="inline-flex items-center rounded-md bg-red-100 px-3 py-1.5 text-red-700 hover:bg-red-200"
+                  className="inline-flex items-center justify-center rounded-md bg-red-100 px-3 py-1.5 text-center text-xs font-medium text-red-700 hover:bg-red-200 sm:whitespace-nowrap"
                 >
                   Delete
                 </button>
@@ -353,15 +355,15 @@ export default function SynopsisPage() {
 
       {/* Edit Modal */}
       {editingId !== null && (
-        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black">
-          <div className="max-h-screen w-full max-w-2xl overflow-y-auto rounded-lg bg-white p-6 shadow-lg">
-            <h2 className="mb-4 text-xl font-semibold">Edit Synopsis</h2>
+        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-end justify-center bg-black p-4 sm:items-center">
+          <div className="max-h-screen w-full max-w-2xl overflow-y-auto rounded-t-lg bg-white p-4 shadow-lg sm:rounded-lg sm:p-6">
+            <h2 className="mb-4 text-lg font-semibold sm:text-xl">Edit Synopsis</h2>
 
             <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <label className="flex flex-col">
                 <span className="mb-1 text-sm font-medium text-gray-700">Title</span>
                 <input
-                  className="rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                   placeholder="Thesis title"
                   value={editTitle}
                   onChange={(e) => setEditTitle(e.target.value)}
@@ -371,7 +373,7 @@ export default function SynopsisPage() {
               <label className="flex flex-col">
                 <span className="mb-1 text-sm font-medium text-gray-700">Student</span>
                 <input
-                  className="rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                   placeholder="Student name"
                   value={editStudentName}
                   onChange={(e) => setEditStudentName(e.target.value)}
@@ -381,7 +383,7 @@ export default function SynopsisPage() {
               <label className="flex flex-col">
                 <span className="mb-1 text-sm font-medium text-gray-700">Stream</span>
                 <input
-                  className="rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                   placeholder="e.g., Marketing, Finance, Operations"
                   value={editStream}
                   onChange={(e) => setEditStream(e.target.value)}
@@ -392,7 +394,7 @@ export default function SynopsisPage() {
                 <span className="mb-1 text-sm font-medium text-gray-700">Year</span>
                 <input
                   type="number"
-                  className="rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                   value={editYear}
                   onChange={(e) => setEditYear(parseInt(e.target.value))}
                 />
@@ -401,7 +403,7 @@ export default function SynopsisPage() {
               <label className="flex flex-col sm:col-span-2">
                 <span className="mb-1 text-sm font-medium text-gray-700">Research Area</span>
                 <input
-                  className="rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                   placeholder="e.g., Digital Marketing, Consumer Behavior"
                   value={editResearchArea}
                   onChange={(e) => setEditResearchArea(e.target.value)}
@@ -411,7 +413,7 @@ export default function SynopsisPage() {
               <label className="flex flex-col sm:col-span-2">
                 <span className="mb-1 text-sm font-medium text-gray-700">Advisor</span>
                 <input
-                  className="rounded-md border border-gray-200 px-3 py-2 focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
+                  className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                   placeholder="Faculty advisor name"
                   value={editAdvisor}
                   onChange={(e) => setEditAdvisor(e.target.value)}
@@ -419,10 +421,10 @@ export default function SynopsisPage() {
               </label>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-2 sm:flex-row">
               <button
                 onClick={handleEdit}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-white hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-medium text-white hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-50"
                 disabled={isEditing}
               >
                 {isEditing ? (
@@ -436,7 +438,7 @@ export default function SynopsisPage() {
               </button>
               <button
                 onClick={closeEdit}
-                className="flex-1 rounded-md bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300 disabled:opacity-50"
+                className="flex-1 rounded-md bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300 disabled:opacity-50"
                 disabled={isEditing}
               >
                 Cancel
@@ -448,17 +450,17 @@ export default function SynopsisPage() {
 
       {/* Delete Confirmation Modal */}
       {deletingId !== null && (
-        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black">
-          <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
-            <h2 className="mb-4 text-xl font-semibold">Delete Synopsis</h2>
-            <p className="mb-6 text-gray-600">
+        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-end justify-center bg-black p-4 sm:items-center">
+          <div className="w-full max-w-md rounded-t-lg bg-white p-4 shadow-lg sm:rounded-lg sm:p-6">
+            <h2 className="mb-4 text-lg font-semibold">Delete Synopsis</h2>
+            <p className="mb-6 text-sm text-gray-600">
               Are you sure you want to delete this synopsis? This action cannot be undone.
             </p>
 
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-2 sm:flex-row">
               <button
                 onClick={handleDelete}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-red-600 px-4 py-2 text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-50"
                 disabled={isDeleting}
               >
                 {isDeleting ? (
@@ -472,7 +474,7 @@ export default function SynopsisPage() {
               </button>
               <button
                 onClick={closeDeleteConfirm}
-                className="flex-1 rounded-md bg-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-300 disabled:opacity-50"
+                className="flex-1 rounded-md bg-gray-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-300 disabled:opacity-50"
                 disabled={isDeleting}
               >
                 Cancel

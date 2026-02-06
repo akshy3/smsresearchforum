@@ -4,6 +4,8 @@ const headerNavLinks = [
   // { href: '/tags', title: 'Tags' },
   { href: '/initiatives', title: 'Initiatives' },
   { href: '/about', title: 'About' },
+  { href: '/synopsis', title: 'Synopsis' },
+
   // { href: '/contact', title: 'Contact' },
 ]
 
