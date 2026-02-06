@@ -2,10 +2,10 @@
 const siteMetadata = {
   title: 'SMS Research Forum',
   author: 'SMS Research Forum',
-  headerTitle: 'SMS Research Forum',
+  headerTitle: 'smsresearchforum',
   description: 'An initiative of School of Management Studies, CUSAT.',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'light', // system, dark or light
   siteUrl: 'https://smsresearchforum.vercel.app',
   siteRepo: 'https://github.com/akshy3/smsresearchforum',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/smslogo.jpg`,
