@@ -9,7 +9,7 @@ type Synopsis = {
   stream: string
   year: number
   researchArea?: string
-  status: string
+  // status: string
   advisor?: string
   filePath: string
   createdAt: string
@@ -21,7 +21,7 @@ export default function SynopsisLibrary() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedStream, setSelectedStream] = useState<string>('')
   const [selectedYear, setSelectedYear] = useState<string>('')
-  const [selectedStatus, setSelectedStatus] = useState<string>('')
+  const [selectedAdvisor, setSelectedAdvisor] = useState<string>('')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
   // Fetch synopses
@@ -51,7 +51,10 @@ export default function SynopsisLibrary() {
     () => [...new Set(synopses.map((s) => s.year))].sort((a, b) => b - a),
     [synopses]
   )
-  const uniqueStatus = useMemo(() => [...new Set(synopses.map((s) => s.status))].sort(), [synopses])
+  const uniqueAdvisor = useMemo(
+    () => [...new Set(synopses.map((s) => s.advisor))].sort(),
+    [synopses]
+  )
 
   // Filter synopses
   const filteredSynopses = useMemo(() => {
@@ -65,17 +68,17 @@ export default function SynopsisLibrary() {
 
       const matchesStream = selectedStream === '' || s.stream === selectedStream
       const matchesYear = selectedYear === '' || s.year === parseInt(selectedYear)
-      const matchesStatus = selectedStatus === '' || s.status === selectedStatus
+      const matchesAdvisor = selectedAdvisor === '' || s.advisor === selectedAdvisor
 
-      return matchesSearch && matchesStream && matchesYear && matchesStatus
+      return matchesSearch && matchesStream && matchesYear && matchesAdvisor
     })
-  }, [synopses, searchQuery, selectedStream, selectedYear, selectedStatus])
+  }, [synopses, searchQuery, selectedStream, selectedYear, selectedAdvisor])
 
   const clearFilters = () => {
     setSearchQuery('')
     setSelectedStream('')
     setSelectedYear('')
-    setSelectedStatus('')
+    setSelectedAdvisor('')
   }
 
   return (
@@ -159,19 +162,19 @@ export default function SynopsisLibrary() {
               </label>
             </div>
 
-            {/* Status Filter */}
+            {/* advisor Filter */}
             <div>
               <label className="mb-2 block text-sm font-medium text-slate-700">
-                Status
+                Advisor
                 <select
-                  value={selectedStatus}
-                  onChange={(e) => setSelectedStatus(e.target.value)}
+                  value={selectedAdvisor}
+                  onChange={(e) => setSelectedAdvisor(e.target.value)}
                   className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm transition outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20"
                 >
-                  <option value="">All Status</option>
-                  {uniqueStatus.map((status) => (
-                    <option key={status} value={status}>
-                      {status}
+                  <option value="">All advisor</option>
+                  {uniqueAdvisor.map((advisor) => (
+                    <option key={advisor} value={advisor}>
+                      {advisor}
                     </option>
                   ))}
                 </select>
@@ -207,7 +210,7 @@ export default function SynopsisLibrary() {
           </div>
 
           {/* Clear Filters Button */}
-          {(searchQuery || selectedStream || selectedYear || selectedStatus) && (
+          {(searchQuery || selectedStream || selectedYear) && (
             <button
               onClick={clearFilters}
               className="inline-flex items-center gap-1 rounded-lg bg-slate-200 px-3 py-1 text-sm text-slate-700 transition hover:bg-slate-300"
@@ -281,7 +284,7 @@ export default function SynopsisLibrary() {
                     <h3 className="line-clamp-2 text-lg font-semibold text-slate-900 transition group-hover:text-sky-600">
                       {synopsis.title}
                     </h3>
-                    <span
+                    {/* <span
                       className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium whitespace-nowrap ${
                         synopsis.status === 'published'
                           ? 'bg-green-100 text-green-800'
@@ -293,7 +296,7 @@ export default function SynopsisLibrary() {
                       }`}
                     >
                       {synopsis.status}
-                    </span>
+                    </span> */}
                   </div>
 
                   <div className="mb-4 space-y-2">
@@ -370,7 +373,7 @@ export default function SynopsisLibrary() {
                             <span className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-700">
                               {synopsis.year}
                             </span>
-                            <span
+                            {/* <span
                               className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
                                 synopsis.status === 'published'
                                   ? 'bg-green-100 text-green-800'
@@ -382,7 +385,7 @@ export default function SynopsisLibrary() {
                               }`}
                             >
                               {synopsis.status}
-                            </span>
+                            </span> */}
                           </div>
                         </div>
                       </div>
