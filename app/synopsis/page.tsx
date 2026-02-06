@@ -165,13 +165,13 @@ export default function SynopsisLibrary() {
             {/* advisor Filter */}
             <div>
               <label className="mb-2 block text-sm font-medium text-slate-700">
-                Advisor
+                Guide
                 <select
                   value={selectedAdvisor}
                   onChange={(e) => setSelectedAdvisor(e.target.value)}
                   className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm transition outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20"
                 >
-                  <option value="">All advisor</option>
+                  <option value="">All Guides</option>
                   {uniqueAdvisor.map((advisor) => (
                     <option key={advisor} value={advisor}>
                       {advisor}
@@ -321,7 +321,7 @@ export default function SynopsisLibrary() {
 
                   {synopsis.advisor && (
                     <p className="mb-4 text-sm text-slate-600">
-                      <span className="font-medium">Advisor:</span> {synopsis.advisor}
+                      <span className="font-medium">Guide:</span> {synopsis.advisor}
                     </p>
                   )}
 
