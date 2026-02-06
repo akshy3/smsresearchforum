@@ -1,10 +1,11 @@
 import { prisma } from '@/lib/prisma'
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { createClient } from '@/lib/supabase/server'
+import { cookies } from 'next/headers'
 
 export async function POST(req: Request) {
+  const supabase = createClient(cookies())
   const formData = await req.formData()
-
   const title = formData.get('title') as string
   const studentName = formData.get('studentName') as string
   const file = formData.get('file') as File
