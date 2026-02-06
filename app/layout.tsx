@@ -96,16 +96,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       {/* <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white"> */}
       <body className="bg-white text-black dark:bg-gray-950 dark:text-white">
-        <ThemeProviders>
-          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
-          <SectionContainer>
-            <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-              <Header />
-              <main className="mb-auto">{children}</main>
-            </SearchProvider>
-            <Footer />
-          </SectionContainer>
-        </ThemeProviders>
+        {/* <ThemeProviders> */}
+        <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
+        <SectionContainer>
+          <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+            <Header />
+            <main className="mb-auto">{children}</main>
+          </SearchProvider>
+          <Footer />
+        </SectionContainer>
+        {/* </ThemeProviders> */}
       </body>
     </html>
   )
