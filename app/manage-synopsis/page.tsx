@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 type Synopsis = {
   id: number
@@ -35,6 +35,21 @@ export default function SynopsisPage() {
   const [isEditing, setIsEditing] = useState(false)
   const [deletingId, setDeletingId] = useState<number | null>(null)
   const [isDeleting, setIsDeleting] = useState(false)
+
+  const streamOptions = useMemo(
+    () =>
+      [...new Set(list.map((item) => item.stream.trim()).filter(Boolean))].sort((a, b) =>
+        a.localeCompare(b)
+      ),
+    [list]
+  )
+  const advisorOptions = useMemo(
+    () =>
+      [...new Set(list.map((item) => (item.advisor || '').trim()).filter(Boolean))].sort((a, b) =>
+        a.localeCompare(b)
+      ),
+    [list]
+  )
 
   async function fetchData() {
     try {
@@ -183,11 +198,17 @@ export default function SynopsisPage() {
           <label className="flex flex-col">
             <span className="mb-1 text-sm font-medium text-gray-700">Stream</span>
             <input
+              list="stream-options"
               className="block w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="e.g., Marketing, Finance, Operations"
               value={stream}
               onChange={(e) => setStream(e.target.value)}
             />
+            <datalist id="stream-options">
+              {streamOptions.map((option) => (
+                <option key={option} value={option} />
+              ))}
+            </datalist>
           </label>
 
           <label className="flex flex-col">
@@ -214,11 +235,17 @@ export default function SynopsisPage() {
           <label className="flex flex-col sm:col-span-2">
             <span className="mb-1 text-sm font-medium text-gray-700">Advisor</span>
             <input
+              list="advisor-options"
               className="block w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
               placeholder="Faculty advisor name"
               value={advisor}
               onChange={(e) => setAdvisor(e.target.value)}
             />
+            <datalist id="advisor-options">
+              {advisorOptions.map((option) => (
+                <option key={option} value={option} />
+              ))}
+            </datalist>
           </label>
         </div>
 
@@ -383,11 +410,17 @@ export default function SynopsisPage() {
               <label className="flex flex-col">
                 <span className="mb-1 text-sm font-medium text-gray-700">Stream</span>
                 <input
+                  list="edit-stream-options"
                   className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                   placeholder="e.g., Marketing, Finance, Operations"
                   value={editStream}
                   onChange={(e) => setEditStream(e.target.value)}
                 />
+                <datalist id="edit-stream-options">
+                  {streamOptions.map((option) => (
+                    <option key={option} value={option} />
+                  ))}
+                </datalist>
               </label>
 
               <label className="flex flex-col">
@@ -413,11 +446,17 @@ export default function SynopsisPage() {
               <label className="flex flex-col sm:col-span-2">
                 <span className="mb-1 text-sm font-medium text-gray-700">Advisor</span>
                 <input
+                  list="edit-advisor-options"
                   className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-500"
                   placeholder="Faculty advisor name"
                   value={editAdvisor}
                   onChange={(e) => setEditAdvisor(e.target.value)}
                 />
+                <datalist id="edit-advisor-options">
+                  {advisorOptions.map((option) => (
+                    <option key={option} value={option} />
+                  ))}
+                </datalist>
               </label>
             </div>
 
