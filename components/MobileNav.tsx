@@ -89,7 +89,7 @@ const MobileNav = () => {
                 <Link href="/" className="flex items-center gap-2" onClick={closeNav}>
                   <Image src="/static/images/smslogo.jpg" alt="smslogo" width={28} height={28} />
                   <span className="text-sm font-semibold tracking-wide text-slate-900 uppercase dark:text-white">
-                    SMS Forum
+                    SMS Research Forum
                   </span>
                 </Link>
                 <button
