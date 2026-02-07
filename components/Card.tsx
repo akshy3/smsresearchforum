@@ -2,11 +2,11 @@ import Image from './Image'
 import Link from './Link'
 
 const Card = ({ title, description, imgSrc, href }) => (
-  <div className="md max-w-[544px] p-4 md:w-1/2">
+  <div className="max-w-[544px] p-4 md:w-1/2">
     <div
       className={`${
         imgSrc && 'h-full'
-      } overflow-hidden rounded-md border-2 border-gray-200/60 dark:border-gray-700/60`}
+      } overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-900`}
     >
       {imgSrc &&
         (href ? (
@@ -14,7 +14,7 @@ const Card = ({ title, description, imgSrc, href }) => (
             <Image
               alt={title}
               src={imgSrc}
-              className="object-cover object-center md:h-36 lg:h-48"
+              className="h-52 w-full object-cover object-center"
               width={544}
               height={306}
             />
@@ -23,26 +23,28 @@ const Card = ({ title, description, imgSrc, href }) => (
           <Image
             alt={title}
             src={imgSrc}
-            className="object-cover object-center md:h-36 lg:h-48"
+            className="h-52 w-full object-cover object-center"
             width={544}
             height={306}
           />
         ))}
       <div className="p-6">
-        <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">
+        <h2 className="mb-3 text-xl leading-snug font-bold tracking-tight text-slate-900 dark:text-white">
           {href ? (
-            <Link href={href} aria-label={`Link to ${title}`}>
+            <Link href={href} aria-label={`Link to ${title}`} className="hover:text-sky-700">
               {title}
             </Link>
           ) : (
             title
           )}
         </h2>
-        <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
+        <p className="mb-4 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
+          {description}
+        </p>
         {href && (
           <Link
             href={href}
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
+            className="text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-300 dark:hover:text-sky-200"
             aria-label={`Link to ${title}`}
           >
             Learn more &rarr;
