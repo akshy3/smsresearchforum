@@ -4,6 +4,12 @@ type ConferenceRegistrationFee = {
   note?: string
 }
 
+type ConferenceContact = {
+  label: string
+  value: string
+  href?: string | null
+}
+
 export const conferenceTracks = [
   {
     slug: 'finance',
@@ -209,7 +215,7 @@ export const conference2026 = {
       value: 'Muhammed Irshad K.V | +91 95676 46717 | irshad@cusat.ac.in',
       href: 'mailto:irshad@cusat.ac.in?subject=Conference2026_Enquiry',
     },
-  ],
+  ] satisfies ConferenceContact[],
   submissionGuidelines: [
     'Prepare an original abstract aligned with one of the listed conference tracks or themes.',
     'Doctoral colloquium submissions should reflect work progressed at least to the conceptual framework stage.',
