@@ -47,7 +47,7 @@ export default function Stats() {
               Core Committee Structure
             </h2>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-200">
-              Directed by Dr. Zakkariya K A (Director, SMS) and Dr. Devi Soumyaja (Research
+              Directed by Dr. Sam Thomas (Director, SMS) and Dr. Devi Soumyaja (Research
               Coordinator), alongside scholar leadership and committee-based coordination that keeps
               the forum active across the year.
             </p>
