@@ -28,15 +28,15 @@ const Header = () => {
             <div className="rounded-2xl border border-slate-200/80 bg-white p-1.5 shadow-[0_10px_30px_-18px_rgba(14,165,233,0.55)] dark:border-gray-700 dark:bg-gray-900">
               <Image src={'/static/images/smslogo.jpg'} alt="smslogo" width={40} height={40} />
             </div>
-            <div className="hidden min-w-0 sm:block">
+            <div className="min-w-0">
               {typeof siteMetadata.headerTitle === 'string' ? (
-                <div className="truncate text-sm font-black tracking-[0.24em] text-slate-900 uppercase dark:text-white">
+                <div className="truncate text-[11px] font-black tracking-[0.14em] text-slate-900 uppercase sm:text-sm sm:tracking-[0.24em] dark:text-white">
                   SMS Research Forum
                 </div>
               ) : (
                 siteMetadata.headerTitle
               )}
-              <p className="mt-0.5 truncate text-xs font-medium tracking-[0.12em] text-slate-500 uppercase dark:text-gray-400">
+              <p className="mt-0.5 hidden truncate text-xs font-medium tracking-[0.12em] text-slate-500 uppercase sm:block dark:text-gray-400">
                 School of Management Studies, CUSAT
               </p>
             </div>
