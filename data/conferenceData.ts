@@ -1,3 +1,9 @@
+type ConferenceRegistrationFee = {
+  label: string
+  value: string
+  note?: string
+}
+
 export const conferenceTracks = [
   {
     slug: 'finance',
@@ -155,7 +161,7 @@ export const conference2026 = {
       value: 'INR 1,888 including GST',
       note: 'Applicable only to conference paper presenters joining virtually, not to the doctoral colloquium.',
     },
-  ],
+  ] satisfies ConferenceRegistrationFee[],
   highlights: [
     'Academic paper presentations',
     'Policy and industry white paper sessions',
