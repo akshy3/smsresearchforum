@@ -3,27 +3,23 @@ import Image from 'next/image'
 const metrics = [
   {
     id: 1,
-    stat: '',
     emphasis: 'Programme Committee',
-    rest: 'Plans seminars, workshops, and conferences',
+    rest: 'Plans seminars, workshops, and flagship academic events',
   },
   {
     id: 2,
-    stat: '',
     emphasis: 'Career & Placement Committee',
-    rest: 'Drives internship and job-placement initiatives',
+    rest: 'Supports internships, placements, and researcher career development',
   },
   {
     id: 3,
-    stat: '',
     emphasis: 'Editorial Committee',
-    rest: 'Produces newsletters and promotional materials',
+    rest: 'Curates newsletters, reports, and forum communication',
   },
   {
     id: 4,
-    stat: '',
     emphasis: 'Social & Welfare Committee',
-    rest: 'Organizes community-building and wellbeing events ​',
+    rest: 'Builds scholar community, inclusion, and wellbeing initiatives',
   },
 ]
 
@@ -52,7 +48,8 @@ export default function Stats() {
             </h2>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-200">
               Directed by Dr. Zakkariya K A (Director, SMS) and Dr. Devi Soumyaja (Research
-              Coordinator), alongside elected research-scholar coordinators.
+              Coordinator), alongside scholar leadership and committee-based coordination that keeps
+              the forum active across the year.
             </p>
           </div>
 

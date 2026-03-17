@@ -302,7 +302,7 @@ export default function Conference2026Page() {
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Microsite Structure
+            Conference Navigation
           </p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Explore the Conference Section

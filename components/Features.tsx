@@ -1,26 +1,35 @@
 import { GlobeAltIcon, LightningBoltIcon, MailIcon, ScaleIcon } from '@heroicons/react/outline'
+import Link from '@/components/Link'
+import { conference2026 } from '@/data/conferenceData'
 
 const features = [
   {
     name: 'Quarterly Newsletter',
-    description: 'Stay updated with the latest research, achievements, and opportunities.',
-    icon: GlobeAltIcon,
-  },
-  {
-    name: 'Monthly Workshops',
     description:
-      'Hands-on sessions on research methods, publishing strategies, and industry trends.',
+      'Stay updated with the latest research, scholar achievements, and upcoming academic opportunities.',
+    icon: GlobeAltIcon,
+    href: '/updates',
+  },
+  {
+    name: 'Workshops and Seminars',
+    description:
+      'Hands-on research methods sessions, thematic seminars, and academic development programmes for scholars.',
     icon: ScaleIcon,
+    href: '/initiatives',
   },
   {
-    name: 'Career and Placement Cell',
-    description: 'Bridging scholars with industries and academic institutions for career growth.',
+    name: "Conference and Colloquium '26",
+    description:
+      'Our current flagship academic programme bringing together conference presentations and a doctoral colloquium.',
     icon: LightningBoltIcon,
+    href: '/conference-2026',
   },
   {
-    name: 'Doctoral Colloquium',
-    description: 'An annual flagship event for research presentations and academic networking.',
+    name: 'Research Resources',
+    description:
+      'Access the synopsis library, updates, and other supporting resources for SMS research scholars.',
     icon: MailIcon,
+    href: '/downloads',
   },
 ]
 
@@ -37,8 +46,8 @@ export default function Features() {
             Key Initiatives That Shape Scholar Life
           </h2>
           <p className="mt-4 text-base text-slate-600 sm:text-lg">
-            Built to support research excellence through publication, collaboration, mentorship, and
-            career readiness.
+            SMS Research Forum brings together research culture, academic events, communication, and
+            scholar support, while also spotlighting major programmes like the 2026 conference.
           </p>
         </div>
 
@@ -57,9 +66,61 @@ export default function Features() {
               <dd className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
                 {feature.description}
               </dd>
+              <div className="mt-5">
+                <Link
+                  href={feature.href}
+                  className="text-sm font-semibold text-sky-700 hover:text-sky-800 dark:hover:text-sky-300"
+                >
+                  Open section &rarr;
+                </Link>
+              </div>
             </div>
           ))}
         </dl>
+
+        <div className="mt-8 rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-6 shadow-sm">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase">
+                Flagship Programme
+              </p>
+              <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">
+                {conference2026.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                {conference2026.tagline}. The forum&apos;s current headline academic programme is
+                positioned here as a major initiative without replacing the broader identity of SMS
+                Research Forum.
+              </p>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl bg-slate-50 px-4 py-4">
+                <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
+                  Event Dates
+                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">
+                  {conference2026.eventDates}
+                </p>
+              </div>
+              <div className="rounded-2xl bg-slate-50 px-4 py-4">
+                <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
+                  Abstract Deadline
+                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">
+                  {conference2026.abstractSubmissionDeadline}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-5">
+            <Link
+              href="/conference-2026"
+              className="text-sm font-semibold text-sky-700 hover:text-sky-800 dark:hover:text-sky-300"
+            >
+              Visit conference section &rarr;
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   )

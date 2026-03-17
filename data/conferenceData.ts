@@ -211,8 +211,8 @@ export const conference2026 = {
   ],
   submissionFormatNote:
     'Abstract and full paper submission links are yet to be published. Until then, this page serves as the official conference information hub.',
-  micrositeIntro:
-    'This conference section is designed as a dedicated microsite for participants, authors, and doctoral scholars to quickly find theme details, track information, participation guidance, and colloquium expectations.',
+  conferenceIntro:
+    'This conference section is designed to help participants, authors, and doctoral scholars quickly find theme details, track information, participation guidance, and colloquium expectations.',
 } as const
 
 export type ConferenceData = typeof conference2026

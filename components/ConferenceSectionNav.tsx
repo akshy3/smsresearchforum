@@ -13,13 +13,13 @@ export default function ConferenceSectionNav() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Conference Microsite
+            Conference Section
           </p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             {conference2026.title}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
-            {conference2026.micrositeIntro}
+            {conference2026.conferenceIntro}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

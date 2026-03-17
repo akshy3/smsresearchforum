@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { conference2026 } from '@/data/conferenceData'
 
 export default function Hero() {
   return (
@@ -31,37 +32,39 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-100 sm:text-lg">
-            Discover doctoral research, track academic progress, and connect with the ideas shaping
-            tomorrow&apos;s management scholarship.
+            SMS Research Forum is a collaborative academic space for scholars, faculty, and
+            research-oriented initiatives at the School of Management Studies, CUSAT. From workshops
+            and colloquia to flagship programmes like {conference2026.title}, the forum supports
+            rigorous, connected, and future-facing scholarship.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/synopsis"
+              href="/about"
               className="inline-flex items-center justify-center rounded-lg bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-400"
             >
-              Explore Synopses
+              About the Forum
             </Link>
             <Link
-              href="/updates"
+              href="/conference-2026"
               className="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
             >
-              Latest Updates
+              Conference & Colloquium&apos;26
             </Link>
           </div>
 
           <div className="mt-10 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
             <div className="rounded-lg border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
-              <p className="text-xs text-sky-100 uppercase">Research Streams</p>
-              <p className="mt-1 text-lg font-bold text-white">Multi-disciplinary</p>
+              <p className="text-xs text-sky-100 uppercase">Forum Mission</p>
+              <p className="mt-1 text-lg font-bold text-white">Research Excellence</p>
             </div>
             <div className="rounded-lg border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
               <p className="text-xs text-sky-100 uppercase">Community</p>
-              <p className="mt-1 text-lg font-bold text-white">Scholars + Guides</p>
+              <p className="mt-1 text-lg font-bold text-white">Scholars + Faculty</p>
             </div>
             <div className="rounded-lg border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
-              <p className="text-xs text-sky-100 uppercase">Repository</p>
-              <p className="mt-1 text-lg font-bold text-white">Living Archive</p>
+              <p className="text-xs text-sky-100 uppercase">Flagship Programme</p>
+              <p className="mt-1 text-lg font-bold text-white">Conference & Colloquium&apos;26</p>
             </div>
           </div>
         </div>

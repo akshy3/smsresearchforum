@@ -1,4 +1,5 @@
 import { conferenceNavLinks } from './conferenceNavLinks'
+import { downloadNavLinks } from './downloadNavLinks'
 
 const headerNavLinks = [
   { href: '/', title: 'Home' },
@@ -8,12 +9,17 @@ const headerNavLinks = [
     description: 'International Conference and Doctoral Colloquium 2026',
     children: conferenceNavLinks,
   },
+  {
+    href: '/downloads',
+    title: 'Downloads',
+    description: 'Resources, archives, and supporting material',
+    children: downloadNavLinks,
+  },
   { href: '/updates', title: 'Updates' },
   // { href: '/tags', title: 'Tags' },
   { href: '/initiatives', title: 'Initiatives' },
   { href: '/committees', title: 'Committees' },
   { href: '/about', title: 'About' },
-  { href: '/synopsis', title: 'Synopsis' },
 
   // { href: '/contact', title: 'Contact' },
 ]
