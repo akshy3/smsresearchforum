@@ -15,7 +15,7 @@ const features = [
     description:
       'See how the forum is organized through committees that support programmes, editorial work, careers, and scholar wellbeing.',
     icon: ScaleIcon,
-    href: '/committees',
+    href: '/about#committees',
   },
   {
     name: "Conference and Colloquium '26",

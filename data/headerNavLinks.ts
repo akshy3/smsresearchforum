@@ -17,7 +17,6 @@ const headerNavLinks = [
   },
   { href: '/updates', title: 'Updates' },
   // { href: '/tags', title: 'Tags' },
-  { href: '/committees', title: 'Committees' },
   { href: '/about', title: 'About' },
 
   // { href: '/contact', title: 'Contact' },

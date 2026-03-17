@@ -1,6 +1,7 @@
 import { genPageMetadata } from 'app/seo'
 import Image from 'next/image'
 import Link from '@/components/Link'
+import committeesData from '@/data/committeesData'
 
 export const metadata = genPageMetadata({ title: 'About' })
 
@@ -56,7 +57,7 @@ export default function Page() {
                 Explore Updates
               </Link>
               <Link
-                href="/committees"
+                href="/about#committees"
                 className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
               >
                 View Committees
@@ -140,6 +141,55 @@ export default function Page() {
               work, and contribute to upcoming forum activities.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="committees"
+        className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
+      >
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+            Forum Structure
+          </p>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Committees
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+            The forum is organized through specialized committees that sustain academic programming,
+            communication, career support, and scholar wellbeing. Together they turn the
+            forum&apos;s mission into regular, visible activity.
+          </p>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
+          {committeesData.map((committee) => (
+            <article
+              key={committee.name}
+              className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 dark:border-gray-700 dark:bg-gray-950/40"
+            >
+              <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+                Committee
+              </p>
+              <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                {committee.name}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+                {committee.summary}
+              </p>
+              <ul className="mt-5 space-y-3">
+                {committee.duties.map((duty) => (
+                  <li
+                    key={duty}
+                    className="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300"
+                  >
+                    <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-sky-500" />
+                    <span className="leading-relaxed">{duty}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </section>
     </div>
