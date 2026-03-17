@@ -10,6 +10,7 @@ import Image from 'next/image'
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
+  const [expandedSection, setExpandedSection] = useState<string | null>(null)
   const navRef = useRef<HTMLElement | null>(null)
   const pathname = usePathname()
 
@@ -19,6 +20,7 @@ const MobileNav = () => {
 
   const closeNav = () => {
     setNavShow(false)
+    setExpandedSection(null)
   }
 
   const onToggleNav = () => {
@@ -136,42 +138,112 @@ const MobileNav = () => {
 
               <nav ref={navRef} className="h-[calc(100%-140px)] overflow-y-auto px-3 py-4">
                 <div className="space-y-2">
-                  {headerNavLinks.map((link) => (
-                    <Link
-                      key={link.title}
-                      href={link.href}
-                      className={`group flex items-center justify-between rounded-2xl border px-4 py-3.5 text-base font-semibold transition ${
-                        pathname === link.href
-                          ? 'border-sky-200 bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-[0_18px_30px_-18px_rgba(14,165,233,0.85)] dark:border-sky-700'
-                          : 'border-transparent bg-slate-50 text-slate-800 hover:border-slate-200 hover:bg-white hover:text-sky-700 dark:bg-gray-900/80 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-900 dark:hover:text-sky-300'
-                      }`}
-                      onClick={closeNav}
-                    >
-                      <div>
-                        <span>{link.title}</span>
-                        <p
-                          className={`mt-1 text-xs font-medium tracking-wide ${
-                            pathname === link.href
-                              ? 'text-sky-50/90'
-                              : 'text-slate-500 dark:text-gray-400'
+                  {headerNavLinks.map((link) => {
+                    const isActive =
+                      pathname === link.href ||
+                      (link.children?.some((child) => pathname === child.href) ?? false)
+
+                    if (link.children) {
+                      const isExpanded = expandedSection === link.href || isActive
+                      return (
+                        <div
+                          key={link.title}
+                          className={`rounded-2xl border transition ${
+                            isActive
+                              ? 'border-sky-200 bg-sky-50 dark:border-sky-700 dark:bg-sky-900/20'
+                              : 'border-transparent bg-slate-50 dark:bg-gray-900/80'
                           }`}
                         >
-                          {link.href === '/'
-                            ? 'Return to the main landing page'
-                            : `Open the ${link.title.toLowerCase()} page`}
-                        </p>
-                      </div>
-                      <span
-                        className={`text-sm transition ${
-                          pathname === link.href
-                            ? 'translate-x-0 text-white'
-                            : 'text-slate-400 group-hover:translate-x-1 group-hover:text-sky-600 dark:text-gray-500 dark:group-hover:text-sky-300'
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setExpandedSection((current) =>
+                                current === link.href ? null : link.href
+                              )
+                            }
+                            className="flex w-full items-center justify-between px-4 py-3.5 text-left"
+                          >
+                            <div>
+                              <p className="text-base font-semibold text-slate-800 dark:text-gray-100">
+                                {link.title}
+                              </p>
+                              <p className="mt-1 text-xs font-medium tracking-wide text-slate-500 dark:text-gray-400">
+                                {link.description || `Open the ${link.title.toLowerCase()} section`}
+                              </p>
+                            </div>
+                            <span className="text-slate-400 dark:text-gray-500">
+                              {isExpanded ? '−' : '+'}
+                            </span>
+                          </button>
+                          {isExpanded && (
+                            <div className="space-y-2 px-3 pb-3">
+                              {link.children.map((child) => {
+                                const isChildActive = pathname === child.href
+                                return (
+                                  <Link
+                                    key={child.href}
+                                    href={child.href}
+                                    className={`block rounded-2xl px-4 py-3 transition ${
+                                      isChildActive
+                                        ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-[0_18px_30px_-18px_rgba(14,165,233,0.85)]'
+                                        : 'bg-white text-slate-800 hover:text-sky-700 dark:bg-gray-950 dark:text-gray-100 dark:hover:text-sky-300'
+                                    }`}
+                                    onClick={closeNav}
+                                  >
+                                    <p className="text-sm font-semibold">{child.title}</p>
+                                    <p
+                                      className={`mt-1 text-xs ${
+                                        isChildActive
+                                          ? 'text-sky-50/90'
+                                          : 'text-slate-500 dark:text-gray-400'
+                                      }`}
+                                    >
+                                      {child.description}
+                                    </p>
+                                  </Link>
+                                )
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      )
+                    }
+
+                    return (
+                      <Link
+                        key={link.title}
+                        href={link.href}
+                        className={`group flex items-center justify-between rounded-2xl border px-4 py-3.5 text-base font-semibold transition ${
+                          isActive
+                            ? 'border-sky-200 bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-[0_18px_30px_-18px_rgba(14,165,233,0.85)] dark:border-sky-700'
+                            : 'border-transparent bg-slate-50 text-slate-800 hover:border-slate-200 hover:bg-white hover:text-sky-700 dark:bg-gray-900/80 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-900 dark:hover:text-sky-300'
                         }`}
+                        onClick={closeNav}
                       >
-                        &rarr;
-                      </span>
-                    </Link>
-                  ))}
+                        <div>
+                          <span>{link.title}</span>
+                          <p
+                            className={`mt-1 text-xs font-medium tracking-wide ${
+                              isActive ? 'text-sky-50/90' : 'text-slate-500 dark:text-gray-400'
+                            }`}
+                          >
+                            {link.href === '/'
+                              ? 'Return to the main landing page'
+                              : `Open the ${link.title.toLowerCase()} page`}
+                          </p>
+                        </div>
+                        <span
+                          className={`text-sm transition ${
+                            isActive
+                              ? 'translate-x-0 text-white'
+                              : 'text-slate-400 group-hover:translate-x-1 group-hover:text-sky-600 dark:text-gray-500 dark:group-hover:text-sky-300'
+                          }`}
+                        >
+                          &rarr;
+                        </span>
+                      </Link>
+                    )
+                  })}
                 </div>
               </nav>
             </DialogPanel>
