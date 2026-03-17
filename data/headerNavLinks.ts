@@ -9,15 +9,15 @@ const headerNavLinks = [
     description: 'International Conference and Doctoral Colloquium 2026',
     children: conferenceNavLinks,
   },
+  { href: '/updates', title: 'Updates' },
+  // { href: '/tags', title: 'Tags' },
+  { href: '/about', title: 'About' },
   {
     href: '/downloads',
     title: 'Downloads',
     description: 'Resources, archives, and supporting material',
     children: downloadNavLinks,
   },
-  { href: '/updates', title: 'Updates' },
-  // { href: '/tags', title: 'Tags' },
-  { href: '/about', title: 'About' },
 
   // { href: '/contact', title: 'Contact' },
 ]
