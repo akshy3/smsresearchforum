@@ -56,10 +56,10 @@ export default function Page() {
                 Explore Updates
               </Link>
               <Link
-                href="/initiatives"
+                href="/committees"
                 className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
               >
-                View Initiatives
+                View Committees
               </Link>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Page() {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
               If you are a scholar at SMS, you are encouraged to actively participate, present your
-              work, and contribute to upcoming initiatives.
+              work, and contribute to upcoming forum activities.
             </p>
           </div>
         </div>

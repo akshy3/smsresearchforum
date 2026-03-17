@@ -148,10 +148,10 @@ export default function CommitteesPage() {
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
-            href="/initiatives"
+            href="/updates"
             className="rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700"
           >
-            Explore Initiatives
+            Explore Updates
           </Link>
           <Link
             href="/about"

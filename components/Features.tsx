@@ -11,11 +11,11 @@ const features = [
     href: '/updates',
   },
   {
-    name: 'Workshops and Seminars',
+    name: 'Committees and Community',
     description:
-      'Hands-on research methods sessions, thematic seminars, and academic development programmes for scholars.',
+      'See how the forum is organized through committees that support programmes, editorial work, careers, and scholar wellbeing.',
     icon: ScaleIcon,
-    href: '/initiatives',
+    href: '/committees',
   },
   {
     name: "Conference and Colloquium '26",
@@ -43,7 +43,7 @@ export default function Features() {
             Forum Highlights
           </p>
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Key Initiatives That Shape Scholar Life
+            Key Forum Activities and Support
           </h2>
           <p className="mt-4 text-base text-slate-600 sm:text-lg">
             SMS Research Forum brings together research culture, academic events, communication, and
