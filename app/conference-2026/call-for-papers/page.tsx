@@ -20,7 +20,7 @@ export default function ConferenceCallForPapersPage() {
         <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           Conference Tracks and Submission Directions
         </h1>
-        <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+        <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
           {conference2026.callForAbstracts}
         </p>
       </section>
@@ -37,17 +37,17 @@ export default function ConferenceCallForPapersPage() {
             <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               {track.title}
             </h2>
-            <p className="mt-2 text-lg font-semibold text-slate-700 dark:text-gray-200">
+            <p className="mt-2 text-lg font-semibold text-slate-800 dark:text-gray-200">
               {track.subtitle}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+            <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
               {track.description}
             </p>
             <div className="mt-6 grid gap-3 md:grid-cols-2">
               {track.topics.map((topic) => (
                 <div
                   key={topic}
-                  className="rounded-2xl border border-white/70 bg-white/60 px-4 py-4 text-sm text-slate-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
+                  className="rounded-2xl border border-white/70 bg-white/60 px-4 py-4 text-sm text-slate-800 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
                 >
                   {topic}
                 </div>

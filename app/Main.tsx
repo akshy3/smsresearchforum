@@ -91,7 +91,7 @@ export default function Home({ posts }) {
               <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
                 Latest Updates
               </h1>
-              <p className="max-w-3xl text-sm leading-relaxed text-slate-200 sm:text-base">
+              <p className="max-w-3xl text-sm leading-relaxed text-slate-100 sm:text-base">
                 Recent announcements, workshops, programme notes, and forum activities from SMS
                 Research Forum.
               </p>
@@ -99,7 +99,7 @@ export default function Home({ posts }) {
             {posts.length > 0 && (
               <Link
                 href="/updates"
-                className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/16"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-sky-50 transition hover:bg-white/16"
               >
                 Browse all updates
               </Link>
@@ -108,7 +108,7 @@ export default function Home({ posts }) {
 
           <ul className="mt-8 space-y-4">
             {!posts.length && (
-              <li className="rounded-2xl border border-dashed border-white/20 bg-white/10 px-5 py-8 text-center text-sm text-slate-200">
+              <li className="rounded-2xl border border-dashed border-white/20 bg-white/10 px-5 py-8 text-center text-sm text-sky-50/90">
                 Updates will appear here as the forum publishes announcements and event notes.
               </li>
             )}
@@ -143,7 +143,7 @@ export default function Home({ posts }) {
                           {title}
                         </Link>
                       </h2>
-                      <div className="prose mt-3 max-w-none text-gray-700 dark:text-gray-300">
+                      <div className="prose mt-3 max-w-none text-slate-700 dark:text-gray-300">
                         {summary}
                       </div>
                     </div>

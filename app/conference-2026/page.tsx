@@ -24,10 +24,10 @@ export default function Conference2026Page() {
             <h1 className="mt-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
               {conference2026.title}
             </h1>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
               {conference2026.subtitle}
             </p>
-            <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-slate-500 uppercase dark:text-gray-400">
+            <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-slate-600 uppercase dark:text-gray-400">
               {conference2026.tagline}
             </p>
 
@@ -100,7 +100,7 @@ export default function Conference2026Page() {
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
             Conference Overview
           </p>
-          <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+          <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
             {conference2026.description.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -109,7 +109,7 @@ export default function Conference2026Page() {
             <p className="text-sm font-semibold text-slate-900 dark:text-white">
               Presentation Mode
             </p>
-            <p className="mt-2 text-sm text-slate-600 dark:text-gray-300">
+            <p className="mt-2 text-sm text-slate-700 dark:text-gray-300">
               {conference2026.formatSummary}
             </p>
           </div>
@@ -119,14 +119,14 @@ export default function Conference2026Page() {
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
             Call for Abstracts
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+          <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
             {conference2026.callForAbstracts}
           </p>
           <div className="mt-6 rounded-2xl bg-white/70 p-4 dark:bg-gray-800/70">
             <p className="text-sm font-semibold text-slate-900 dark:text-white">
               Submission update
             </p>
-            <p className="mt-2 text-sm text-slate-600 dark:text-gray-300">
+            <p className="mt-2 text-sm text-slate-700 dark:text-gray-300">
               {conference2026.submissionFormatNote}
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function Conference2026Page() {
                     </p>
                   )}
                 </div>
-                <p className="text-right text-sm font-semibold text-slate-600 dark:text-gray-300">
+                <p className="text-right text-sm font-semibold text-slate-700 dark:text-gray-300">
                   {item.value}
                 </p>
               </div>
@@ -181,10 +181,10 @@ export default function Conference2026Page() {
             {conference2026.tracks.map((track) => (
               <div
                 key={track.slug}
-                className="rounded-2xl border border-white/70 bg-white/58 px-4 py-4 text-sm font-medium text-slate-700 shadow-sm dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
+                className="rounded-2xl border border-white/70 bg-white/58 px-4 py-4 text-sm font-medium text-slate-800 shadow-sm dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
               >
-                <p>{track.title}</p>
-                <p className="mt-1 text-xs font-medium text-slate-500 dark:text-gray-400">
+                <p className="font-semibold">{track.title}</p>
+                <p className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-400">
                   {track.subtitle}
                 </p>
               </div>
@@ -205,7 +205,7 @@ export default function Conference2026Page() {
             {conference2026.highlights.map((highlight) => (
               <li
                 key={highlight}
-                className="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300"
+                className="flex items-start gap-3 text-sm text-slate-700 dark:text-gray-300"
               >
                 <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-sky-500" />
                 <span>{highlight}</span>
@@ -231,17 +231,17 @@ export default function Conference2026Page() {
                   <p className="text-sm font-semibold text-slate-900 dark:text-white">
                     {fee.label}
                   </p>
-                  <p className="text-sm font-semibold text-slate-700 dark:text-gray-200">
+                  <p className="text-sm font-semibold text-slate-800 dark:text-gray-200">
                     {fee.value}
                   </p>
                 </div>
                 {fee.note && (
-                  <p className="mt-2 text-sm text-slate-600 dark:text-gray-300">{fee.note}</p>
+                  <p className="mt-2 text-sm text-slate-700 dark:text-gray-300">{fee.note}</p>
                 )}
               </div>
             ))}
           </div>
-          <p className="mt-4 text-sm text-slate-600 dark:text-gray-300">
+          <p className="mt-4 text-sm text-slate-700 dark:text-gray-300">
             Non-presenting participants, including early-stage researchers, postgraduate students,
             and faculty, are also welcome to attend the conference.
           </p>
@@ -256,7 +256,7 @@ export default function Conference2026Page() {
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Eligibility and Submission Scope
           </h2>
-          <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
+          <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-700 dark:text-gray-300">
             <p>{conference2026.doctoralColloquium.eligibility}</p>
             <p>{conference2026.doctoralColloquium.stageRequirement}</p>
             <p>{conference2026.doctoralColloquium.format}</p>
@@ -269,7 +269,7 @@ export default function Conference2026Page() {
               {conference2026.doctoralColloquium.abstractIncludes.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300"
+                  className="flex items-start gap-3 text-sm text-slate-700 dark:text-gray-300"
                 >
                   <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-sky-500" />
                   <span>{item}</span>
@@ -290,7 +290,7 @@ export default function Conference2026Page() {
             {conference2026.doctoralColloquium.focusAreas.map((area) => (
               <div
                 key={area}
-                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-medium text-slate-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
+                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-medium text-slate-800 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
               >
                 {area}
               </div>
@@ -310,19 +310,19 @@ export default function Conference2026Page() {
           <div className="mt-5 grid gap-3">
             <Link
               href="/conference-2026/call-for-papers"
-              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200 dark:hover:text-sky-300"
+              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-semibold text-slate-800 hover:border-sky-300 hover:text-sky-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200 dark:hover:text-sky-300"
             >
               Call for Papers
             </Link>
             <Link
               href="/conference-2026/doctoral-colloquium"
-              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200 dark:hover:text-sky-300"
+              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-semibold text-slate-800 hover:border-sky-300 hover:text-sky-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200 dark:hover:text-sky-300"
             >
               Doctoral Colloquium
             </Link>
             <Link
               href="/conference-2026/participation"
-              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-semibold text-slate-700 hover:border-sky-300 hover:text-sky-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200 dark:hover:text-sky-300"
+              className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-semibold text-slate-800 hover:border-sky-300 hover:text-sky-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200 dark:hover:text-sky-300"
             >
               Participation
             </Link>
