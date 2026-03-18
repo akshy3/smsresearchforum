@@ -135,7 +135,7 @@ export const conference2026 = {
     'A flagship academic platform from SMS Research Forum for scholars, faculty, and practitioners to present emerging work, exchange ideas, and build meaningful research collaborations.',
   tagline: 'Ignite the Research Aptitude',
   theme: 'Digital Futures: Reimagining Social and Business Models',
-  heroImage: '/static/images/colloquium2.jpg',
+  heroImage: '/static/images/conference26.jpeg',
   registrationLink: null as string | null,
   submissionInterestLink:
     'mailto:researchforumsms@gmail.com?subject=Abstract%20Submission%20Interest%20-%20International%20Conference%20and%20Colloquium%2026',
