@@ -6,7 +6,7 @@ import { conference2026 } from '@/data/conferenceData'
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden rounded-2xl border border-slate-200/70 shadow-xl">
+    <section className="relative overflow-hidden rounded-[2rem] border border-slate-200/70 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.5)]">
       <div className="absolute inset-0">
         <Image
           className="h-full w-full object-cover"
@@ -53,16 +53,16 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="mt-10 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
-            <div className="rounded-lg border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+          <div className="mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur-sm">
               <p className="text-xs text-sky-100 uppercase">Forum Mission</p>
               <p className="mt-1 text-lg font-bold text-white">Research Excellence</p>
             </div>
-            <div className="rounded-lg border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur-sm">
               <p className="text-xs text-sky-100 uppercase">Community</p>
               <p className="mt-1 text-lg font-bold text-white">Scholars + Faculty</p>
             </div>
-            <div className="rounded-lg border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm">
+            <div className="rounded-2xl border border-cyan-300/25 bg-gradient-to-br from-white/14 to-sky-400/10 px-4 py-4 backdrop-blur-sm">
               <p className="text-xs text-sky-100 uppercase">Flagship Programme</p>
               <p className="mt-1 text-lg font-bold text-white">Conference & Colloquium&apos;26</p>
             </div>

@@ -13,7 +13,7 @@ export default function Home({ posts }) {
     <>
       <Hero />
       <section className="px-4 pt-10 md:px-10">
-        <div className="rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:bg-gray-900">
+        <div className="rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-sky-50/70 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:via-gray-900 dark:to-sky-950/20">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
@@ -23,9 +23,9 @@ export default function Home({ posts }) {
                 {conference2026.title}
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
-                The homepage now leads with the forum&apos;s flagship 2026 programme. Explore the
-                conference section for theme details, participation guidance, doctoral colloquium
-                expectations, and track-wise submission directions.
+                A major academic programme of SMS Research Forum, bringing together conference
+                presentations, thematic discussions, and a dedicated doctoral colloquium for
+                emerging researchers.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
@@ -38,12 +38,12 @@ export default function Home({ posts }) {
                   href="/conference-2026/participation"
                   className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
                 >
-                  Participation Details
+                  Participation Guide
                 </Link>
               </div>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <div className="rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                   Theme
                 </p>
@@ -51,7 +51,7 @@ export default function Home({ posts }) {
                   {conference2026.theme}
                 </p>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <div className="rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                   Venue
                 </p>
@@ -59,7 +59,7 @@ export default function Home({ posts }) {
                   {conference2026.venue}
                 </p>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <div className="rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                   Abstract Deadline
                 </p>
@@ -67,7 +67,7 @@ export default function Home({ posts }) {
                   {conference2026.abstractSubmissionDeadline}
                 </p>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <div className="rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                   Format
                 </p>
@@ -83,27 +83,41 @@ export default function Home({ posts }) {
 
       <section className="px-4 pt-14 pb-8 md:px-10">
         <div className="rounded-2xl border border-slate-200/70 bg-gradient-to-b from-white to-slate-50 p-6 shadow-sm sm:p-8">
-          <div className="space-y-2 md:space-y-4">
-            <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase">
-              Newsroom
-            </p>
-            <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl dark:text-gray-100">
-              Latest Updates
-            </h1>
-            <p className="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
-              Recent announcements, workshops, programme notes, and forum activities from SMS
-              Research Forum.
-            </p>
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-2 md:space-y-4">
+              <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase">
+                Newsroom
+              </p>
+              <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl dark:text-gray-100">
+                Latest Updates
+              </h1>
+              <p className="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+                Recent announcements, workshops, programme notes, and forum activities from SMS
+                Research Forum.
+              </p>
+            </div>
+            {posts.length > 0 && (
+              <Link
+                href="/updates"
+                className="inline-flex rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+              >
+                Browse all updates
+              </Link>
+            )}
           </div>
 
           <ul className="mt-8 space-y-4">
-            {!posts.length && 'No posts found.'}
+            {!posts.length && (
+              <li className="rounded-2xl border border-dashed border-slate-300 bg-white/80 px-5 py-8 text-center text-sm text-slate-600 dark:border-gray-700 dark:bg-gray-900/70 dark:text-gray-300">
+                Updates will appear here as the forum publishes announcements and event notes.
+              </li>
+            )}
             {posts.slice(0, MAX_DISPLAY).map((post) => {
               const { slug, date, title, summary, tags } = post
               return (
                 <li
                   key={slug}
-                  className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+                  className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <article className="space-y-4">
                     <div className="flex flex-wrap items-center gap-3">
@@ -150,17 +164,6 @@ export default function Home({ posts }) {
           </ul>
         </div>
       </section>
-      {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end px-4 md:px-10">
-          <Link
-            href="/updates"
-            className="text-sm font-semibold text-sky-700 hover:text-sky-800 dark:hover:text-sky-500"
-            aria-label="All posts"
-          >
-            All Posts &rarr;
-          </Link>
-        </div>
-      )}
       {siteMetadata.newsletter?.provider && (
         <div className="flex items-center justify-center pt-4">{/* <NewsletterForm /> */}</div>
       )}

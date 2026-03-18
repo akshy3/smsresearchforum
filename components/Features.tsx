@@ -46,36 +46,48 @@ export default function Features() {
             Key Forum Activities and Support
           </h2>
           <p className="mt-4 text-base text-slate-600 sm:text-lg">
-            SMS Research Forum brings together research culture, academic events, communication, and
-            scholar support, while also spotlighting major programmes like the 2026 conference.
+            Explore the main areas through which the forum supports research scholars, builds
+            academic community, and shares important opportunities through the year.
           </p>
         </div>
 
         <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6">
-          {features.map((feature) => (
-            <div
-              key={feature.name}
-              className="group rounded-2xl border border-slate-200/80 bg-white/90 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"
-            >
-              <dt className="flex items-center gap-4">
-                <span className="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition group-hover:bg-sky-600 group-hover:text-white">
-                  <feature.icon className="h-6 w-6" aria-hidden="true" />
-                </span>
-                <p className="text-lg leading-6 font-semibold text-slate-900">{feature.name}</p>
-              </dt>
-              <dd className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
-                {feature.description}
-              </dd>
-              <div className="mt-5">
-                <Link
-                  href={feature.href}
-                  className="text-sm font-semibold text-sky-700 hover:text-sky-800 dark:hover:text-sky-300"
-                >
-                  Open section &rarr;
-                </Link>
+          {features.map((feature) => {
+            const isFeaturedProgramme = feature.href === '/conference-2026'
+
+            return (
+              <div
+                key={feature.name}
+                className={`group rounded-2xl border p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
+                  isFeaturedProgramme
+                    ? 'border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50/80 hover:border-sky-300'
+                    : 'border-slate-200/80 bg-white/90 hover:border-sky-300'
+                }`}
+              >
+                <dt className="flex items-center gap-4">
+                  <span
+                    className={`inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl text-sky-700 transition group-hover:bg-sky-600 group-hover:text-white ${
+                      isFeaturedProgramme ? 'bg-white shadow-sm' : 'bg-sky-100'
+                    }`}
+                  >
+                    <feature.icon className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                  <p className="text-lg leading-6 font-semibold text-slate-900">{feature.name}</p>
+                </dt>
+                <dd className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+                  {feature.description}
+                </dd>
+                <div className="mt-5">
+                  <Link
+                    href={feature.href}
+                    className="text-sm font-semibold text-sky-700 hover:text-sky-800 dark:hover:text-sky-300"
+                  >
+                    Open section &rarr;
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </dl>
 
         <div className="mt-8 rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-6 shadow-sm">
@@ -88,9 +100,9 @@ export default function Features() {
                 {conference2026.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-                {conference2026.tagline}. The forum&apos;s current headline academic programme is
-                positioned here as a major initiative without replacing the broader identity of SMS
-                Research Forum.
+                {conference2026.tagline}. This year&apos;s flagship programme invites scholars and
+                researchers to engage with current questions in management and interdisciplinary
+                research.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
