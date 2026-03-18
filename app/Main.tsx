@@ -82,16 +82,16 @@ export default function Home({ posts }) {
       <Features />
 
       <section className="px-4 pt-14 pb-8 md:px-10">
-        <div className="rounded-2xl border border-slate-200/70 bg-gradient-to-b from-white to-slate-50 p-6 shadow-sm sm:p-8">
+        <div className="rounded-2xl border border-slate-400/45 bg-gradient-to-br from-[#3A4A6B] via-[#334361] to-[#2B3854] p-6 shadow-[0_24px_50px_-24px_rgba(12,19,37,0.45)] sm:p-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="space-y-2 md:space-y-4">
-              <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase">
+              <p className="text-sm font-semibold tracking-[0.2em] text-sky-200 uppercase">
                 Newsroom
               </p>
-              <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl dark:text-gray-100">
+              <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
                 Latest Updates
               </h1>
-              <p className="max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+              <p className="max-w-3xl text-sm leading-relaxed text-slate-200 sm:text-base">
                 Recent announcements, workshops, programme notes, and forum activities from SMS
                 Research Forum.
               </p>
@@ -99,7 +99,7 @@ export default function Home({ posts }) {
             {posts.length > 0 && (
               <Link
                 href="/updates"
-                className="inline-flex rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                className="inline-flex rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/16"
               >
                 Browse all updates
               </Link>
@@ -108,7 +108,7 @@ export default function Home({ posts }) {
 
           <ul className="mt-8 space-y-4">
             {!posts.length && (
-              <li className="rounded-2xl border border-dashed border-slate-300 bg-white/80 px-5 py-8 text-center text-sm text-slate-600 dark:border-gray-700 dark:bg-gray-900/70 dark:text-gray-300">
+              <li className="rounded-2xl border border-dashed border-white/20 bg-white/10 px-5 py-8 text-center text-sm text-slate-200">
                 Updates will appear here as the forum publishes announcements and event notes.
               </li>
             )}
@@ -117,7 +117,7 @@ export default function Home({ posts }) {
               return (
                 <li
                   key={slug}
-                  className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="rounded-2xl border border-white/65 bg-white/92 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <article className="space-y-4">
                     <div className="flex flex-wrap items-center gap-3">
