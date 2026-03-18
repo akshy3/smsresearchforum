@@ -15,7 +15,7 @@ export default function Conference2026Page() {
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <ConferenceSectionNav />
 
-      <section className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white shadow-[0_24px_80px_-36px_rgba(15,23,42,0.45)] dark:border-gray-700 dark:bg-gray-900">
+      <section className="overflow-hidden rounded-[2rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dfe7f2_46%,#d4dfed_100%)] shadow-[0_24px_80px_-36px_rgba(15,23,42,0.28)] dark:border-gray-700 dark:bg-gray-900">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="p-6 sm:p-8 lg:p-10">
             <p className="text-sm font-semibold tracking-[0.22em] text-sky-700 uppercase dark:text-sky-300">
@@ -31,8 +31,8 @@ export default function Conference2026Page() {
               {conference2026.tagline}
             </p>
 
-            <div className="mt-6 rounded-3xl bg-gradient-to-r from-sky-50 via-white to-cyan-50 p-5 dark:from-sky-950/30 dark:via-gray-900 dark:to-cyan-950/20">
-              <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+            <div className="mt-6 rounded-3xl bg-[linear-gradient(135deg,#d8e2ef_0%,#e8eef7_52%,#dbe6f2_100%)] p-5 dark:from-sky-950/30 dark:via-gray-900 dark:to-cyan-950/20">
+              <p className="text-xs font-semibold tracking-[0.18em] text-sky-800 uppercase dark:text-sky-300">
                 Conference Theme
               </p>
               <p className="mt-2 text-lg font-bold text-slate-900 dark:text-white">
@@ -41,7 +41,7 @@ export default function Conference2026Page() {
             </div>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <div className="rounded-2xl border border-white/70 bg-white/62 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                   Venue
                 </p>
@@ -49,7 +49,7 @@ export default function Conference2026Page() {
                   {conference2026.venue}
                 </p>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <div className="rounded-2xl border border-white/70 bg-white/62 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                   Event Dates
                 </p>
@@ -57,7 +57,7 @@ export default function Conference2026Page() {
                   {conference2026.eventDates}
                 </p>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <div className="rounded-2xl border border-white/70 bg-white/62 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                   Abstract Deadline
                 </p>
@@ -70,13 +70,13 @@ export default function Conference2026Page() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/conference-2026/call-for-papers"
-                className="rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(14,165,233,0.9)] transition hover:opacity-95"
+                className="rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(12,19,37,0.35)] transition hover:bg-[#334361]"
               >
                 Explore Tracks
               </Link>
               <Link
                 href="/conference-2026/participation"
-                className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                className="rounded-full border border-slate-300 bg-white/72 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
               >
                 Participation Details
               </Link>
@@ -96,7 +96,7 @@ export default function Conference2026Page() {
       </section>
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
             Conference Overview
           </p>
@@ -105,7 +105,7 @@ export default function Conference2026Page() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <div className="mt-5 rounded-2xl bg-slate-50 p-4 dark:bg-gray-800/70">
+          <div className="mt-5 rounded-2xl bg-white/70 p-4 dark:bg-gray-800/70">
             <p className="text-sm font-semibold text-slate-900 dark:text-white">
               Presentation Mode
             </p>
@@ -115,14 +115,14 @@ export default function Conference2026Page() {
           </div>
         </article>
 
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
             Call for Abstracts
           </p>
           <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
             {conference2026.callForAbstracts}
           </p>
-          <div className="mt-6 rounded-2xl bg-slate-50 p-4 dark:bg-gray-800/70">
+          <div className="mt-6 rounded-2xl bg-white/70 p-4 dark:bg-gray-800/70">
             <p className="text-sm font-semibold text-slate-900 dark:text-white">
               Submission update
             </p>
@@ -134,7 +134,7 @@ export default function Conference2026Page() {
       </section>
 
       <section className="mt-8 grid grid-cols-1 gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf2f8_0%,#e1e9f3_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <div className="flex items-center justify-between gap-3">
             <div>
               <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
@@ -150,7 +150,7 @@ export default function Conference2026Page() {
             {conference2026.keyDates.map((item) => (
               <div
                 key={item.label}
-                className="flex items-start justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70"
+                className="flex items-start justify-between gap-4 rounded-2xl border border-white/70 bg-white/70 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70"
               >
                 <div>
                   <p className="text-sm font-semibold text-slate-900 dark:text-white">
@@ -170,7 +170,7 @@ export default function Conference2026Page() {
           </div>
         </article>
 
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <article className="rounded-[1.75rem] border border-slate-400/70 bg-[linear-gradient(135deg,#d6e0ed_0%,#cad7e6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
             Tracks and Themes
           </p>
@@ -181,7 +181,7 @@ export default function Conference2026Page() {
             {conference2026.tracks.map((track) => (
               <div
                 key={track.slug}
-                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-medium text-slate-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
+                className="rounded-2xl border border-white/70 bg-white/58 px-4 py-4 text-sm font-medium text-slate-700 shadow-sm dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
               >
                 <p>{track.title}</p>
                 <p className="mt-1 text-xs font-medium text-slate-500 dark:text-gray-400">

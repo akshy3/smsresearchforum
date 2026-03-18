@@ -13,7 +13,7 @@ export default function ConferenceCallForPapersPage() {
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <ConferenceSectionNav />
 
-      <section className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+      <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dde6f1_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
         <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
           Call for Papers
         </p>
@@ -29,7 +29,7 @@ export default function ConferenceCallForPapersPage() {
         {conference2026.tracks.map((track) => (
           <article
             key={track.slug}
-            className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
+            className="rounded-[1.75rem] border border-slate-400/70 bg-[linear-gradient(135deg,#dbe5f0_0%,#ccd9e8_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
           >
             <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
               Track
@@ -47,7 +47,7 @@ export default function ConferenceCallForPapersPage() {
               {track.topics.map((topic) => (
                 <div
                   key={topic}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-slate-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
+                  className="rounded-2xl border border-white/70 bg-white/60 px-4 py-4 text-sm text-slate-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
                 >
                   {topic}
                 </div>

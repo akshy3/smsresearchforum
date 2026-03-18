@@ -9,7 +9,7 @@ export default function ConferenceSectionNav() {
   const pathname = usePathname()
 
   return (
-    <section className="rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-5 shadow-sm backdrop-blur dark:border-gray-700 dark:bg-gray-900/90">
+    <section className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e5ebf4_100%)] p-5 shadow-sm backdrop-blur dark:border-gray-700 dark:bg-gray-900/90">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
@@ -31,8 +31,8 @@ export default function ConferenceSectionNav() {
                 href={link.href}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                   isActive
-                    ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-[0_10px_24px_-12px_rgba(14,165,233,0.9)]'
-                    : 'border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800'
+                    ? 'bg-[#3A4A6B] text-white shadow-[0_10px_24px_-12px_rgba(12,19,37,0.35)]'
+                    : 'border border-slate-300 bg-white/70 text-slate-700 hover:bg-white dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800'
                 }`}
               >
                 {link.title}
