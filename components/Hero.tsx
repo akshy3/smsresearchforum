@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="relative px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="max-w-4xl">
           <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-sky-100 uppercase backdrop-blur-sm">
-            School of Management Studies, CUSAT
+            A golden jubilee initiative of the School of Management Studies, CUSAT
           </span>
           <h1 className="mt-5 text-4xl leading-tight font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Empowering Scholars.
