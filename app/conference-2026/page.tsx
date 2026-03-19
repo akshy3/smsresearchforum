@@ -69,7 +69,7 @@ export default function Conference2026Page() {
 
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                href="/conference-2026/call-for-papers"
+                href="/conference-2026/conference-papers"
                 className="rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(12,19,37,0.35)] transition hover:bg-[#334361]"
               >
                 Explore Tracks
@@ -309,10 +309,10 @@ export default function Conference2026Page() {
           </h2>
           <div className="mt-5 grid gap-3">
             <Link
-              href="/conference-2026/call-for-papers"
+              href="/conference-2026/conference-papers"
               className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-semibold text-slate-800 hover:border-sky-300 hover:text-sky-700 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200 dark:hover:text-sky-300"
             >
-              Call for Papers
+              Conference Papers
             </Link>
             <Link
               href="/conference-2026/doctoral-colloquium"

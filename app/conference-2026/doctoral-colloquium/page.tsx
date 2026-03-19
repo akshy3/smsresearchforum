@@ -19,7 +19,7 @@ export default function ConferenceDoctoralColloquiumPage() {
             Doctoral Colloquium
           </p>
           <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Eligibility and Format
+            Doctoral Colloquium Submission Guidelines
           </h1>
           <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
             <p>{conference2026.doctoralColloquium.eligibility}</p>
@@ -64,6 +64,36 @@ export default function ConferenceDoctoralColloquiumPage() {
             >
               {area}
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          Submission Guidelines
+        </p>
+        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          Doctoral Colloquium Submission Guidelines
+        </h2>
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          {conference2026.submissionGuidelines.colloquium.map((section) => (
+            <article
+              key={section.title}
+              className="rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-gray-700 dark:bg-gray-800/70"
+            >
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{section.title}</h3>
+              <ul className="mt-4 space-y-3">
+                {section.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm leading-relaxed text-slate-700 dark:text-gray-300"
+                  >
+                    <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-sky-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </section>

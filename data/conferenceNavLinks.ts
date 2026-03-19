@@ -1,14 +1,14 @@
 export const conferenceNavLinks = [
   { href: '/conference-2026', title: 'Overview', description: 'Theme, highlights, and key dates' },
   {
-    href: '/conference-2026/call-for-papers',
-    title: 'Call for Papers',
-    description: 'Tracks, topics, and conference paper directions',
+    href: '/conference-2026/conference-papers',
+    title: 'Conference Papers',
+    description: 'Tracks, topics, and submission guidelines for conference papers',
   },
   {
     href: '/conference-2026/doctoral-colloquium',
     title: 'Doctoral Colloquium',
-    description: 'Eligibility, format, and doctoral focus areas',
+    description: 'Eligibility, format, and submission guidelines for doctoral scholars',
   },
   {
     href: '/conference-2026/participation',

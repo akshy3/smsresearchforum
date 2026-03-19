@@ -10,6 +10,11 @@ type ConferenceContact = {
   href?: string | null
 }
 
+type ConferenceSubmissionSection = {
+  title: string
+  items: string[]
+}
+
 export const conferenceTracks = [
   {
     slug: 'finance',
@@ -216,11 +221,48 @@ export const conference2026 = {
       href: 'mailto:irshad@cusat.ac.in?subject=Conference2026_Enquiry',
     },
   ] satisfies ConferenceContact[],
-  submissionGuidelines: [
-    'Prepare an original abstract aligned with one of the listed conference tracks or themes.',
-    'Doctoral colloquium submissions should reflect work progressed at least to the conceptual framework stage.',
-    'Keep your contact details ready so the organizing team can notify you once the submission link goes live.',
-  ],
+  submissionGuidelines: {
+    conference: [
+      {
+        title: 'Abstract Submission',
+        items: [
+          'The abstract should not exceed 250 words.',
+          'The abstract must clearly include the purpose of the study, method or design, major findings, and the originality or contribution of the study.',
+          'Authors should ensure the abstract concisely reflects the core contribution of the research.',
+        ],
+      },
+      {
+        title: 'Full Paper Submission',
+        items: [
+          'The full paper length should be between 2500 and 3000 words.',
+          'Authors must follow APA guidelines.',
+          'The manuscript must maintain academic integrity with plagiarism not exceeding 10%.',
+          'Submissions should present original and unpublished work.',
+          'The entire submission, including title, abstract, text, figures, graphs, tables, and references, must be contained in one document.',
+        ],
+      },
+    ] satisfies ConferenceSubmissionSection[],
+    colloquium: [
+      {
+        title: 'Extended Abstract',
+        items: [
+          'The extended abstract should be approximately 2500 words.',
+          'It should provide sufficient detail about the background of the study, research objectives, methodology, key arguments or preliminary findings, and expected contribution.',
+          'The entire submission, including title, abstract, text, figures, graphs, tables, and references, must be contained in one document.',
+        ],
+      },
+      {
+        title: 'Full Paper Submission',
+        items: [
+          'The full paper should range between 4000 and 6000 words.',
+          'The papers must follow the latest APA academic writing and referencing style.',
+          'The similarity or plagiarism index must not exceed 10%.',
+          'Papers should demonstrate original research and scholarly contribution.',
+          'The entire submission, including title, abstract, text, figures, graphs, tables, and references, must be contained in one document.',
+        ],
+      },
+    ] satisfies ConferenceSubmissionSection[],
+  },
   submissionFormatNote:
     'Abstract and full paper submission links are yet to be published. Until then, this page serves as the official conference information hub.',
   conferenceIntro:
