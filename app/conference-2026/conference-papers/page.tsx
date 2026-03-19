@@ -25,7 +25,7 @@ export default function ConferenceCallForPapersPage() {
         </p>
       </section>
 
-      <section className="mt-8 space-y-6">
+      <section id="tracks" className="mt-8 scroll-mt-28 space-y-6">
         {conference2026.tracks.map((track) => (
           <article
             key={track.slug}
@@ -57,7 +57,10 @@ export default function ConferenceCallForPapersPage() {
         ))}
       </section>
 
-      <section className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+      <section
+        id="guidelines"
+        className="mt-8 scroll-mt-28 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
+      >
         <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
           Submission Guidelines
         </p>

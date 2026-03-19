@@ -139,12 +139,20 @@ export default function Conference2026Page() {
             </p>
           </div>
           <div className="mt-5">
-            <Link
-              href="/conference-2026/conference-papers"
-              className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
-            >
-              View Conference Paper Guidelines
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/conference-2026/conference-papers#guidelines"
+                className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+              >
+                Paper Guidelines
+              </Link>
+              <Link
+                href="/conference-2026/conference-papers#tracks"
+                className="inline-flex rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+              >
+                Explore Tracks
+              </Link>
+            </div>
           </div>
         </article>
       </section>
