@@ -78,9 +78,13 @@ export default function Conference2026Page() {
                 href="/conference-2026/participation"
                 className="rounded-full border border-slate-300 bg-white/72 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
               >
-                Participation Details
+                Register / Participate
               </Link>
             </div>
+            <p className="mt-4 text-sm font-medium text-slate-600 dark:text-gray-300">
+              Registration is now open for offline participants and online conference paper
+              presenters. Visit the participation page to choose the correct registration form.
+            </p>
           </div>
 
           <div className="relative min-h-[320px]">
@@ -119,8 +123,12 @@ export default function Conference2026Page() {
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
             Conference Papers
           </p>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Tracks and Submission Guidance
+          </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
-            {conference2026.callForAbstracts}
+            Browse conference tracks, submission areas, and paper guidelines for authors preparing
+            abstracts and full papers under the conference theme.
           </p>
           <div className="mt-6 rounded-2xl bg-white/70 p-4 dark:bg-gray-800/70">
             <p className="text-sm font-semibold text-slate-900 dark:text-white">
@@ -129,6 +137,14 @@ export default function Conference2026Page() {
             <p className="mt-2 text-sm text-slate-700 dark:text-gray-300">
               {conference2026.submissionFormatNote}
             </p>
+          </div>
+          <div className="mt-5">
+            <Link
+              href="/conference-2026/conference-papers"
+              className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+            >
+              View Conference Paper Guidelines
+            </Link>
           </div>
         </article>
       </section>
@@ -219,7 +235,7 @@ export default function Conference2026Page() {
             Registration Fees
           </p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Fee Structure
+            Participation Snapshot
           </h2>
           <div className="mt-6 space-y-3">
             {conference2026.registrationFees.map((fee) => (
@@ -245,6 +261,14 @@ export default function Conference2026Page() {
             Non-presenting participants, including early-stage researchers, postgraduate students,
             and faculty, are also welcome to attend the conference.
           </p>
+          <div className="mt-5">
+            <Link
+              href="/conference-2026/participation"
+              className="inline-flex rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+            >
+              View Registration Options
+            </Link>
+          </div>
         </article>
       </section>
 
