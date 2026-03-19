@@ -15,6 +15,12 @@ type ConferenceSubmissionSection = {
   items: string[]
 }
 
+type ConferenceRegistrationLink = {
+  label: string
+  href: string
+  note: string
+}
+
 export const conferenceTracks = [
   {
     slug: 'finance',
@@ -141,7 +147,18 @@ export const conference2026 = {
   tagline: 'Ignite the Research Aptitude',
   theme: 'Digital Futures: Reimagining Social and Business Models',
   heroImage: '/static/images/conference26.jpeg',
-  registrationLink: null as string | null,
+  registrationLinks: [
+    {
+      label: 'Offline Participation Registration',
+      href: 'https://forms.gle/ptcu3QdDZiCCDHVdA',
+      note: 'For offline participants of the International Conference and Doctoral Colloquium 2026, including presenters and attendees.',
+    },
+    {
+      label: 'Online Paper Presenter Registration',
+      href: 'https://forms.gle/MNkpzhN2jw1kj5i49',
+      note: 'For International Conference 2026 participants presenting papers online only.',
+    },
+  ] satisfies ConferenceRegistrationLink[],
   submissionInterestLink:
     'mailto:researchforumsms@gmail.com?subject=Abstract%20Submission%20Interest%20-%20International%20Conference%20and%20Colloquium%2026',
   abstractSubmissionDeadline: '10 April 2026',
@@ -264,7 +281,7 @@ export const conference2026 = {
     ] satisfies ConferenceSubmissionSection[],
   },
   submissionFormatNote:
-    'Abstract and full paper submission links are yet to be published. Until then, this page serves as the official conference information hub.',
+    'Abstract and full paper submission guidance is available in this conference section. Registration is now open through the published participation links.',
   conferenceIntro:
     'This conference section is designed to help participants, authors, and doctoral scholars quickly find theme details, track information, participation guidance, and colloquium expectations.',
 } as const

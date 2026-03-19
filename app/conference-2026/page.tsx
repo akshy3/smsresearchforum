@@ -72,7 +72,7 @@ export default function Conference2026Page() {
                 href="/conference-2026/conference-papers"
                 className="rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(12,19,37,0.35)] transition hover:bg-[#334361]"
               >
-                Explore Tracks
+                Conference Papers
               </Link>
               <Link
                 href="/conference-2026/participation"
@@ -117,14 +117,14 @@ export default function Conference2026Page() {
 
         <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Call for Abstracts
+            Conference Papers
           </p>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
             {conference2026.callForAbstracts}
           </p>
           <div className="mt-6 rounded-2xl bg-white/70 p-4 dark:bg-gray-800/70">
             <p className="text-sm font-semibold text-slate-900 dark:text-white">
-              Submission update
+              Submission guidance
             </p>
             <p className="mt-2 text-sm text-slate-700 dark:text-gray-300">
               {conference2026.submissionFormatNote}
@@ -172,10 +172,10 @@ export default function Conference2026Page() {
 
         <article className="rounded-[1.75rem] border border-slate-400/70 bg-[linear-gradient(135deg,#d6e0ed_0%,#cad7e6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Tracks and Themes
+            Conference Papers
           </p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Suggested Submission Areas
+            Tracks and Submission Areas
           </h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             {conference2026.tracks.map((track) => (
@@ -254,28 +254,27 @@ export default function Conference2026Page() {
             Doctoral Colloquium
           </p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Eligibility and Submission Scope
+            For Advanced Doctoral Scholars
           </h2>
           <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-700 dark:text-gray-300">
             <p>{conference2026.doctoralColloquium.eligibility}</p>
             <p>{conference2026.doctoralColloquium.stageRequirement}</p>
-            <p>{conference2026.doctoralColloquium.format}</p>
+          </div>
+          <div className="mt-5 rounded-2xl bg-slate-50 px-4 py-4 dark:bg-gray-800/70">
+            <p className="text-sm font-semibold text-slate-900 dark:text-white">
+              Submission format
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-gray-300">
+              {conference2026.doctoralColloquium.format}
+            </p>
           </div>
           <div className="mt-5">
-            <p className="text-sm font-semibold text-slate-900 dark:text-white">
-              The abstract should include:
-            </p>
-            <ul className="mt-3 space-y-2">
-              {conference2026.doctoralColloquium.abstractIncludes.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-sm text-slate-700 dark:text-gray-300"
-                >
-                  <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-sky-500" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <Link
+              href="/conference-2026/doctoral-colloquium"
+              className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+            >
+              View Colloquium Guidelines
+            </Link>
           </div>
         </article>
 

@@ -30,23 +30,34 @@ export default function ConferenceParticipationPage() {
               Registration status
             </p>
             <p className="mt-2 text-sm text-slate-600 dark:text-gray-300">
-              Registration links and payment links are not published yet. This page can be updated
-              instantly once the final public links are ready.
+              Registration is now open for both offline participation and online conference paper
+              presentation. Please choose the correct form based on your mode of participation.
             </p>
           </div>
-          <div className="mt-5 flex flex-wrap gap-3">
-            {conference2026.registrationLink ? (
-              <Link
-                href={conference2026.registrationLink}
-                className="rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(14,165,233,0.9)] transition hover:opacity-95"
+          <div className="mt-5 grid gap-4">
+            {conference2026.registrationLinks.map((registration) => (
+              <div
+                key={registration.href}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-gray-700 dark:bg-gray-800/70"
               >
-                Register Now
-              </Link>
-            ) : (
-              <span className="rounded-full border border-dashed border-slate-300 px-5 py-3 text-sm font-semibold text-slate-500 dark:border-gray-700 dark:text-gray-400">
-                Registration link coming soon
-              </span>
-            )}
+                <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                  {registration.label}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
+                  {registration.note}
+                </p>
+                <div className="mt-4">
+                  <Link
+                    href={registration.href}
+                    className="inline-flex rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(14,165,233,0.9)] transition hover:opacity-95"
+                  >
+                    Open Registration Form
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 flex flex-wrap gap-3">
             <Link
               href={conference2026.submissionInterestLink}
               className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
