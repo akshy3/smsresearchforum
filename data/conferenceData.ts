@@ -111,7 +111,7 @@ export const conferenceTracks = [
   {
     slug: 'strategy',
     title: 'Strategy & Innovation',
-    subtitle: 'Innovation and Emerging Business Models in the Digital Economy',
+    subtitle: 'Emerging Business Models in the Digital Economy',
     description:
       'This track looks at how firms rethink innovation, competition, and value creation in response to technological change and digital disruption.',
     topics: [
