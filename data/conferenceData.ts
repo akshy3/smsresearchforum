@@ -54,16 +54,20 @@ export const conferenceTracks = [
   {
     slug: 'human-resources',
     title: 'Human Resources & Organizational Behaviour',
-    subtitle: 'Leadership, culture and change in the Digital Era',
+    subtitle: 'Leadership, Culture, and Change in the Digital Era',
     description:
-      'As organizations undergo rapid digital transformation, human resource practices and organizational behaviour are evolving to shape agile, inclusive, and technology-enabled workplaces.',
+      'As organizations undergo rapid digital transformation, both human resource practices and organizational behavior are being fundamentally reshaped. This track explores how leadership, culture, and workforce dynamics evolve in technology-driven environments, with a focus on AI integration, employee well-being, digital collaboration, and responsible change management. It invites research on building agile, inclusive, and future-ready organizations that effectively align people, technology, and strategy.',
     topics: [
-      'Digital leadership and leadership in technology-driven organizations',
-      'Organizational culture and employee engagement in digital work environments',
-      'Artificial intelligence and data-driven HR practices',
+      'Artificial Intelligence, Automation, and Human-AI Collaboration in Organizations',
+      'Digital Leadership and Leadership in Technology-Driven Work Environments',
+      'People Analytics, Data-Driven Decision-Making, and Workforce Insights',
       'Workforce transformation, reskilling, and continuous learning',
-      'Employee well-being and work-life balance in digital workplaces',
-      'Change management and organizational adaptation in the digital era',
+      'Hybrid work, remote work, and digital collaboration practices',
+      'Organizational culture, climate, and employee engagement in virtual environments',
+      'Employee well-being, motivation, and work-life balance in digital workplaces',
+      'Ethical HR practices, algorithmic fairness, and responsible leadership',
+      'Change management, organizational adaptation, and technology adoption behaviour',
+      'Diversity, equity, inclusion, and organizational resilience in the Digital Era',
     ],
   },
   {
