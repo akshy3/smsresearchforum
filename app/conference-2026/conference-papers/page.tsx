@@ -26,13 +26,13 @@ export default function ConferenceCallForPapersPage() {
       </section>
 
       <section id="tracks" className="mt-8 scroll-mt-28 space-y-6">
-        {conference2026.tracks.map((track) => (
+        {conference2026.tracks.map((track, index) => (
           <article
             key={track.slug}
             className="rounded-[1.75rem] border border-slate-400/70 bg-[linear-gradient(135deg,#dbe5f0_0%,#ccd9e8_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
           >
             <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-              Track
+              Track {index + 1}
             </p>
             <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               {track.title}

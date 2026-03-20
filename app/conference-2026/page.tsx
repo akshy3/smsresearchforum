@@ -202,12 +202,14 @@ export default function Conference2026Page() {
             Tracks and Submission Areas
           </h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
-            {conference2026.tracks.map((track) => (
+            {conference2026.tracks.map((track, index) => (
               <div
                 key={track.slug}
                 className="rounded-2xl border border-white/70 bg-white/58 px-4 py-4 text-sm font-medium text-slate-800 shadow-sm dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
               >
-                <p className="font-semibold">{track.title}</p>
+                <p className="font-semibold">
+                  Track {index + 1}: {track.title}
+                </p>
                 <p className="mt-1 text-xs font-medium text-slate-600 dark:text-gray-400">
                   {track.subtitle}
                 </p>
