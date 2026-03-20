@@ -113,12 +113,47 @@ export default function ConferenceParticipationPage() {
               <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                 {contact.label}
               </p>
-              <Link
-                href={contact.href}
-                className="mt-2 inline-block text-sm font-semibold text-sky-700 hover:text-sky-800 dark:text-sky-300 dark:hover:text-sky-200"
-              >
-                {contact.value}
-              </Link>
+              {contact.name && (
+                <p className="mt-2 text-base font-semibold text-slate-900 dark:text-white">
+                  {contact.name}
+                </p>
+              )}
+              {contact.value && (
+                <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
+                  {contact.value}
+                </p>
+              )}
+              {contact.note && (
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
+                  {contact.note}
+                </p>
+              )}
+              <div className="mt-3 flex flex-wrap gap-3">
+                {contact.phone && (
+                  <Link
+                    href={`tel:${contact.phone.replace(/\s+/g, '')}`}
+                    className="inline-flex rounded-full border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700 dark:border-gray-600 dark:text-gray-200 dark:hover:text-sky-300"
+                  >
+                    {contact.phone}
+                  </Link>
+                )}
+                {contact.email && (
+                  <Link
+                    href={`mailto:${contact.email}`}
+                    className="inline-flex rounded-full border border-slate-300 px-3 py-2 text-sm font-semibold text-sky-700 transition hover:border-sky-300 hover:text-sky-800 dark:border-gray-600 dark:text-sky-300 dark:hover:text-sky-200"
+                  >
+                    {contact.email}
+                  </Link>
+                )}
+                {!contact.email && contact.href && contact.value && (
+                  <Link
+                    href={contact.href}
+                    className="inline-flex rounded-full border border-slate-300 px-3 py-2 text-sm font-semibold text-sky-700 transition hover:border-sky-300 hover:text-sky-800 dark:border-gray-600 dark:text-sky-300 dark:hover:text-sky-200"
+                  >
+                    {contact.value}
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
         </div>

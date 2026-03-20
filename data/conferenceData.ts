@@ -6,13 +6,23 @@ type ConferenceRegistrationFee = {
 
 type ConferenceContact = {
   label: string
-  value: string
+  name?: string
+  value?: string
+  phone?: string
+  email?: string
   href?: string | null
+  note?: string
 }
 
 type ConferenceSubmissionSection = {
   title: string
   items: string[]
+}
+
+type ConferencePublicationOpportunity = {
+  journal: string
+  indexing: string
+  publisher: string
 }
 
 type ConferenceRegistrationLink = {
@@ -178,6 +188,26 @@ export const conference2026 = {
     'Value-added qualitative and quantitative workshops',
     'Cultural evening and networking dinner',
   ],
+  publicationOpportunities: {
+    note: 'Selected full papers will be considered for publication in the above-mentioned journals.',
+    journals: [
+      {
+        journal: 'Journal of Global Marketing',
+        indexing: 'Scopus Q1, ABDC Ranking - B',
+        publisher: 'Taylor & Francis',
+      },
+      {
+        journal: 'Journal of Creative Communication',
+        indexing: 'Scopus Q2, ABDC Ranking - C',
+        publisher: 'SAGE',
+      },
+      {
+        journal: 'SMS Journal of Business Management',
+        indexing: 'Institutional journal publication opportunity',
+        publisher: 'School of Management Studies',
+      },
+    ] satisfies ConferencePublicationOpportunity[],
+  },
   doctoralColloquium: {
     eligibility:
       'For advanced PhD/FPM scholars registered with recognized institutions in India or abroad who have completed at least one year of doctoral research.',
@@ -208,11 +238,21 @@ export const conference2026 = {
       label: 'Conference Email',
       value: 'researchforumsms@gmail.com',
       href: 'mailto:researchforumsms@gmail.com?subject=International%20Conference%20and%20Colloquium%2026',
+      note: 'General enquiries for the conference and doctoral colloquium.',
     },
     {
       label: 'Conference Coordinator',
-      value: 'Muhammed Irshad K.V | +91 95676 46717 | irshad@cusat.ac.in',
-      href: 'mailto:irshad@cusat.ac.in?subject=Conference2026_Enquiry',
+      name: 'Muhammed Irshad K.V',
+      phone: '+91 95676 46717',
+      email: 'irshad@cusat.ac.in',
+      note: 'Primary contact for conference and colloquium coordination.',
+    },
+    {
+      label: 'Abstract Queries',
+      name: 'Sreedev Soman',
+      phone: '+91 9895375360',
+      email: 'sreedev@cusat.ac.in',
+      note: 'Contact for abstract-related questions and submission clarifications.',
     },
   ] satisfies ConferenceContact[],
   submissionGuidelines: {
