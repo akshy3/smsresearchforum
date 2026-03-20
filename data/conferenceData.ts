@@ -156,7 +156,7 @@ export const conference2026 = {
   eventDates: '15-16 May 2026',
   venue: 'School of Management Studies, CUSAT',
   formatSummary:
-    'International Conference presentations will be allowed in hybrid mode, while the Doctoral Colloquium will be conducted offline at SMS, CUSAT.',
+    'International Conference presentations will be allowed in hybrid mode, while the Doctoral Colloquium, workshops and value-added sessions will be conducted offline at SMS, CUSAT.',
   description: [
     'Building on the success of the forum’s earlier edition, the SMS Research Forum at the School of Management Studies, Cochin University of Science and Technology is organizing its second International Conference and Doctoral Colloquium on 15-16 May 2026.',
     'This edition brings together scholars, journal editors, and practitioners to discuss how digital technologies are reshaping organizations, markets, and social systems, while creating space for high-quality research presentations, collaboration, and publication-oriented dialogue.',
