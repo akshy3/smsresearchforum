@@ -87,14 +87,14 @@ export default function Conference2026Page() {
             </p>
           </div>
 
-          <div className="relative min-h-[320px]">
+          <div className="relative min-h-[260px] bg-slate-200 sm:min-h-[320px] lg:min-h-full dark:bg-gray-800">
             <Image
               src={conference2026.heroImage}
               alt={conference2026.title}
               fill
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain object-center lg:object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent lg:from-slate-950/55 lg:via-slate-950/10" />
           </div>
         </div>
       </section>
