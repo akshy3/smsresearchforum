@@ -193,7 +193,7 @@ export const conference2026 = {
     'Cultural evening and networking dinner',
   ],
   publicationOpportunities: {
-    note: 'Selected full papers will be considered for publication in the above-mentioned journals.',
+    note: 'Only full papers submitted to the conference will be considered for publication in the above-mentioned journals.',
     journals: [
       {
         journal: 'Journal of Global Marketing',
