@@ -239,33 +239,6 @@ export default function ConferenceProgrammePage() {
           </div>
         )}
       </section>
-
-      <section className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-          Next Steps
-        </p>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Register and Prepare
-        </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
-          Participants can review the featured sessions here, then move to the participation and
-          conference paper sections for registration, submission guidance, and contact information.
-        </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <Link
-            href="/conference-2026/participation"
-            className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
-          >
-            View Participation Options
-          </Link>
-          <Link
-            href="/conference-2026/conference-papers"
-            className="inline-flex rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
-          >
-            Review Paper Guidelines
-          </Link>
-        </div>
-      </section>
     </div>
   )
 }
