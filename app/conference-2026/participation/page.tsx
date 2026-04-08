@@ -33,6 +33,9 @@ export default function ConferenceParticipationPage() {
               Registration is now open for both offline participation and online conference paper
               presentation. Please choose the correct form based on your mode of participation.
             </p>
+            <p className="mt-2 text-sm font-medium text-slate-700 dark:text-gray-200">
+              Certificates will be issued only to registered participants.
+            </p>
           </div>
           <div className="mt-5 grid gap-4">
             {conference2026.registrationLinks.map((registration) => (

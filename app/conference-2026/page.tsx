@@ -85,6 +85,9 @@ export default function Conference2026Page() {
               Registration is now open for offline participants and online conference paper
               presenters. Visit the participation page to choose the correct registration form.
             </p>
+            <p className="mt-2 text-sm font-medium text-slate-700 dark:text-gray-200">
+              Certificates will be issued only to registered participants.
+            </p>
           </div>
 
           <div className="relative min-h-[260px] bg-slate-200 sm:min-h-[320px] lg:min-h-full dark:bg-gray-800">
