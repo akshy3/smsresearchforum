@@ -225,14 +225,14 @@ export default function Conference2026Page() {
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Conference Programme
+            Featured Sessions
           </p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             What Participants Can Expect
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
-            The featured programme currently highlights two special experiences for participants:
-            the workshop series and the Meet the Editors session.
+            The featured sessions currently highlight two special experiences for participants: the
+            workshop series and the Meet the Editors session.
           </p>
           <div className="mt-6 grid gap-3">
             {conference2026.activities.map((activity) => (
@@ -264,7 +264,7 @@ export default function Conference2026Page() {
               href="/conference-2026/programme"
               className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
             >
-              View Full Programme
+              View Featured Sessions
             </Link>
           </div>
         </article>

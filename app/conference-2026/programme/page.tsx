@@ -5,8 +5,8 @@ import { conference2026 } from '@/data/conferenceData'
 import ConferenceSectionNav from '@/components/ConferenceSectionNav'
 
 export const metadata = genPageMetadata({
-  title: `${conference2026.shortTitle} - Programme`,
-  description: 'Explore the conference workshops and Meet the Editors session in the programme.',
+  title: `${conference2026.shortTitle} - Featured Sessions`,
+  description: 'Explore the conference workshops and Meet the Editors session.',
   image: conference2026.heroImage,
 })
 
@@ -22,13 +22,13 @@ export default function ConferenceProgrammePage() {
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dde6f1_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
         <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-          Conference Programme
+          Featured Sessions
         </p>
         <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           Workshops and Meet the Editors
         </h1>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
-          This programme page highlights the two featured special sessions in the conference:
+          This featured sessions page highlights the two special sessions in the conference:
           workshops for hands-on learning and Meet the Editors for publication-focused dialogue.
         </p>
       </section>
@@ -36,15 +36,15 @@ export default function ConferenceProgrammePage() {
       <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf2f8_0%,#e3ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
         <div className="max-w-4xl">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Featured Programme
+            Featured Sessions
           </p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Meet the Editors and Workshops
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
             These featured sessions bring publication-focused conversation and hands-on learning
-            into the same conference programme. Meet the Editors anchors the academic dialogue,
-            while the workshops extend that experience through focused practical sessions.
+            into the same conference section. Meet the Editors anchors the academic dialogue, while
+            the workshops extend that experience through focused practical sessions.
           </p>
         </div>
 
@@ -155,7 +155,7 @@ export default function ConferenceProgrammePage() {
                 Workshops
               </p>
               <h3 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                Workshop Sessions in the Programme
+                Workshop Sessions
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
                 The workshop segment combines holistic research design and case-based learning with
@@ -248,8 +248,8 @@ export default function ConferenceProgrammePage() {
           Register and Prepare
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
-          Participants can review the programme here, then move to the participation and conference
-          paper sections for registration, submission guidance, and contact information.
+          Participants can review the featured sessions here, then move to the participation and
+          conference paper sections for registration, submission guidance, and contact information.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
