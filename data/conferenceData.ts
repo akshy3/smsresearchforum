@@ -172,6 +172,7 @@ export const conference2026 = {
   tagline: 'Ignite the Research Aptitude',
   theme: 'Digital Futures: Reimagining Social and Business Models',
   heroImage: '/static/images/conference26.jpeg',
+  callForAbstractsFlyer: '/static/images/DC26/call for abstracts.jpeg',
   registrationLinks: [
     {
       label: 'Offline Participation Registration',

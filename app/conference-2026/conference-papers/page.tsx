@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { genPageMetadata } from 'app/seo'
 import { conference2026 } from '@/data/conferenceData'
 import ConferenceSectionNav from '@/components/ConferenceSectionNav'
@@ -13,16 +14,47 @@ export default function ConferenceCallForPapersPage() {
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <ConferenceSectionNav />
 
-      <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dde6f1_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-          Conference Papers
-        </p>
-        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Conference Papers and Submission Guidelines
-        </h1>
-        <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
-          {conference2026.callForAbstracts}
-        </p>
+      <section className="mt-8 grid grid-cols-1 gap-6 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dde6f1_100%)] p-6 shadow-sm lg:grid-cols-[1.05fr_0.95fr] dark:border-gray-700 dark:bg-gray-900">
+        <article>
+          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+            Conference Papers
+          </p>
+          <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Conference Papers and Submission Guidelines
+          </h1>
+          <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
+            {conference2026.callForAbstracts}
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/70 bg-white/70 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
+                Abstract Deadline
+              </p>
+              <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
+                {conference2026.abstractSubmissionDeadline}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/70 bg-white/70 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
+                Full Paper Deadline
+              </p>
+              <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
+                30 April 2026
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article className="overflow-hidden rounded-[1.5rem] border border-white/70 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800/70">
+          <div className="relative aspect-[4/5] w-full bg-slate-100 dark:bg-gray-900">
+            <Image
+              src={conference2026.callForAbstractsFlyer}
+              alt="Call for abstract submissions flyer for Conference and Colloquium 2026"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </article>
       </section>
 
       <section id="tracks" className="mt-8 scroll-mt-28 space-y-6">
