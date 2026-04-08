@@ -1,5 +1,10 @@
 export const conferenceNavLinks = [
-  { href: '/conference-2026', title: 'Overview', description: 'Theme, highlights, and key dates' },
+  { href: '/conference-2026', title: 'Overview', description: 'Theme, programme, and key dates' },
+  {
+    href: '/conference-2026/programme',
+    title: 'Programme',
+    description: 'Workshops, editor sessions, awards, and conference experience highlights',
+  },
   {
     href: '/conference-2026/conference-papers',
     title: 'Conference Papers',

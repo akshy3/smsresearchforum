@@ -31,6 +31,40 @@ type ConferenceRegistrationLink = {
   note: string
 }
 
+type ConferenceActivity = {
+  title: string
+  summary: string
+  format: string
+  audience: string
+  tag?: string
+  subtitle?: string
+  dateTime?: string
+  venue?: string
+  image?: string
+  speakers?: {
+    name: string
+    role: string
+    affiliation: string
+  }[]
+  moderator?: {
+    name: string
+    role: string
+    affiliation: string
+  }
+  sessions?: {
+    title: string
+    dateTime: string
+    venue: string
+    speaker: {
+      name: string
+      role: string
+      affiliation: string
+    }
+    highlights?: string[]
+    image?: string
+  }[]
+}
+
 export const conferenceTracks = [
   {
     slug: 'finance',
@@ -190,6 +224,89 @@ export const conference2026 = {
     'Value added sessions on methodology by academic experts',
     'Cultural Evening & Networking Dinner',
   ],
+  activities: [
+    {
+      title: 'Workshops',
+      summary:
+        'Hands-on workshops in the conference programme will support participants with systems thinking, case-based learning, methodological sharpening, and practical academic skill-building.',
+      format: 'Offline at SMS, CUSAT',
+      audience:
+        'Research scholars, faculty members, and participants seeking practical research support',
+      tag: 'Capacity Building',
+      sessions: [
+        {
+          title: 'Systems Thinking in Action: Designing Holistic Research',
+          dateTime: '15 May 2026, 02.00 PM - 05.00 PM',
+          venue: 'Seminar Complex, CUSAT',
+          image: '/static/images/DC26/Ganesh.jpeg',
+          speaker: {
+            name: 'Prof. L. S. Ganesh',
+            role: 'Professor (Rtd.)',
+            affiliation: 'IIT Madras',
+          },
+          highlights: [
+            'Vice Chancellor (2022-2025) of the ICFAI Foundation for Higher Education at Hyderabad.',
+            'Specialized in systems thinking, project management, and technology management.',
+          ],
+        },
+        {
+          title: 'Learning with Cases',
+          dateTime: '16 May 2026, 02.00 PM - 04.00 PM',
+          venue: 'Seminar Complex, CUSAT',
+          image: '/static/images/DC26/Rejie.jpeg',
+          speaker: {
+            name: 'Prof. Rejie George Pallathitta',
+            role: 'Professor and Chairperson Strategy',
+            affiliation: 'IIM Bangalore',
+          },
+          highlights: [
+            'Chairperson, NSRCEL.',
+            'Specialized in corporate governance, strategic management, and international business.',
+          ],
+        },
+      ],
+    },
+    {
+      title: 'Meet the Editors',
+      summary:
+        'A focused dialogue with journal editors on future-proofing research in the digital economy will help participants understand publication expectations, manuscript development, review processes, and how to position their work for journal consideration.',
+      format: 'Offline interactive session',
+      audience:
+        'Authors, doctoral scholars, and faculty members preparing publication-oriented work',
+      tag: 'Publication',
+      subtitle: 'Future-Proofing Research in the Digital Economy: A Dialogue with Journal Editors',
+      dateTime: '15 May 2026, 11.15 AM - 01.15 PM',
+      venue: 'Seminar Complex, CUSAT',
+      image: '/static/images/DC26/meet-the-editors.jpeg',
+      speakers: [
+        {
+          name: 'Prof. Srinivasan Rangan',
+          role: 'Professor',
+          affiliation: 'Indian Institute of Management Bangalore',
+        },
+        {
+          name: 'Prof. Shaphali Gupta',
+          role: 'Professor',
+          affiliation: 'Indian Institute of Management Kozhikode',
+        },
+        {
+          name: 'Prof. Ajay Manrai',
+          role: 'Professor Emeritus of Marketing',
+          affiliation: 'University of Delaware',
+        },
+        {
+          name: 'Prof. K. Mathiyazhagan',
+          role: 'Professor and Research Head',
+          affiliation: 'Thiagarajar School of Management',
+        },
+      ],
+      moderator: {
+        name: 'Prof. Joshy Joseph',
+        role: 'Associate Professor',
+        affiliation: 'Indian Institute of Management Kozhikode',
+      },
+    },
+  ] satisfies ConferenceActivity[],
   publicationOpportunities: {
     note: 'Only full papers submitted to the conference will be considered for publication in these journals.',
     journals: [

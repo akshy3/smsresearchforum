@@ -225,22 +225,48 @@ export default function Conference2026Page() {
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Conference Highlights
+            Conference Programme
           </p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             What Participants Can Expect
           </h2>
-          <ul className="mt-6 space-y-3">
-            {conference2026.highlights.map((highlight) => (
-              <li
-                key={highlight}
-                className="flex items-start gap-3 text-sm text-slate-700 dark:text-gray-300"
+          <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
+            The featured programme currently highlights two special experiences for participants:
+            the workshop series and the Meet the Editors session.
+          </p>
+          <div className="mt-6 grid gap-3">
+            {conference2026.activities.map((activity) => (
+              <article
+                key={activity.title}
+                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70"
               >
-                <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-sky-500" />
-                <span>{highlight}</span>
-              </li>
+                <div className="flex flex-wrap items-center gap-2">
+                  {activity.tag && (
+                    <span className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold tracking-wide text-sky-800 uppercase dark:bg-gray-900 dark:text-sky-300">
+                      {activity.tag}
+                    </span>
+                  )}
+                  <span className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
+                    {activity.format}
+                  </span>
+                </div>
+                <h3 className="mt-3 text-base font-bold text-slate-900 dark:text-white">
+                  {activity.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-gray-300">
+                  {activity.summary}
+                </p>
+              </article>
             ))}
-          </ul>
+          </div>
+          <div className="mt-5">
+            <Link
+              href="/conference-2026/programme"
+              className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+            >
+              View Full Programme
+            </Link>
+          </div>
         </article>
 
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
