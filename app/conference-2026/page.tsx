@@ -15,7 +15,7 @@ export default function Conference2026Page() {
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <ConferenceSectionNav />
 
-      <section className="overflow-hidden rounded-[2rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dfe7f2_46%,#d4dfed_100%)] shadow-[0_24px_80px_-36px_rgba(15,23,42,0.28)] dark:border-gray-700 dark:bg-gray-900">
+      <section className="overflow-hidden rounded-[2rem] border border-slate-300/70 bg-[#D9E3EF] shadow-[0_24px_80px_-36px_rgba(15,23,42,0.28)] dark:border-gray-700 dark:bg-gray-900">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="p-6 sm:p-8 lg:p-10">
             <p className="text-sm font-semibold tracking-[0.22em] text-sky-700 uppercase dark:text-sky-300">
@@ -117,14 +117,13 @@ export default function Conference2026Page() {
             </p>
           </div>
 
-          <div className="relative min-h-[260px] bg-slate-200 sm:min-h-[320px] lg:min-h-full dark:bg-gray-800">
+          <div className="relative min-h-[260px] bg-[#D9E3EF] sm:min-h-[320px] lg:min-h-full dark:bg-gray-800">
             <Image
               src={conference2026.heroImage}
               alt={conference2026.title}
               fill
-              className="h-full w-full object-contain object-center lg:object-cover"
+              className="h-full w-full object-contain object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent lg:from-slate-950/55 lg:via-slate-950/10" />
           </div>
         </div>
       </section>
