@@ -39,7 +39,7 @@ export default function ConferenceCallForPapersPage() {
                 Full Paper Deadline
               </p>
               <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
-                30 April 2026
+                {conference2026.fullPaperSubmissionDeadline}
               </p>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function ConferenceCallForPapersPage() {
               Registration Alert
             </p>
             <p className="mt-2 text-base font-bold text-rose-800 dark:text-rose-200">
-              Early bird registration closes on 15 April 2026.
+              Early bird registration closes on {conference2026.earlyBirdRegistrationDeadline}.
             </p>
           </div>
         </article>

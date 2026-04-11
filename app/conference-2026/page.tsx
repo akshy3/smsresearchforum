@@ -67,6 +67,33 @@ export default function Conference2026Page() {
               </div>
             </div>
 
+            <div className="mt-6 rounded-[1.75rem] border border-fuchsia-200 bg-[linear-gradient(135deg,#fff7fb_0%,#f4ecff_48%,#eef5ff_100%)] p-5 shadow-[0_18px_40px_-28px_rgba(91,33,182,0.5)] dark:border-fuchsia-900/50 dark:bg-[linear-gradient(135deg,rgba(80,7,36,0.35)_0%,rgba(59,7,100,0.25)_48%,rgba(8,47,73,0.25)_100%)]">
+              <p className="text-xs font-semibold tracking-[0.18em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
+                Deadline Extended
+              </p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl bg-white/80 px-4 py-4 dark:bg-gray-900/40">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                    Abstract Submission
+                  </p>
+                  <p className="mt-1 text-lg font-black text-indigo-700 dark:text-indigo-300">
+                    {conference2026.abstractSubmissionDeadline}
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-white/80 px-4 py-4 dark:bg-gray-900/40">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                    Full Paper Submission
+                  </p>
+                  <p className="mt-1 text-lg font-black text-indigo-700 dark:text-indigo-300">
+                    {conference2026.fullPaperSubmissionDeadline}
+                  </p>
+                </div>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-gray-300">
+                Full paper submission is mandatory only for consideration for journal publication.
+              </p>
+            </div>
+
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/conference-2026/conference-papers"
@@ -156,6 +183,51 @@ export default function Conference2026Page() {
                 Explore Tracks
               </Link>
             </div>
+          </div>
+        </article>
+      </section>
+
+      <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+        <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#f7f7fb_0%,#eef2ff_52%,#fdf2f8_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+            Updated Deadlines
+          </p>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Deadline Extension Announcement
+          </h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
+            The conference submission timeline has been extended. Authors can now submit abstracts
+            until {conference2026.abstractSubmissionDeadline}, and full papers for journal
+            consideration until {conference2026.fullPaperSubmissionDeadline}.
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/70 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
+                Early Bird Registration
+              </p>
+              <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
+                {conference2026.earlyBirdRegistrationDeadline}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/70 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
+              <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
+                Final Registration
+              </p>
+              <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
+                {conference2026.finalRegistrationDeadline}
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
+          <div className="relative aspect-[16/10] w-full bg-slate-100 dark:bg-gray-800">
+            <Image
+              src={conference2026.deadlineExtensionFlyer}
+              alt="Deadline extended poster for the International Conference and Colloquium 2026"
+              fill
+              className="object-contain"
+            />
           </div>
         </article>
       </section>

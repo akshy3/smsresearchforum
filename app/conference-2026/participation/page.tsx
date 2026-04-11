@@ -42,7 +42,7 @@ export default function ConferenceParticipationPage() {
               Early Bird Reminder
             </p>
             <p className="mt-2 text-base font-bold text-amber-800 dark:text-amber-200">
-              Early bird registration will close on 15 April 2026.
+              Early bird registration will close on {conference2026.earlyBirdRegistrationDeadline}.
             </p>
           </div>
           <div className="mt-5 grid gap-4">
