@@ -293,6 +293,34 @@ export default function Conference2026Page() {
         </article>
       </section>
 
+      <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef3f8_0%,#e4edf6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          Publication Opportunities
+        </p>
+        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          Journals Associated with Selected Full Papers
+        </h2>
+        <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
+          {conference2026.publicationOpportunities.note}
+        </p>
+        <div className="mt-6 grid gap-4 lg:grid-cols-3">
+          {conference2026.publicationOpportunities.journals.map((journal) => (
+            <article
+              key={journal.journal}
+              className="rounded-3xl border border-white/70 bg-white/80 p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800/70"
+            >
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                {journal.journal}
+              </h3>
+              <p className="mt-3 text-sm font-semibold text-slate-700 dark:text-gray-200">
+                {journal.indexing}
+              </p>
+              <p className="mt-2 text-sm text-slate-600 dark:text-gray-300">{journal.publisher}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
@@ -380,34 +408,6 @@ export default function Conference2026Page() {
             </Link>
           </div>
         </article>
-      </section>
-
-      <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef3f8_0%,#e4edf6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-          Publication Opportunities
-        </p>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          Journals Associated with Selected Full Papers
-        </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
-          {conference2026.publicationOpportunities.note}
-        </p>
-        <div className="mt-6 grid gap-4 lg:grid-cols-3">
-          {conference2026.publicationOpportunities.journals.map((journal) => (
-            <article
-              key={journal.journal}
-              className="rounded-3xl border border-white/70 bg-white/80 p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800/70"
-            >
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                {journal.journal}
-              </h3>
-              <p className="mt-3 text-sm font-semibold text-slate-700 dark:text-gray-200">
-                {journal.indexing}
-              </p>
-              <p className="mt-2 text-sm text-slate-600 dark:text-gray-300">{journal.publisher}</p>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">

@@ -316,6 +316,11 @@ export const conference2026 = {
     note: 'Only full papers submitted to the conference will be considered for publication in these journals.',
     journals: [
       {
+        journal: 'Journal of Knowledge Management',
+        indexing: 'Scopus Q1, ABDC Ranking - A',
+        publisher: 'Emerald',
+      },
+      {
         journal: 'Journal of Global Marketing',
         indexing: 'Scopus Q1, ABDC Ranking - B',
         publisher: 'Taylor & Francis',
