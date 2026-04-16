@@ -25,23 +25,31 @@ export default function ConferenceCallForPapersPage() {
           <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
             {conference2026.callForAbstracts}
           </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/70 bg-white/70 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
-              <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
-                Abstract Deadline
-              </p>
-              <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
-                {conference2026.abstractSubmissionDeadline}
-              </p>
+          <div className="mt-6 rounded-[1.25rem] border border-fuchsia-200 bg-[linear-gradient(135deg,#fff7fb_0%,#f4ecff_48%,#eef5ff_100%)] p-4 shadow-[0_12px_28px_-18px_rgba(91,33,182,0.45)] dark:border-fuchsia-900/50 dark:bg-[linear-gradient(135deg,rgba(80,7,36,0.35)_0%,rgba(59,7,100,0.25)_48%,rgba(8,47,73,0.25)_100%)]">
+            <p className="text-xs font-semibold tracking-[0.18em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
+              Deadline Extended
+            </p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl bg-white/80 px-4 py-3 dark:bg-gray-900/40">
+                <p className="text-xs font-semibold text-slate-600 dark:text-gray-300">
+                  Abstract Submission
+                </p>
+                <p className="mt-1 text-base font-black text-indigo-700 dark:text-indigo-300">
+                  {conference2026.abstractSubmissionDeadline}
+                </p>
+              </div>
+              <div className="rounded-xl bg-white/80 px-4 py-3 dark:bg-gray-900/40">
+                <p className="text-xs font-semibold text-slate-600 dark:text-gray-300">
+                  Full Paper Submission
+                </p>
+                <p className="mt-1 text-base font-black text-indigo-700 dark:text-indigo-300">
+                  {conference2026.fullPaperSubmissionDeadline}
+                </p>
+              </div>
             </div>
-            <div className="rounded-2xl border border-white/70 bg-white/70 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
-              <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
-                Full Paper Deadline
-              </p>
-              <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
-                {conference2026.fullPaperSubmissionDeadline}
-              </p>
-            </div>
+            <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-gray-400">
+              Full paper submission is mandatory only for consideration for journal publication.
+            </p>
           </div>
           <div className="mt-5 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 dark:border-rose-900/60 dark:bg-rose-950/30">
             <p className="text-xs font-semibold tracking-[0.18em] text-rose-700 uppercase dark:text-rose-300">
@@ -84,7 +92,7 @@ export default function ConferenceCallForPapersPage() {
               {track.description}
             </p>
             <div className="mt-6 grid gap-3 md:grid-cols-2">
-              {track.topics.map((topic) => (
+              {track.topics.map((topic: string) => (
                 <div
                   key={topic}
                   className="rounded-2xl border border-white/70 bg-white/60 px-4 py-4 text-sm text-slate-800 dark:border-gray-700 dark:bg-gray-800/70 dark:text-gray-200"
