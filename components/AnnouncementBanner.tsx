@@ -7,7 +7,7 @@ const message =
 
 export default function AnnouncementBanner() {
   return (
-    <div className="overflow-hidden border-b border-indigo-700 bg-indigo-700 py-2 text-white">
+    <div className="overflow-hidden border-b border-slate-800 bg-slate-900 py-2 text-sky-100">
       <Link
         href="/conference-2026"
         aria-label="View conference details — deadline extended to 4 May 2026"

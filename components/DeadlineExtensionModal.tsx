@@ -31,7 +31,7 @@ export default function DeadlineExtensionModal() {
   return (
     <div
       role="presentation"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/50 px-4 pt-20 pb-6 backdrop-blur-sm"
       onClick={handleBackdropClick}
       onKeyDown={handleBackdropKey}
     >
@@ -39,7 +39,7 @@ export default function DeadlineExtensionModal() {
         role="dialog"
         aria-modal="true"
         aria-label="Abstract Submission Deadline Extended"
-        className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-gray-900"
+        className="relative w-full max-w-md flex-shrink-0 overflow-hidden rounded-2xl bg-white shadow-2xl dark:bg-gray-900"
       >
         <button
           onClick={dismiss}
