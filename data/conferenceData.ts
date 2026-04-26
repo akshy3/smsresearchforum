@@ -187,11 +187,11 @@ export const conference2026 = {
   ] satisfies ConferenceRegistrationLink[],
   submissionInterestLink:
     'mailto:researchforumsms@gmail.com?subject=Abstract%20Submission%20Interest%20-%20International%20Conference%20and%20Colloquium%2026',
-  abstractSubmissionDeadline: '25 April 2026',
-  fullPaperSubmissionDeadline: '05 May 2026',
+  abstractSubmissionDeadline: '4 May 2026',
+  fullPaperSubmissionDeadline: '10 May 2026',
   earlyBirdRegistrationDeadline: '15 April 2026',
   finalRegistrationDeadline: '10 May 2026',
-  deadlineExtensionFlyer: '/static/images/DC26/deadline extended.jpeg',
+  deadlineExtensionFlyer: '/static/images/DC26/Extended.jpg',
   eventDates: '15-16 May 2026',
   venue: 'School of Management Studies, CUSAT',
   formatSummary:
@@ -204,10 +204,10 @@ export const conference2026 = {
     'The conference invites the academic community and industry professionals to contribute papers, white papers, and doctoral research discussions aligned with the theme of Digital Futures: Reimagining Social and Business Models.',
   tracks: conferenceTracks,
   keyDates: [
-    { label: 'Last date to submit abstract', value: '25 April 2026', isTentative: false },
+    { label: 'Last date to submit abstract', value: '4 May 2026', isTentative: false },
     { label: 'Abstract acceptance', value: 'Within 3-5 days of submission', isTentative: false },
     { label: 'Early bird registration closes', value: '15 April 2026', isTentative: false },
-    { label: 'Last date to submit full papers', value: '05 May 2026', isTentative: false },
+    { label: 'Last date to submit full papers', value: '10 May 2026', isTentative: false },
     { label: 'Registration closes', value: '10 May 2026', isTentative: false },
     { label: 'Conference dates', value: '15-16 May 2026', isTentative: false },
   ],
