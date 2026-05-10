@@ -199,18 +199,10 @@ export default function Conference2026Page() {
             until {conference2026.abstractSubmissionDeadline}, and full papers for journal
             consideration until {conference2026.fullPaperSubmissionDeadline}.
           </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="mt-5">
             <div className="rounded-2xl border border-white/70 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
               <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
-                Early Bird Registration
-              </p>
-              <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
-                {conference2026.earlyBirdRegistrationDeadline}
-              </p>
-            </div>
-            <div className="rounded-2xl border border-white/70 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
-              <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
-                Final Registration
+                Registration Closes
               </p>
               <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
                 {conference2026.finalRegistrationDeadline}

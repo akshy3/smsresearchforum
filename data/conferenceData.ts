@@ -212,8 +212,7 @@ export const conference2026 = {
     { label: 'Conference dates', value: '15-16 May 2026', isTentative: false },
   ],
   registrationFees: [
-    { label: 'Early Bird (before 15 April)', value: 'INR 2,360 including GST' },
-    { label: 'Post Early Bird (after 15 April)', value: 'INR 2,950 including GST' },
+    { label: 'Registration Fee', value: 'INR 2,950 including GST' },
     {
       label: 'Online Paper Presentation',
       value: 'INR 1,888 including GST',

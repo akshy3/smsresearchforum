@@ -51,14 +51,6 @@ export default function ConferenceCallForPapersPage() {
               Full paper submission is mandatory only for consideration for journal publication.
             </p>
           </div>
-          <div className="mt-5 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-4 dark:border-rose-900/60 dark:bg-rose-950/30">
-            <p className="text-xs font-semibold tracking-[0.18em] text-rose-700 uppercase dark:text-rose-300">
-              Registration Alert
-            </p>
-            <p className="mt-2 text-base font-bold text-rose-800 dark:text-rose-200">
-              Early bird registration closes on {conference2026.earlyBirdRegistrationDeadline}.
-            </p>
-          </div>
         </article>
 
         <article className="overflow-hidden rounded-[1.5rem] border border-white/70 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800/70">

@@ -37,14 +37,6 @@ export default function ConferenceParticipationPage() {
               Certificates will be issued only to registered participants.
             </p>
           </div>
-          <div className="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-900/60 dark:bg-amber-950/30">
-            <p className="text-xs font-semibold tracking-[0.18em] text-amber-700 uppercase dark:text-amber-300">
-              Early Bird Reminder
-            </p>
-            <p className="mt-2 text-base font-bold text-amber-800 dark:text-amber-200">
-              Early bird registration will close on {conference2026.earlyBirdRegistrationDeadline}.
-            </p>
-          </div>
           <div className="mt-5 grid gap-4">
             {conference2026.registrationLinks.map((registration) => (
               <div
