@@ -191,7 +191,6 @@ export const conference2026 = {
   fullPaperSubmissionDeadline: '10 May 2026',
   earlyBirdRegistrationDeadline: '15 April 2026',
   finalRegistrationDeadline: '10 May 2026',
-  deadlineExtensionFlyer: '/static/images/DC26/Extended.jpg',
   eventDates: '15-16 May 2026',
   venue: 'School of Management Studies, CUSAT',
   formatSummary:

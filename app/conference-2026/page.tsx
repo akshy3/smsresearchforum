@@ -186,7 +186,7 @@ export default function Conference2026Page() {
         </article>
       </section>
 
-      <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="mt-8">
         <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#f7f7fb_0%,#eef2ff_52%,#fdf2f8_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
             Updated Deadlines
@@ -208,17 +208,6 @@ export default function Conference2026Page() {
                 {conference2026.finalRegistrationDeadline}
               </p>
             </div>
-          </div>
-        </article>
-
-        <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <div className="relative aspect-[16/10] w-full bg-slate-100 dark:bg-gray-800">
-            <Image
-              src={conference2026.deadlineExtensionFlyer}
-              alt="Deadline extended poster for the International Conference and Colloquium 2026"
-              fill
-              className="object-contain"
-            />
           </div>
         </article>
       </section>
