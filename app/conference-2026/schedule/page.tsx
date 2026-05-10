@@ -13,13 +13,11 @@ const day1 = {
   date: '15 May 2026',
   venue: 'Seminar Complex',
   sessions: [
-    { time: '08:30 AM – 09:30 AM', title: 'Registration & Welcome Kit Distribution' },
-    { time: '09:30 AM – 10:00 AM', title: 'Inaugural Ceremony' },
-    { time: '10:00 AM – 10:45 AM', title: 'Keynote Session' },
-    { time: '10:45 AM – 11:00 AM', title: 'Group Photo' },
-    { time: '11:00 AM – 11:15 AM', title: 'Tea Break' },
+    { time: '08:30 AM – 09:30 AM', title: 'Registration' },
+    { time: '09:30 AM – 10:45 AM', title: 'Inaugural Ceremony' },
     { time: '11:15 AM – 01:00 PM', title: 'Meet the Editors Session' },
-    { time: '07:00 PM – 09:00 PM', title: 'Networking Dinner & Cultural Night', tag: 'Workshop' },
+    { time: '02:00 PM – 05:00 PM', title: 'Workshop', tag: 'Workshop', venue: 'Seminar Complex' },
+    { time: '07:00 PM – 09:00 PM', title: 'Cultural Night & Dinner' },
   ],
 }
 

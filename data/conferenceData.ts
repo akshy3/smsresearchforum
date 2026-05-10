@@ -280,7 +280,7 @@ export const conference2026 = {
         'Authors, doctoral scholars, and faculty members preparing publication-oriented work',
       tag: 'Publication',
       subtitle: 'Future-Proofing Research in the Digital Economy: A Dialogue with Journal Editors',
-      dateTime: '15 May 2026, 11.15 AM - 01.15 PM',
+      dateTime: '15 May 2026, 11.15 AM - 01.00 PM',
       venue: 'Seminar Complex, CUSAT',
       image: '/static/images/DC26/meet-the-editors.jpeg',
       speakers: [
