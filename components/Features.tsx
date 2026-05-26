@@ -20,7 +20,7 @@ const features = [
   {
     name: "Conference and Colloquium '26",
     description:
-      'Our current flagship academic programme bringing together conference presentations and a doctoral colloquium.',
+      'Our flagship academic programme brought together conference presentations and a doctoral colloquium.',
     icon: LightningBoltIcon,
     href: '/conference-2026',
   },
@@ -102,7 +102,7 @@ export default function Features() {
               <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
                 {conference2026.tagline}. This year&apos;s flagship programme invites scholars and
                 researchers to engage with current questions in management and interdisciplinary
-                research.
+                research. The official proceedings are now available.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -116,11 +116,9 @@ export default function Features() {
               </div>
               <div className="rounded-2xl bg-slate-50 px-4 py-4">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
-                  Abstract Deadline
+                  Proceedings
                 </p>
-                <p className="mt-2 text-sm font-semibold text-slate-900">
-                  {conference2026.abstractSubmissionDeadline}
-                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">Published</p>
               </div>
             </div>
           </div>

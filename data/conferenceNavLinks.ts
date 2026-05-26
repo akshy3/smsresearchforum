@@ -15,6 +15,11 @@ export const conferenceNavLinks = [
     description: 'Workshops and Meet the Editors',
   },
   {
+    href: '/conference-2026#proceedings',
+    title: 'Proceedings',
+    description: 'Official proceedings from the concluded conference',
+  },
+  {
     href: '/conference-2026/conference-papers',
     title: 'Conference Papers',
     description: 'Tracks, topics, and submission guidelines for conference papers',

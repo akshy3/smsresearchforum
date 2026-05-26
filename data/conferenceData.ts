@@ -65,6 +65,13 @@ type ConferenceActivity = {
   }[]
 }
 
+type ConferenceProceedings = {
+  title: string
+  href: string
+  description: string
+  cta: string
+}
+
 export const conferenceTracks = [
   {
     slug: 'finance',
@@ -173,6 +180,13 @@ export const conference2026 = {
   theme: 'Digital Futures: Reimagining Social and Business Models',
   heroImage: '/static/images/conference26.jpeg',
   callForAbstractsFlyer: '/static/images/DC26/call for abstracts.jpeg',
+  proceedings: {
+    title: 'Conference Proceedings 2026',
+    href: '/uploads/conference-proceedings-2026.pdf',
+    description:
+      'The official proceedings from the International Conference and Doctoral Colloquium 2026 are now available for participants, authors, and readers.',
+    cta: 'Download Proceedings',
+  } satisfies ConferenceProceedings,
   registrationLinks: [
     {
       label: 'Offline Participation Registration',
@@ -425,7 +439,7 @@ export const conference2026 = {
     ] satisfies ConferenceSubmissionSection[],
   },
   submissionFormatNote:
-    'Abstract and full paper submission guidance is available in this conference section. Registration is now open through the published participation links.',
+    'Abstract and full paper submission guidance is retained here as part of the conference archive. The official proceedings are now available for download.',
   conferenceIntro:
     'This conference section is designed to help participants, authors, and doctoral scholars quickly find theme details, track information, participation guidance, and colloquium expectations.',
 } as const

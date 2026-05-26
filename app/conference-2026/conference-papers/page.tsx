@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from '@/components/Link'
 import { genPageMetadata } from 'app/seo'
 import { conference2026 } from '@/data/conferenceData'
 import ConferenceSectionNav from '@/components/ConferenceSectionNav'
@@ -27,12 +28,12 @@ export default function ConferenceCallForPapersPage() {
           </p>
           <div className="mt-6 rounded-[1.25rem] border border-fuchsia-200 bg-[linear-gradient(135deg,#fff7fb_0%,#f4ecff_48%,#eef5ff_100%)] p-4 shadow-[0_12px_28px_-18px_rgba(91,33,182,0.45)] dark:border-fuchsia-900/50 dark:bg-[linear-gradient(135deg,rgba(80,7,36,0.35)_0%,rgba(59,7,100,0.25)_48%,rgba(8,47,73,0.25)_100%)]">
             <p className="text-xs font-semibold tracking-[0.18em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
-              Deadline Extended
+              Conference Archive
             </p>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl bg-white/80 px-4 py-3 dark:bg-gray-900/40">
                 <p className="text-xs font-semibold text-slate-600 dark:text-gray-300">
-                  Abstract Submission
+                  Abstract Submission Closed
                 </p>
                 <p className="mt-1 text-base font-black text-indigo-700 dark:text-indigo-300">
                   {conference2026.abstractSubmissionDeadline}
@@ -40,7 +41,7 @@ export default function ConferenceCallForPapersPage() {
               </div>
               <div className="rounded-xl bg-white/80 px-4 py-3 dark:bg-gray-900/40">
                 <p className="text-xs font-semibold text-slate-600 dark:text-gray-300">
-                  Full Paper Submission
+                  Full Paper Submission Closed
                 </p>
                 <p className="mt-1 text-base font-black text-indigo-700 dark:text-indigo-300">
                   {conference2026.fullPaperSubmissionDeadline}
@@ -48,8 +49,17 @@ export default function ConferenceCallForPapersPage() {
               </div>
             </div>
             <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-gray-400">
-              Full paper submission is mandatory only for consideration for journal publication.
+              Submission guidance is retained here for reference. The official proceedings are now
+              available for download.
             </p>
+            <div className="mt-4">
+              <Link
+                href={conference2026.proceedings.href}
+                className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+              >
+                {conference2026.proceedings.cta}
+              </Link>
+            </div>
           </div>
         </article>
 

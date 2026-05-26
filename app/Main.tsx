@@ -35,10 +35,10 @@ export default function Home({ posts }) {
                   Open Conference Section
                 </Link>
                 <Link
-                  href="/conference-2026/participation"
+                  href={conference2026.proceedings.href}
                   className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
                 >
-                  Participation Guide
+                  Download Proceedings
                 </Link>
               </div>
             </div>
@@ -61,10 +61,10 @@ export default function Home({ posts }) {
               </div>
               <div className="rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
-                  Abstract Deadline
+                  Proceedings
                 </p>
                 <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
-                  {conference2026.abstractSubmissionDeadline}
+                  Published
                 </p>
               </div>
               <div className="rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">

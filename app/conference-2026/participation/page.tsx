@@ -17,10 +17,10 @@ export default function ConferenceParticipationPage() {
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Participation Modes
+            Participation Archive
           </p>
           <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Registering and Presenting
+            Participation and Presentation Details
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
             {conference2026.formatSummary}
@@ -30,37 +30,21 @@ export default function ConferenceParticipationPage() {
               Registration status
             </p>
             <p className="mt-2 text-sm text-slate-600 dark:text-gray-300">
-              Registration is now open for both offline participation and online conference paper
-              presentation. Please choose the correct form based on your mode of participation.
+              Registration for the International Conference and Doctoral Colloquium 2026 has closed.
+              This page is retained as an archive of participation modes, fee structure, and contact
+              information.
             </p>
             <p className="mt-2 text-sm font-medium text-slate-700 dark:text-gray-200">
-              Certificates will be issued only to registered participants.
+              Certificates were issued only to registered participants.
             </p>
           </div>
-          <div className="mt-5 grid gap-4">
-            {conference2026.registrationLinks.map((registration) => (
-              <div
-                key={registration.href}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-gray-700 dark:bg-gray-800/70"
-              >
-                <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                  {registration.label}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
-                  {registration.note}
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href={registration.href}
-                    className="inline-flex rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(14,165,233,0.9)] transition hover:opacity-95"
-                  >
-                    Open Registration Form
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
           <div className="mt-5 flex flex-wrap gap-3">
+            <Link
+              href={conference2026.proceedings.href}
+              className="rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(14,165,233,0.9)] transition hover:opacity-95"
+            >
+              {conference2026.proceedings.cta}
+            </Link>
             <Link
               href={conference2026.submissionInterestLink}
               className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"

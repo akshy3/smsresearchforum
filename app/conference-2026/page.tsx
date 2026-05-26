@@ -59,45 +59,44 @@ export default function Conference2026Page() {
               </div>
               <div className="rounded-2xl border border-white/70 bg-white/62 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
-                  Abstract Deadline
+                  Proceedings
                 </p>
                 <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
-                  {conference2026.abstractSubmissionDeadline}
+                  Published
                 </p>
               </div>
             </div>
 
             <div className="mt-6 rounded-[1.75rem] border border-fuchsia-200 bg-[linear-gradient(135deg,#fff7fb_0%,#f4ecff_48%,#eef5ff_100%)] p-5 shadow-[0_18px_40px_-28px_rgba(91,33,182,0.5)] dark:border-fuchsia-900/50 dark:bg-[linear-gradient(135deg,rgba(80,7,36,0.35)_0%,rgba(59,7,100,0.25)_48%,rgba(8,47,73,0.25)_100%)]">
               <p className="text-xs font-semibold tracking-[0.18em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
-                Deadline Extended
+                Conference Concluded
               </p>
-              <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl bg-white/80 px-4 py-4 dark:bg-gray-900/40">
-                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                    Abstract Submission
-                  </p>
-                  <p className="mt-1 text-lg font-black text-indigo-700 dark:text-indigo-300">
-                    {conference2026.abstractSubmissionDeadline}
-                  </p>
-                </div>
-                <div className="rounded-2xl bg-white/80 px-4 py-4 dark:bg-gray-900/40">
-                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                    Full Paper Submission
-                  </p>
-                  <p className="mt-1 text-lg font-black text-indigo-700 dark:text-indigo-300">
-                    {conference2026.fullPaperSubmissionDeadline}
-                  </p>
-                </div>
-              </div>
+              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                Proceedings are now available
+              </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-gray-300">
-                Full paper submission is mandatory only for consideration for journal publication.
+                {conference2026.proceedings.description}
               </p>
+              <div className="mt-5">
+                <Link
+                  href={conference2026.proceedings.href}
+                  className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+                >
+                  {conference2026.proceedings.cta}
+                </Link>
+              </div>
             </div>
 
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                href="/conference-2026/conference-papers"
+                href={conference2026.proceedings.href}
                 className="rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(12,19,37,0.35)] transition hover:bg-[#334361]"
+              >
+                Download Proceedings
+              </Link>
+              <Link
+                href="/conference-2026/conference-papers"
+                className="rounded-full border border-slate-300 bg-white/72 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
               >
                 Conference Papers
               </Link>
@@ -105,15 +104,15 @@ export default function Conference2026Page() {
                 href="/conference-2026/participation"
                 className="rounded-full border border-slate-300 bg-white/72 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
               >
-                Register / Participate
+                Participation Details
               </Link>
             </div>
             <p className="mt-4 text-sm font-medium text-slate-600 dark:text-gray-300">
-              Registration is now open for offline participants and online conference paper
-              presenters. Visit the participation page to choose the correct registration form.
+              This page is retained as the archive for conference details, programme information,
+              participation guidance, and published proceedings.
             </p>
             <p className="mt-2 text-sm font-medium text-slate-700 dark:text-gray-200">
-              Certificates will be issued only to registered participants.
+              Certificates were issued only to registered participants.
             </p>
           </div>
 
@@ -125,6 +124,31 @@ export default function Conference2026Page() {
               className="h-full w-full object-contain object-center"
             />
           </div>
+        </div>
+      </section>
+
+      <section
+        id="proceedings"
+        className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef3f8_0%,#e4edf6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
+      >
+        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          Conference Archive
+        </p>
+        <div className="mt-2 grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              {conference2026.proceedings.title}
+            </h2>
+            <p className="mt-3 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
+              {conference2026.proceedings.description}
+            </p>
+          </div>
+          <Link
+            href={conference2026.proceedings.href}
+            className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+          >
+            {conference2026.proceedings.cta}
+          </Link>
         </div>
       </section>
 
@@ -189,20 +213,19 @@ export default function Conference2026Page() {
       <section className="mt-8">
         <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#f7f7fb_0%,#eef2ff_52%,#fdf2f8_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
-            Updated Deadlines
+            Conference Timeline
           </p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Deadline Extension Announcement
+            Key Submission and Registration Dates
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
-            The conference submission timeline has been extended. Authors can now submit abstracts
-            until {conference2026.abstractSubmissionDeadline}, and full papers for journal
-            consideration until {conference2026.fullPaperSubmissionDeadline}.
+            The conference has concluded. Submission and registration dates are retained here as
+            part of the event record for authors, participants, and future reference.
           </p>
           <div className="mt-5">
             <div className="rounded-2xl border border-white/70 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
               <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
-                Registration Closes
+                Registration Closed
               </p>
               <p className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
                 {conference2026.finalRegistrationDeadline}
@@ -385,7 +408,7 @@ export default function Conference2026Page() {
               href="/conference-2026/participation"
               className="inline-flex rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
             >
-              View Registration Options
+              View Participation Details
             </Link>
           </div>
         </article>
