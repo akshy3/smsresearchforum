@@ -6,6 +6,8 @@ import Hero from '@/components/Hero'
 import Features from '@/components/Features'
 import Stats from '@/components/Stats'
 import { conference2026 } from '@/data/conferenceData'
+import { featuredGalleryPhotos } from '@/data/galleryData'
+import Image from 'next/image'
 const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
@@ -80,6 +82,49 @@ export default function Home({ posts }) {
         </div>
       </section>
       <Features />
+
+      <section className="px-4 pt-14 md:px-10">
+        <div className="rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-sky-50/70 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:via-gray-900 dark:to-sky-950/20">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+                Gallery
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+                Moments from SMS Research Forum
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+                Browse photos from forum events, including the International Conference and Doctoral
+                Colloquium 2026.
+              </p>
+            </div>
+            <Link
+              href="/gallery"
+              className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+            >
+              Open Gallery
+            </Link>
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {featuredGalleryPhotos.map((photo, index) => (
+              <div
+                key={photo.src}
+                className="relative aspect-[3/2] overflow-hidden rounded-[1.25rem] border border-white/70 bg-slate-100 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover"
+                  priority={index === 0}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="px-4 pt-14 pb-8 md:px-10">
         <div className="rounded-2xl border border-slate-400/45 bg-gradient-to-br from-[#3A4A6B] via-[#334361] to-[#2B3854] p-6 shadow-[0_24px_50px_-24px_rgba(12,19,37,0.45)] sm:p-8">
