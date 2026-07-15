@@ -8,7 +8,7 @@ const features = [
     description:
       'Stay updated with the latest research, scholar achievements, and upcoming academic opportunities.',
     icon: GlobeAltIcon,
-    href: '/updates',
+    href: '/newsletters',
   },
   {
     name: 'Committees and Community',

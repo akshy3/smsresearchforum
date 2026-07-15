@@ -16,6 +16,13 @@ const resources = [
     cta: 'Open Synopsis Library',
   },
   {
+    title: 'Newsletters',
+    description:
+      'Read and download newsletter issues from SMS Research Forum, including research updates and scholar community highlights.',
+    href: '/newsletters',
+    cta: 'Open Newsletters',
+  },
+  {
     title: "Conference '26",
     description:
       'Find the official conference overview, call for papers, doctoral colloquium details, and participation information.',

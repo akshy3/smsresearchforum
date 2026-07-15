@@ -11,6 +11,7 @@ const headerNavLinks = [
   },
   { href: '/gallery', title: 'Gallery' },
   { href: '/updates', title: 'Updates' },
+  { href: '/newsletters', title: 'Newsletters' },
   // { href: '/tags', title: 'Tags' },
   { href: '/about', title: 'About' },
   {

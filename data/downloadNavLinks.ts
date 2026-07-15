@@ -9,6 +9,11 @@ export const downloadNavLinks = [
     title: 'Synopsis Library',
     description: 'Browse doctoral synopsis submissions',
   },
+  {
+    href: '/newsletters',
+    title: 'Newsletters',
+    description: 'Read SMS Research Forum newsletter issues',
+  },
 ] as const
 
 export type DownloadNavLink = (typeof downloadNavLinks)[number]
