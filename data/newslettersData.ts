@@ -1,5 +1,13 @@
 export const newsletters = [
   {
+    title: 'SMS Research Forum Newsletter - Issue 3',
+    issue: 'Issue 3',
+    dateLabel: 'October 2026',
+    description:
+      'The October 2026 issue of the SMS Research Forum newsletter, featuring a message from the Dean of Social Sciences, recent events at SMS, and scholar achievements and creative pursuits.',
+    href: '/static/files/newsletters/sms-research-forum-newsletter-issue-3-october-2026.pdf',
+  },
+  {
     title: 'SMS Research Forum Newsletter - Issue 2',
     issue: 'Issue 2',
     dateLabel: 'July 2026',
