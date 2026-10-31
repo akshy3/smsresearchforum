@@ -102,6 +102,9 @@ export const Updates = defineDocumentType(() => ({
     date: { type: 'date', required: true },
     tags: { type: 'list', of: { type: 'string' }, default: [] },
     lastmod: { type: 'date' },
+    // When the event itself happens (date is when the update was posted)
+    eventDate: { type: 'date' },
+    eventEndDate: { type: 'date' },
     draft: { type: 'boolean' },
     summary: { type: 'string' },
     images: { type: 'json' },

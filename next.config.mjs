@@ -57,6 +57,15 @@ const config = {
     ],
     unoptimized,
   },
+  async redirects() {
+    return [
+      {
+        source: '/updates/dcotoral-colloquium',
+        destination: '/updates/doctoral-colloquium',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

@@ -3,6 +3,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import Hero from '@/components/Hero'
+import EventDate from '@/components/EventDate'
 import Features from '@/components/Features'
 import Stats from '@/components/Stats'
 import { conference2026 } from '@/data/conferenceData'
@@ -158,7 +159,7 @@ export default function Home({ posts }) {
               </li>
             )}
             {posts.slice(0, MAX_DISPLAY).map((post) => {
-              const { slug, date, title, summary, tags } = post
+              const { slug, date, title, summary, tags, eventDate, eventEndDate } = post
               return (
                 <li
                   key={slug}
@@ -172,6 +173,7 @@ export default function Home({ posts }) {
                       >
                         {formatDate(date, siteMetadata.locale)}
                       </time>
+                      <EventDate start={eventDate} end={eventEndDate} />
                       <div className="flex flex-wrap">
                         {tags.map((tag) => (
                           <Tag key={tag} text={tag} />

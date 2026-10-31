@@ -8,6 +8,7 @@ import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Updates } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
+import EventDate from '@/components/EventDate'
 import siteMetadata from '@/data/siteMetadata'
 import tagData from 'app/tag-data.json'
 
@@ -188,7 +189,7 @@ export default function ListLayoutWithTags({
 
           <ul className="space-y-4">
             {displayPosts.map((post) => {
-              const { path, date, title, summary, tags } = post
+              const { path, date, title, summary, tags, eventDate, eventEndDate } = post
               return (
                 <li key={path}>
                   <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-sky-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-900">
@@ -200,6 +201,7 @@ export default function ListLayoutWithTags({
                       >
                         {formatDate(date, siteMetadata.locale)}
                       </time>
+                      <EventDate start={eventDate} end={eventEndDate} />
                       <div className="flex flex-wrap">
                         {tags?.map((tag) => (
                           <Tag key={tag} text={tag} />
