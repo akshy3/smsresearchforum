@@ -6,7 +6,7 @@ const siteMetadata = {
   description: 'An initiative of School of Management Studies, CUSAT.',
   language: 'en-us',
   theme: 'light', // system, dark or light
-  siteUrl: 'https://smsresearchforum.org',
+  siteUrl: 'https://www.smsresearchforum.org',
   siteRepo: 'https://github.com/akshy3/smsresearchforum',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/smslogo.jpg`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/socialbanner.png`,

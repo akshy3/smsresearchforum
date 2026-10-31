@@ -134,9 +134,9 @@ export default function Home({ posts }) {
               <p className="text-sm font-semibold tracking-[0.2em] text-sky-200 uppercase">
                 Newsroom
               </p>
-              <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
                 Latest Updates
-              </h1>
+              </h2>
               <p className="max-w-3xl text-sm leading-relaxed text-slate-100 sm:text-base">
                 Recent announcements, workshops, programme notes, and forum activities from SMS
                 Research Forum.

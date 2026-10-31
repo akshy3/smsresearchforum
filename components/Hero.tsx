@@ -14,6 +14,7 @@ export default function Hero() {
           alt="SMS research forum scholars collaborating"
           width={1600}
           height={1000}
+          sizes="(max-width: 1280px) 100vw, 1280px"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/70 to-sky-900/70" />

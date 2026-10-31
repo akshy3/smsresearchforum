@@ -6,6 +6,15 @@ import siteMetadata from '@/data/siteMetadata'
 const DAY_MS = 24 * 60 * 60 * 1000
 const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000
 
+function formatRange(start: string, end: string, format: Intl.DateTimeFormat) {
+  const [s, e] = [new Date(start), new Date(end)]
+  if (s.getUTCFullYear() === e.getUTCFullYear() && s.getUTCMonth() === e.getUTCMonth()) {
+    const month = s.toLocaleString(siteMetadata.locale, { month: 'short', timeZone: 'UTC' })
+    return `${month} ${s.getUTCDate()} – ${e.getUTCDate()}, ${s.getUTCFullYear()}`
+  }
+  return `${format.format(s)} – ${format.format(e)}`
+}
+
 interface EventDateProps {
   start?: string
   end?: string
@@ -30,9 +39,9 @@ export default function EventDate({ start, end }: EventDateProps) {
     year: 'numeric',
     timeZone: 'UTC',
   })
-  const label = end
-    ? format.formatRange(new Date(start), new Date(end))
-    : format.format(new Date(start))
+  // Ranges are joined by hand: formatRange's spacing differs between the server
+  // and browsers, which made React re-render the page.
+  const label = end ? formatRange(start, end, format) : format.format(new Date(start))
 
   return (
     <span
