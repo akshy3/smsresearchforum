@@ -17,18 +17,18 @@ export default function Hero() {
           sizes="(max-width: 1280px) 100vw, 1280px"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/70 to-sky-900/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.35),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(251,191,36,0.2),transparent_35%)]" />
+        <div className="from-navy-950/90 via-navy-900/65 to-navy-800/30 absolute inset-0 bg-gradient-to-r" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(228,176,84,0.2),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(70,98,143,0.35),transparent_35%)]" />
       </div>
 
       <div className="relative px-5 py-10 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="max-w-4xl">
-          <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-sky-100 uppercase backdrop-blur-sm">
+          <span className="border-gold-300/30 text-gold-100 inline-flex items-center rounded-full border bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide uppercase backdrop-blur-sm">
             A golden jubilee initiative of the School of Management Studies, CUSAT
           </span>
           <h1 className="mt-5 text-4xl leading-tight font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Empowering Scholars.
-            <span className="block bg-gradient-to-r from-sky-200 to-cyan-300 bg-clip-text text-transparent">
+            <span className="from-gold-200 to-gold-400 block bg-gradient-to-r bg-clip-text text-transparent">
               Fostering Innovation.
             </span>
           </h1>
@@ -45,7 +45,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/about"
-              className="inline-flex items-center justify-center rounded-lg bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-400"
+              className="bg-gold-400 text-navy-950 hover:bg-gold-300 inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold transition"
             >
               About the Forum
             </Link>

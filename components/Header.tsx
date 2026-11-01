@@ -27,7 +27,7 @@ const Header = () => {
           className="min-w-0 flex-1 lg:flex-none"
         >
           <div className="flex items-center gap-3">
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-1.5 shadow-[0_10px_30px_-18px_rgba(14,165,233,0.55)] dark:border-gray-700 dark:bg-gray-900">
+            <div className="rounded-2xl border border-slate-200/80 bg-white p-1.5 shadow-[0_10px_30px_-18px_rgba(12,24,48,0.55)] dark:border-gray-700 dark:bg-gray-900">
               <Image src={'/static/images/smslogo.jpg'} alt="smslogo" width={40} height={40} />
             </div>
             <div className="min-w-0">
@@ -60,7 +60,7 @@ const Header = () => {
                       <MenuButton
                         className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition duration-200 ${
                           isActive
-                            ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-[0_10px_24px_-12px_rgba(14,165,233,0.9)]'
+                            ? 'from-navy-900 to-navy-800 bg-gradient-to-r text-white shadow-[0_10px_24px_-12px_rgba(12,24,48,0.9)]'
                             : 'text-slate-700 hover:bg-slate-100 hover:text-sky-700 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-sky-300'
                         }`}
                       >
@@ -83,7 +83,7 @@ const Header = () => {
                         leaveTo="opacity-0 translate-y-2"
                       >
                         <MenuItems className="absolute top-[calc(100%+0.75rem)] left-1/2 z-[80] w-80 -translate-x-1/2 rounded-3xl border border-slate-200/80 bg-white p-3 shadow-[0_24px_60px_-28px_rgba(15,23,42,0.45)] outline-none dark:border-gray-800 dark:bg-gray-900">
-                          <div className="rounded-2xl bg-gradient-to-r from-sky-50 to-cyan-50 px-4 py-3 dark:from-sky-950/40 dark:to-cyan-950/30">
+                          <div className="to-gold-50 dark:to-gold-950/30 rounded-2xl bg-gradient-to-r from-sky-50 px-4 py-3 dark:from-sky-950/40">
                             <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
                               {link.title}
                             </p>
@@ -133,7 +133,7 @@ const Header = () => {
                     href={link.href}
                     className={`rounded-full px-4 py-2 text-sm font-semibold transition duration-200 ${
                       isActive
-                        ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-[0_10px_24px_-12px_rgba(14,165,233,0.9)]'
+                        ? 'from-navy-900 to-navy-800 bg-gradient-to-r text-white shadow-[0_10px_24px_-12px_rgba(12,24,48,0.9)]'
                         : 'text-slate-700 hover:bg-slate-100 hover:text-sky-700 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-sky-300'
                     }`}
                   >

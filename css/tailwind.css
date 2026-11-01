@@ -37,6 +37,32 @@
   --color-gray-900: oklch(0.21 0.034 264.665);
   --color-gray-950: oklch(0.13 0.028 261.692);
 
+  /* Brand colours, taken from the SMS logo: navy (#0c1830) and gold (#e4b054).
+     Navy is for dark surfaces, gold the one highlight colour. */
+  --color-navy-50: #f2f5fa;
+  --color-navy-100: #e3e9f3;
+  --color-navy-200: #c5d1e6;
+  --color-navy-300: #9aaecf;
+  --color-navy-400: #6a84b0;
+  --color-navy-500: #46628f;
+  --color-navy-600: #344c74;
+  --color-navy-700: #273a5c;
+  --color-navy-800: #1b2a45;
+  --color-navy-900: #111f39;
+  --color-navy-950: #0c1830;
+
+  --color-gold-50: #fdf8ec;
+  --color-gold-100: #faefd0;
+  --color-gold-200: #f4dc9e;
+  --color-gold-300: #edc76c;
+  --color-gold-400: #e4b054;
+  --color-gold-500: #d49b2f;
+  --color-gold-600: #b77d22;
+  --color-gold-700: #93601e;
+  --color-gold-800: #784d1f;
+  --color-gold-900: #63401d;
+  --color-gold-950: #39210c;
+
   /* Line heights */
   --line-height-11: 2.75rem;
   --line-height-12: 3rem;

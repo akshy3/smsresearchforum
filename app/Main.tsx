@@ -30,10 +30,10 @@ export default function Home({ posts }) {
       <NextEvent events={events} />
 
       <section className="px-4 pt-10 md:px-10">
-        <div className="rounded-2xl border border-slate-400/45 bg-gradient-to-br from-[#3A4A6B] via-[#334361] to-[#2B3854] p-6 shadow-[0_24px_50px_-24px_rgba(12,19,37,0.45)] sm:p-8">
+        <div className="border-navy-800 from-navy-900 via-navy-900 to-navy-950 rounded-2xl border bg-gradient-to-br p-6 shadow-[0_24px_50px_-24px_rgba(12,19,37,0.45)] sm:p-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="space-y-2 md:space-y-4">
-              <p className="text-sm font-semibold tracking-[0.2em] text-sky-200 uppercase">
+              <p className="text-gold-300 text-sm font-semibold tracking-[0.2em] uppercase">
                 Newsroom
               </p>
               <h2 className="text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -131,7 +131,7 @@ export default function Home({ posts }) {
             </div>
             <Link
               href="/gallery"
-              className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+              className="bg-navy-900 hover:bg-navy-800 inline-flex rounded-full px-5 py-3 text-sm font-semibold text-white transition"
             >
               Open Gallery
             </Link>
@@ -177,7 +177,7 @@ export default function Home({ posts }) {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href="/conference-2026"
-                  className="rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(14,165,233,0.9)] transition hover:opacity-95"
+                  className="bg-navy-900 hover:bg-navy-800 dark:bg-navy-700 dark:hover:bg-navy-600 rounded-full px-5 py-3 text-sm font-semibold text-white transition"
                 >
                   Conference Section
                 </Link>

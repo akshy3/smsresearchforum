@@ -55,7 +55,7 @@ export default function ConferenceCallForPapersPage() {
             <div className="mt-4">
               <Link
                 href={conference2026.proceedings.href}
-                className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+                className="bg-navy-900 hover:bg-navy-800 inline-flex rounded-full px-5 py-3 text-sm font-semibold text-white transition"
               >
                 {conference2026.proceedings.cta}
               </Link>

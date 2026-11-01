@@ -41,7 +41,7 @@ export default function ConferenceParticipationPage() {
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
               href={conference2026.proceedings.href}
-              className="rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(14,165,233,0.9)] transition hover:opacity-95"
+              className="from-navy-900 to-navy-800 rounded-full bg-gradient-to-r px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(12,24,48,0.9)] transition hover:opacity-95"
             >
               {conference2026.proceedings.cta}
             </Link>

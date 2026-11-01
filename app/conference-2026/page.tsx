@@ -31,7 +31,7 @@ export default function Conference2026Page() {
               {conference2026.tagline}
             </p>
 
-            <div className="mt-6 rounded-3xl bg-[linear-gradient(135deg,#d8e2ef_0%,#e8eef7_52%,#dbe6f2_100%)] p-5 dark:from-sky-950/30 dark:via-gray-900 dark:to-cyan-950/20">
+            <div className="dark:to-gold-950/20 mt-6 rounded-3xl bg-[linear-gradient(135deg,#d8e2ef_0%,#e8eef7_52%,#dbe6f2_100%)] p-5 dark:from-sky-950/30 dark:via-gray-900">
               <p className="text-xs font-semibold tracking-[0.18em] text-sky-800 uppercase dark:text-sky-300">
                 Conference Theme
               </p>
@@ -80,7 +80,7 @@ export default function Conference2026Page() {
               <div className="mt-5">
                 <Link
                   href={conference2026.proceedings.href}
-                  className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+                  className="bg-navy-900 hover:bg-navy-800 inline-flex rounded-full px-5 py-3 text-sm font-semibold text-white transition"
                 >
                   {conference2026.proceedings.cta}
                 </Link>
@@ -90,7 +90,7 @@ export default function Conference2026Page() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href={conference2026.proceedings.href}
-                className="rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(12,19,37,0.35)] transition hover:bg-[#334361]"
+                className="bg-navy-900 hover:bg-navy-800 rounded-full px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_36px_-16px_rgba(12,19,37,0.35)] transition"
               >
                 Download Proceedings
               </Link>
@@ -145,7 +145,7 @@ export default function Conference2026Page() {
           </div>
           <Link
             href={conference2026.proceedings.href}
-            className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+            className="bg-navy-900 hover:bg-navy-800 inline-flex rounded-full px-5 py-3 text-sm font-semibold text-white transition"
           >
             {conference2026.proceedings.cta}
           </Link>
@@ -195,7 +195,7 @@ export default function Conference2026Page() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/conference-2026/conference-papers#guidelines"
-                className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+                className="bg-navy-900 hover:bg-navy-800 inline-flex rounded-full px-5 py-3 text-sm font-semibold text-white transition"
               >
                 Paper Guidelines
               </Link>
@@ -365,7 +365,7 @@ export default function Conference2026Page() {
           <div className="mt-5">
             <Link
               href="/conference-2026/programme"
-              className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+              className="bg-navy-900 hover:bg-navy-800 inline-flex rounded-full px-5 py-3 text-sm font-semibold text-white transition"
             >
               View Featured Sessions
             </Link>
@@ -437,7 +437,7 @@ export default function Conference2026Page() {
           <div className="mt-5">
             <Link
               href="/conference-2026/doctoral-colloquium"
-              className="inline-flex rounded-full bg-[#3A4A6B] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#334361]"
+              className="bg-navy-900 hover:bg-navy-800 inline-flex rounded-full px-5 py-3 text-sm font-semibold text-white transition"
             >
               View Colloquium Guidelines
             </Link>

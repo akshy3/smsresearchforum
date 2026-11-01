@@ -27,7 +27,7 @@ const metrics = [
 export default function Stats() {
   return (
     <section className="px-4 pt-10 md:px-10">
-      <div className="relative overflow-hidden rounded-[2rem] border border-slate-800/70 bg-slate-900 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.85)]">
+      <div className="border-navy-800 bg-navy-950 relative overflow-hidden rounded-[2rem] border shadow-[0_30px_80px_-45px_rgba(15,23,42,0.85)]">
         <div className="absolute inset-0">
           <Image
             className="h-full w-full object-cover opacity-20"
@@ -36,13 +36,13 @@ export default function Stats() {
             width={1400}
             height={1000}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-slate-900/70" />
+          <div className="from-navy-950 via-navy-950/90 to-navy-900/70 absolute inset-0 bg-gradient-to-r" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
           <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 xl:items-start">
             <div>
-              <p className="text-sm font-semibold tracking-[0.2em] text-cyan-300 uppercase">
+              <p className="text-gold-300 text-sm font-semibold tracking-[0.2em] uppercase">
                 Forum Structure
               </p>
               <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">

@@ -4,11 +4,11 @@ import SocialIcon from '@/components/social-icons'
 
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-slate-800/70 bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 text-white">
+    <footer className="border-navy-800 from-navy-950 via-navy-950 to-navy-900 mt-24 border-t bg-gradient-to-br text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <p className="text-sm font-semibold tracking-[0.2em] text-cyan-300 uppercase">
+            <p className="text-gold-300 text-sm font-semibold tracking-[0.2em] uppercase">
               SMS Research Forum
             </p>
             <h2 className="mt-3 text-2xl font-extrabold tracking-tight sm:text-3xl">
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold tracking-[0.18em] text-cyan-300 uppercase">
+            <p className="text-gold-300 text-sm font-semibold tracking-[0.18em] uppercase">
               Quick Links
             </p>
             <div className="mt-5 space-y-3 text-sm text-slate-300">
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-semibold tracking-[0.18em] text-cyan-300 uppercase">
+            <p className="text-gold-300 text-sm font-semibold tracking-[0.18em] uppercase">
               Connect
             </p>
             <p className="mt-5 text-sm text-slate-300">Email</p>

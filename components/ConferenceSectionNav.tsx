@@ -31,7 +31,7 @@ export default function ConferenceSectionNav() {
                 href={link.href}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                   isActive
-                    ? 'bg-[#3A4A6B] text-white shadow-[0_10px_24px_-12px_rgba(12,19,37,0.35)]'
+                    ? 'bg-navy-900 text-white shadow-[0_10px_24px_-12px_rgba(12,19,37,0.35)]'
                     : 'border border-slate-300 bg-white/70 text-slate-700 hover:bg-white dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800'
                 }`}
               >

@@ -90,7 +90,7 @@ const MobileNav = () => {
               <div className="border-b border-slate-200/80 px-4 py-5 dark:border-gray-800">
                 <div className="flex items-start justify-between gap-3">
                   <Link href="/" className="flex min-w-0 items-center gap-3" onClick={closeNav}>
-                    <div className="rounded-2xl border border-slate-200/80 bg-white p-1.5 shadow-[0_10px_30px_-18px_rgba(14,165,233,0.55)] dark:border-gray-700 dark:bg-gray-900">
+                    <div className="rounded-2xl border border-slate-200/80 bg-white p-1.5 shadow-[0_10px_30px_-18px_rgba(12,24,48,0.55)] dark:border-gray-700 dark:bg-gray-900">
                       <Image
                         src="/static/images/smslogo.jpg"
                         alt="smslogo"
@@ -126,7 +126,7 @@ const MobileNav = () => {
                     </svg>
                   </button>
                 </div>
-                <div className="mt-4 rounded-2xl bg-gradient-to-r from-sky-50 to-cyan-50 px-4 py-3 dark:from-sky-950/40 dark:to-cyan-950/30">
+                <div className="to-gold-50 dark:to-gold-950/30 mt-4 rounded-2xl bg-gradient-to-r from-sky-50 px-4 py-3 dark:from-sky-950/40">
                   <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
                     Navigation
                   </p>
@@ -185,7 +185,7 @@ const MobileNav = () => {
                                     href={child.href}
                                     className={`block rounded-2xl px-4 py-3 transition ${
                                       isChildActive
-                                        ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-[0_18px_30px_-18px_rgba(14,165,233,0.85)]'
+                                        ? 'from-navy-900 to-navy-800 bg-gradient-to-r text-white shadow-[0_18px_30px_-18px_rgba(12,24,48,0.85)]'
                                         : 'bg-white text-slate-800 hover:text-sky-700 dark:bg-gray-950 dark:text-gray-100 dark:hover:text-sky-300'
                                     }`}
                                     onClick={closeNav}
@@ -215,7 +215,7 @@ const MobileNav = () => {
                         href={link.href}
                         className={`group flex items-center justify-between rounded-2xl border px-4 py-3.5 text-base font-semibold transition ${
                           isActive
-                            ? 'border-sky-200 bg-gradient-to-r from-sky-500 to-cyan-500 text-white shadow-[0_18px_30px_-18px_rgba(14,165,233,0.85)] dark:border-sky-700'
+                            ? 'from-navy-900 to-navy-800 border-sky-200 bg-gradient-to-r text-white shadow-[0_18px_30px_-18px_rgba(12,24,48,0.85)] dark:border-sky-700'
                             : 'border-transparent bg-slate-50 text-slate-800 hover:border-slate-200 hover:bg-white hover:text-sky-700 dark:bg-gray-900/80 dark:text-gray-100 dark:hover:border-gray-700 dark:hover:bg-gray-900 dark:hover:text-sky-300'
                         }`}
                         onClick={closeNav}
