@@ -1,10 +1,10 @@
 import 'css/tailwind.css'
-import 'pliny/search/algolia.css'
 import 'remark-github-blockquote-alert/alert.css'
 
 import { Inter, Source_Serif_4 } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
-import { SearchProvider, SearchConfig } from 'pliny/search'
+// Import the kbar provider directly: 'pliny/search' also bundles Algolia DocSearch (~85 KB)
+import { KBarSearchProvider, KBarConfig } from 'pliny/search/KBar'
 import Header from '@/components/Header'
 import SectionContainer from '@/components/SectionContainer'
 import Footer from '@/components/Footer'
@@ -108,10 +108,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* <ThemeProviders> */}
         <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
         <SectionContainer>
-          <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+          <KBarSearchProvider kbarConfig={(siteMetadata.search as KBarConfig).kbarConfig}>
             <Header />
             <main className="mb-auto">{children}</main>
-          </SearchProvider>
+          </KBarSearchProvider>
           <Footer />
         </SectionContainer>
         <ScrollReveal />
