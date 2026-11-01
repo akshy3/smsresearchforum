@@ -14,7 +14,7 @@ export default function NewslettersPage() {
         <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           SMS Research Forum
         </p>
-        <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
           Newsletters
         </h1>
         <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">

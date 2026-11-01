@@ -86,7 +86,7 @@ export default function SynopsisLibrary() {
       {/* Header */}
       <div className="border-b border-slate-200 bg-white shadow-sm">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-          <h1 className="mb-2 text-3xl font-bold text-slate-900 sm:text-4xl">
+          <h1 className="mb-2 text-3xl font-semibold text-slate-900 sm:text-4xl">
             PhD Synopsis Library
           </h1>
           <p className="text-slate-600">Explore research synopses from our doctoral students</p>

@@ -30,14 +30,14 @@ export default function GalleryPage() {
           {galleryPhotos.map((photo, index) => (
             <div
               key={photo.src}
-              className="relative aspect-[3/2] overflow-hidden rounded-[1.25rem] border border-white/70 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+              className="group relative aspect-[3/2] overflow-hidden rounded-[1.25rem] border border-white/70 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
             >
               <Image
                 src={photo.src}
                 alt={photo.alt}
                 fill
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover transition duration-700 ease-out group-hover:scale-105"
                 priority={index < 3}
               />
             </div>

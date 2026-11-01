@@ -21,7 +21,7 @@ export default function Conference2026Page() {
             <p className="text-sm font-semibold tracking-[0.22em] text-sky-700 uppercase dark:text-sky-300">
               SMS Research Forum
             </p>
-            <h1 className="mt-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
               {conference2026.title}
             </h1>
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -67,8 +67,8 @@ export default function Conference2026Page() {
               </div>
             </div>
 
-            <div className="mt-6 rounded-[1.75rem] border border-fuchsia-200 bg-[linear-gradient(135deg,#fff7fb_0%,#f4ecff_48%,#eef5ff_100%)] p-5 shadow-[0_18px_40px_-28px_rgba(91,33,182,0.5)] dark:border-fuchsia-900/50 dark:bg-[linear-gradient(135deg,rgba(80,7,36,0.35)_0%,rgba(59,7,100,0.25)_48%,rgba(8,47,73,0.25)_100%)]">
-              <p className="text-xs font-semibold tracking-[0.14em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
+            <div className="border-gold-300 from-gold-50 to-navy-50 dark:border-gold-900/50 mt-6 rounded-[1.75rem] border bg-gradient-to-br via-white p-5 shadow-[0_18px_40px_-28px_rgba(12,24,48,0.3)] dark:bg-[linear-gradient(135deg,rgba(57,33,12,0.4)_0%,rgba(17,31,57,0.4)_100%)]">
+              <p className="text-gold-700 dark:text-gold-300 text-xs font-semibold tracking-[0.14em] uppercase">
                 Conference Concluded
               </p>
               <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
@@ -211,7 +211,7 @@ export default function Conference2026Page() {
       </section>
 
       <section className="mt-8">
-        <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#f7f7fb_0%,#eef2ff_52%,#fdf2f8_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <article className="from-navy-50 to-gold-50 rounded-[1.75rem] border border-slate-300/70 bg-gradient-to-br via-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Timeline
           </p>
@@ -259,7 +259,7 @@ export default function Conference2026Page() {
                     {item.label}
                   </p>
                   {item.isTentative && (
-                    <p className="mt-1 text-xs font-medium tracking-wide text-amber-700 uppercase dark:text-amber-300">
+                    <p className="text-gold-700 dark:text-gold-300 mt-1 text-xs font-medium tracking-wide uppercase">
                       Tentative / awaiting confirmation
                     </p>
                   )}
@@ -313,7 +313,7 @@ export default function Conference2026Page() {
               key={journal.journal}
               className="rounded-3xl border border-white/70 bg-white/80 p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800/70"
             >
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                 {journal.journal}
               </h3>
               <p className="mt-3 text-sm font-semibold text-slate-700 dark:text-gray-200">
@@ -353,7 +353,7 @@ export default function Conference2026Page() {
                     {activity.format}
                   </span>
                 </div>
-                <h3 className="mt-3 text-base font-bold text-slate-900 dark:text-white">
+                <h3 className="mt-3 text-base font-semibold text-slate-900 dark:text-white">
                   {activity.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-gray-300">

@@ -112,7 +112,7 @@ export default function ConferenceProgrammePage() {
                           key={speaker.name}
                           className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-900/70"
                         >
-                          <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                          <h4 className="text-base font-semibold text-slate-900 dark:text-white">
                             {speaker.name}
                           </h4>
                           <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-gray-200">
@@ -132,7 +132,7 @@ export default function ConferenceProgrammePage() {
                     <p className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase dark:text-gray-400">
                       Moderator
                     </p>
-                    <h4 className="mt-2 text-base font-bold text-slate-900 dark:text-white">
+                    <h4 className="mt-2 text-base font-semibold text-slate-900 dark:text-white">
                       {meetTheEditors.moderator.name}
                     </h4>
                     <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-gray-200">
@@ -209,7 +209,7 @@ export default function ConferenceProgrammePage() {
                       <p className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase dark:text-gray-400">
                         Resource Person
                       </p>
-                      <h4 className="mt-2 text-lg font-bold text-slate-900 dark:text-white">
+                      <h4 className="mt-2 text-lg font-semibold text-slate-900 dark:text-white">
                         {session.speaker.name}
                       </h4>
                       <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-gray-200">

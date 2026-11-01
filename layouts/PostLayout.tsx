@@ -73,7 +73,9 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
               className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-900"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <h2 className="text-lg font-bold text-slate-900 dark:text-white">Event details</h2>
+                <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  Event details
+                </h2>
                 <EventDate start={eventDate} end={eventEndDate} />
               </div>
               <dl className="mt-4 grid grid-cols-1 gap-4 text-sm sm:grid-cols-3">

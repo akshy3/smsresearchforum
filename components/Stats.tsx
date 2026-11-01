@@ -1,26 +1,32 @@
 import Image from 'next/image'
 import Link from '@/components/Link'
 
+// Committees 2026-27 (full duties are on the About page, from data/committeesData.ts)
 const metrics = [
   {
     id: 1,
     emphasis: 'Programme Committee',
-    rest: 'Plans seminars, workshops, and flagship academic events',
+    rest: 'Plans workshops, seminars, expert talks, paper discussions and colloquia',
   },
   {
     id: 2,
-    emphasis: 'Career & Placement Committee',
-    rest: 'Supports internships, placements, and researcher career development',
+    emphasis: 'Editorial Committee',
+    rest: 'Content, reports, the newsletter, and alumni and placement coordination',
   },
   {
     id: 3,
-    emphasis: 'Editorial Committee',
-    rest: 'Curates newsletters, reports, and forum communication',
+    emphasis: 'Social & Welfare Committee',
+    rest: 'Scholar interaction, welfare, peer support and inclusion',
   },
   {
     id: 4,
-    emphasis: 'Social & Welfare Committee',
-    rest: 'Builds scholar community, inclusion, and wellbeing initiatives',
+    emphasis: 'Technical Committee',
+    rest: 'Design, digital publicity, photography, archives and event tech support',
+  },
+  {
+    id: 5,
+    emphasis: 'Finance Committee',
+    rest: 'Budgets, approved expenditure, bills and financial records',
   },
 ]
 
@@ -67,7 +73,7 @@ export default function Stats() {
               {metrics.map((item) => (
                 <div
                   key={item.id}
-                  className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
+                  className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:last:col-span-2"
                 >
                   <p className="text-base font-semibold text-white">{item.emphasis}</p>
                   <p className="mt-2 text-sm leading-relaxed text-slate-300">{item.rest}</p>

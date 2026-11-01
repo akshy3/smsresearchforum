@@ -26,8 +26,8 @@ export default function ConferenceCallForPapersPage() {
           <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
             {conference2026.callForAbstracts}
           </p>
-          <div className="mt-6 rounded-[1.25rem] border border-fuchsia-200 bg-[linear-gradient(135deg,#fff7fb_0%,#f4ecff_48%,#eef5ff_100%)] p-4 shadow-[0_12px_28px_-18px_rgba(91,33,182,0.45)] dark:border-fuchsia-900/50 dark:bg-[linear-gradient(135deg,rgba(80,7,36,0.35)_0%,rgba(59,7,100,0.25)_48%,rgba(8,47,73,0.25)_100%)]">
-            <p className="text-xs font-semibold tracking-[0.14em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
+          <div className="border-gold-300 from-gold-50 to-navy-50 dark:border-gold-900/50 mt-6 rounded-[1.25rem] border bg-gradient-to-br via-white p-4 shadow-[0_12px_28px_-18px_rgba(12,24,48,0.3)] dark:bg-[linear-gradient(135deg,rgba(57,33,12,0.4)_0%,rgba(17,31,57,0.4)_100%)]">
+            <p className="text-gold-700 dark:text-gold-300 text-xs font-semibold tracking-[0.14em] uppercase">
               Conference Archive
             </p>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -35,7 +35,7 @@ export default function ConferenceCallForPapersPage() {
                 <p className="text-xs font-semibold text-slate-600 dark:text-gray-300">
                   Abstract Submission Closed
                 </p>
-                <p className="mt-1 text-base font-black text-indigo-700 dark:text-indigo-300">
+                <p className="text-navy-700 dark:text-navy-200 mt-1 text-base font-semibold">
                   {conference2026.abstractSubmissionDeadline}
                 </p>
               </div>
@@ -43,7 +43,7 @@ export default function ConferenceCallForPapersPage() {
                 <p className="text-xs font-semibold text-slate-600 dark:text-gray-300">
                   Full Paper Submission Closed
                 </p>
-                <p className="mt-1 text-base font-black text-indigo-700 dark:text-indigo-300">
+                <p className="text-navy-700 dark:text-navy-200 mt-1 text-base font-semibold">
                   {conference2026.fullPaperSubmissionDeadline}
                 </p>
               </div>
@@ -123,7 +123,9 @@ export default function ConferenceCallForPapersPage() {
               key={section.title}
               className="rounded-3xl border border-slate-200 bg-slate-50 p-5 dark:border-gray-700 dark:bg-gray-800/70"
             >
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">{section.title}</h3>
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                {section.title}
+              </h3>
               <ul className="mt-4 space-y-3">
                 {section.items.map((item) => (
                   <li
@@ -156,7 +158,7 @@ export default function ConferenceCallForPapersPage() {
               key={journal.journal}
               className="rounded-3xl border border-white/70 bg-white/80 p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800/70"
             >
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                 {journal.journal}
               </h3>
               <p className="mt-3 text-sm font-semibold text-slate-700 dark:text-gray-200">

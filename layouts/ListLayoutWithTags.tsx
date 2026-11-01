@@ -209,7 +209,7 @@ export default function ListLayoutWithTags({
                       </div>
                     </div>
 
-                    <h2 className="mt-4 text-xl leading-snug font-bold tracking-tight text-slate-900 sm:text-2xl dark:text-white">
+                    <h2 className="mt-4 text-xl leading-snug font-semibold tracking-tight text-slate-900 sm:text-2xl dark:text-white">
                       <Link href={`/${path}`} className="text-slate-900 dark:text-white">
                         {title}
                       </Link>

@@ -12,7 +12,7 @@ const features = [
   {
     name: 'Committees and Community',
     description:
-      'See how the forum is organized through committees that support programmes, editorial work, careers, and scholar wellbeing.',
+      'See how the forum’s five committees run programmes, communications, scholar welfare, technical support and finances.',
     icon: UserGroupIcon,
     href: '/about#committees',
   },
