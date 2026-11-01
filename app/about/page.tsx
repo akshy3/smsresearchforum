@@ -4,8 +4,8 @@ import { slug } from 'github-slugger'
 import Link from '@/components/Link'
 import committeesData, {
   committeesYear,
+  committeeGuidelines,
   forumCoordinators,
-  generalInstructions,
 } from '@/data/committeesData'
 
 export const metadata = genPageMetadata({ title: 'About' })
@@ -254,75 +254,30 @@ export default function Page() {
                   ))}
                 </ul>
               </div>
-
-              <details className="mt-6 rounded-xl border border-slate-200 px-4 py-3 dark:border-gray-700">
-                <summary className="text-navy-800 cursor-pointer text-sm font-semibold dark:text-gray-100">
-                  Responsibilities
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
-                  {committee.summary}
-                </p>
-                {committee.duties.map((group) => (
-                  <div key={group.title || committee.name} className="mt-4">
-                    {group.title && (
-                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white">
-                        {group.title}
-                      </h4>
-                    )}
-                    <ul className="mt-2 space-y-2">
-                      {group.items.map((duty) => (
-                        <li
-                          key={duty}
-                          className="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300"
-                        >
-                          <span className="bg-gold-500 mt-1.5 h-2 w-2 shrink-0 rounded-full" />
-                          <span className="leading-relaxed">{duty}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </details>
-
-              <details className="mt-3 rounded-xl border border-slate-200 px-4 py-3 dark:border-gray-700">
-                <summary className="text-navy-800 cursor-pointer text-sm font-semibold dark:text-gray-100">
-                  Instructions for the Committee Heads
-                </summary>
-                <ul className="mt-3 space-y-2">
-                  {committee.headInstructions.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300"
-                    >
-                      <span className="bg-navy-400 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" />
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </details>
             </article>
           ))}
         </div>
 
-        <div className={`${card} mt-8 p-6`}>
-          <h3 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
-            General Instructions for All Committee Heads
-          </h3>
-          <ol className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {generalInstructions.map((item, index) => (
-              <li key={item.title} className="flex items-start gap-3 text-sm">
-                <span className="bg-navy-900 text-gold-300 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold">
-                  {index + 1}
-                </span>
-                <span className="leading-relaxed text-slate-600 dark:text-gray-300">
-                  <span className="font-semibold text-slate-900 dark:text-white">
-                    {item.title}:
-                  </span>{' '}
-                  {item.text}
-                </span>
-              </li>
-            ))}
-          </ol>
+        <div className="from-navy-900 to-navy-950 mt-8 flex flex-col gap-4 rounded-2xl bg-gradient-to-br p-6 text-white sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-gold-300 text-xs font-semibold tracking-[0.14em] uppercase">
+              For committee members
+            </p>
+            <h3 className="mt-2 text-2xl font-semibold tracking-tight">
+              {committeeGuidelines.title}
+            </h3>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-300">
+              {committeeGuidelines.description}
+            </p>
+          </div>
+          <a
+            href={committeeGuidelines.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gold-400 text-navy-950 hover:bg-gold-300 inline-flex shrink-0 items-center justify-center rounded-lg px-6 py-3 text-sm font-semibold shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          >
+            Download PDF
+          </a>
         </div>
       </section>
     </div>

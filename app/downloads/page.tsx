@@ -1,6 +1,7 @@
 import Link from '@/components/Link'
 import { genPageMetadata } from 'app/seo'
 import { conference2026 } from '@/data/conferenceData'
+import { committeeGuidelines } from '@/data/committeesData'
 
 export const metadata = genPageMetadata({
   title: 'Downloads',
@@ -34,6 +35,12 @@ const resources = [
     description: conference2026.proceedings.description,
     href: conference2026.proceedings.href,
     cta: conference2026.proceedings.cta,
+  },
+  {
+    title: committeeGuidelines.title,
+    description: committeeGuidelines.description,
+    href: committeeGuidelines.href,
+    cta: 'Download Guidelines',
   },
 ]
 
