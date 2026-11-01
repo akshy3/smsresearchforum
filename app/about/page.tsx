@@ -2,7 +2,11 @@ import { genPageMetadata } from 'app/seo'
 import Image from 'next/image'
 import { slug } from 'github-slugger'
 import Link from '@/components/Link'
-import committeesData, { committeesYear, generalInstructions } from '@/data/committeesData'
+import committeesData, {
+  committeesYear,
+  forumCoordinators,
+  generalInstructions,
+} from '@/data/committeesData'
 
 export const metadata = genPageMetadata({ title: 'About' })
 
@@ -143,6 +147,22 @@ export default function Page() {
                 </li>
               ))}
             </ul>
+
+            <p className="text-gold-300 mt-8 text-xs font-semibold tracking-[0.14em] uppercase">
+              Forum Coordinators {committeesYear}
+            </p>
+            <div className="mt-3 space-y-3">
+              {forumCoordinators.map((group) => (
+                <div
+                  key={group.title}
+                  className="border-gold-300/30 bg-gold-400/10 rounded-xl border px-4 py-3"
+                >
+                  <p className="text-sm text-slate-300">{group.title}</p>
+                  <p className="mt-1 font-semibold">{group.names.join(' & ')}</p>
+                </div>
+              ))}
+            </div>
+
             <p className="mt-5 text-sm leading-relaxed text-slate-300">
               Scholar-led committees carry the forum&apos;s work through the year. If you are a
               scholar at SMS, you are encouraged to participate, present your work, and contribute.

@@ -18,6 +18,12 @@ export interface Committee {
 
 export const committeesYear = '2026–27'
 
+/** Scholar coordinators, above the committee heads */
+export const forumCoordinators = [
+  { title: 'Coordinators', names: ['Akshay M', 'Sruthy Gopinath'] },
+  { title: 'Assistant Coordinators', names: ['Hasnath Hameed', 'Shahanas A M'] },
+]
+
 const committeesData: Committee[] = [
   {
     name: 'Programme Committee',
