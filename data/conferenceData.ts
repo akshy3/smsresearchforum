@@ -179,6 +179,7 @@ export const conference2026 = {
   tagline: 'Ignite the Research Aptitude',
   theme: 'Digital Futures: Reimagining Social and Business Models',
   heroImage: '/static/images/conference26.jpeg',
+  shareImage: '/static/images/share/conference-2026.jpg',
   callForAbstractsFlyer: '/static/images/DC26/call for abstracts.jpeg',
   proceedings: {
     title: 'Conference Proceedings 2026',

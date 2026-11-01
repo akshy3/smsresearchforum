@@ -7,7 +7,7 @@ import ConferenceSectionNav from '@/components/ConferenceSectionNav'
 export const metadata = genPageMetadata({
   title: `${conference2026.shortTitle} - Conference Papers`,
   description: conference2026.callForAbstracts,
-  image: conference2026.heroImage,
+  image: conference2026.shareImage,
 })
 
 export default function ConferenceCallForPapersPage() {

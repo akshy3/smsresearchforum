@@ -5,7 +5,7 @@ import ConferenceSectionNav from '@/components/ConferenceSectionNav'
 export const metadata = genPageMetadata({
   title: `${conference2026.shortTitle} - Doctoral Colloquium`,
   description: conference2026.doctoralColloquium.eligibility,
-  image: conference2026.heroImage,
+  image: conference2026.shareImage,
 })
 
 export default function ConferenceDoctoralColloquiumPage() {

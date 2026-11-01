@@ -6,6 +6,7 @@ export const metadata = genPageMetadata({
   title: `${conference2026.shortTitle} - Programme Schedule`,
   description:
     'Full programme schedule for the International Conference & Doctoral Colloquium 2026.',
+  image: conference2026.shareImage,
 })
 
 const day1 = {

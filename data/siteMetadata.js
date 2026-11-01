@@ -3,13 +3,15 @@ const siteMetadata = {
   title: 'SMS Research Forum',
   author: 'SMS Research Forum',
   headerTitle: 'smsresearchforum',
-  description: 'An initiative of School of Management Studies, CUSAT.',
+  description:
+    'SMS Research Forum, School of Management Studies, CUSAT: workshops, doctoral colloquia, research updates and a community for scholars and faculty.',
   language: 'en-us',
   theme: 'light', // system, dark or light
   siteUrl: 'https://www.smsresearchforum.org',
   siteRepo: 'https://github.com/akshy3/smsresearchforum',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/smslogo.jpg`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/socialbanner.png`,
+  // 1200x630 link-preview image (WhatsApp, LinkedIn, X); keep it under ~300 KB
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/share/sms-research-forum.jpg`,
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'researchforumsms@gmail.com',
   github: 'https://github.com',

@@ -8,7 +8,7 @@ import Fold from '@/components/Fold'
 export const metadata = genPageMetadata({
   title: conference2026.title,
   description: conference2026.subtitle,
-  image: conference2026.heroImage,
+  image: conference2026.shareImage,
 })
 
 export default function Conference2026Page() {

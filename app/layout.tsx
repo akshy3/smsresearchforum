@@ -12,6 +12,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
+import { defaultShareImage } from './seo'
 
 // Inter for text, Source Serif 4 for headings
 const inter = Inter({
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     description: siteMetadata.description,
     url: './',
     siteName: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
+    images: [defaultShareImage],
     locale: 'en_US',
     type: 'website',
   },
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     title: siteMetadata.title,
     card: 'summary_large_image',
-    images: [siteMetadata.socialBanner],
+    images: [defaultShareImage],
   },
 }
 

@@ -6,7 +6,7 @@ import ConferenceSectionNav from '@/components/ConferenceSectionNav'
 export const metadata = genPageMetadata({
   title: `${conference2026.shortTitle} - Participation`,
   description: conference2026.formatSummary,
-  image: conference2026.heroImage,
+  image: conference2026.shareImage,
 })
 
 export default function ConferenceParticipationPage() {
