@@ -26,7 +26,7 @@ export default function ConferenceCallForPapersPage() {
           <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
             {conference2026.callForAbstracts}
           </p>
-          <div className="border-gold-300 from-gold-50 to-navy-50 dark:border-gold-900/50 mt-6 rounded-[1.25rem] border bg-gradient-to-br via-white p-4 shadow-[0_12px_28px_-18px_rgba(12,24,48,0.3)] dark:bg-[linear-gradient(135deg,rgba(57,33,12,0.4)_0%,rgba(17,31,57,0.4)_100%)]">
+          <div className="border-gold-300 to-navy-50 dark:border-gold-900/50 mt-6 rounded-[1.25rem] border bg-gradient-to-br from-white via-white p-4 shadow-[0_12px_28px_-18px_rgba(12,24,48,0.3)] dark:bg-[linear-gradient(135deg,rgba(57,33,12,0.4)_0%,rgba(17,31,57,0.4)_100%)]">
             <p className="text-gold-700 dark:text-gold-300 text-xs font-semibold tracking-[0.14em] uppercase">
               Conference Archive
             </p>

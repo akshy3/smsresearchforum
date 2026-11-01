@@ -54,7 +54,7 @@ export default function Page() {
           <Image
             src="/static/images/sms_cusat.jpg"
             alt="School of Management Studies, CUSAT"
-            className="animate-slow-zoom h-full w-full object-cover"
+            className="animate-slow-zoom h-full w-full object-cover saturate-[0.55]"
             sizes="(max-width: 1280px) 100vw, 1280px"
             fill
             priority

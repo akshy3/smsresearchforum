@@ -126,7 +126,7 @@ const MobileNav = () => {
                     </svg>
                   </button>
                 </div>
-                <div className="to-gold-50 dark:to-gold-950/30 mt-4 rounded-2xl bg-gradient-to-r from-sky-50 px-4 py-3 dark:from-sky-950/40">
+                <div className="to-navy-50 dark:to-navy-950/30 mt-4 rounded-2xl bg-gradient-to-r from-sky-50 px-4 py-3 dark:from-sky-950/40">
                   <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                     Navigation
                   </p>

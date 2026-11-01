@@ -10,7 +10,7 @@ export const metadata = genPageMetadata({
 export default function NewslettersPage() {
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <section className="to-gold-50 rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:via-gray-900 dark:to-sky-950/20">
+      <section className="to-navy-50 rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:via-gray-900 dark:to-sky-950/20">
         <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           SMS Research Forum
         </p>

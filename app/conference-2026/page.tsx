@@ -32,7 +32,7 @@ export default function Conference2026Page() {
               {conference2026.tagline}
             </p>
 
-            <div className="dark:to-gold-950/20 mt-6 rounded-3xl bg-[linear-gradient(135deg,#d8e2ef_0%,#e8eef7_52%,#dbe6f2_100%)] p-5 dark:from-sky-950/30 dark:via-gray-900">
+            <div className="dark:to-navy-950/20 mt-6 rounded-3xl bg-[linear-gradient(135deg,#d8e2ef_0%,#e8eef7_52%,#dbe6f2_100%)] p-5 dark:from-sky-950/30 dark:via-gray-900">
               <p className="text-xs font-semibold tracking-[0.14em] text-sky-800 uppercase dark:text-sky-300">
                 Conference Theme
               </p>
@@ -68,7 +68,7 @@ export default function Conference2026Page() {
               </div>
             </div>
 
-            <div className="border-gold-300 from-gold-50 to-navy-50 dark:border-gold-900/50 mt-6 rounded-[1.75rem] border bg-gradient-to-br via-white p-5 shadow-[0_18px_40px_-28px_rgba(12,24,48,0.3)] dark:bg-[linear-gradient(135deg,rgba(57,33,12,0.4)_0%,rgba(17,31,57,0.4)_100%)]">
+            <div className="border-gold-300 to-navy-50 dark:border-gold-900/50 mt-6 rounded-[1.75rem] border bg-gradient-to-br from-white via-white p-5 shadow-[0_18px_40px_-28px_rgba(12,24,48,0.3)] dark:bg-[linear-gradient(135deg,rgba(57,33,12,0.4)_0%,rgba(17,31,57,0.4)_100%)]">
               <p className="text-gold-700 dark:text-gold-300 text-xs font-semibold tracking-[0.14em] uppercase">
                 Conference Concluded
               </p>
@@ -212,7 +212,7 @@ export default function Conference2026Page() {
       </section>
 
       <section className="mt-8">
-        <Fold className="from-navy-50 to-gold-50 rounded-[1.75rem] border border-slate-300/70 bg-gradient-to-br via-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="from-navy-50 to-navy-50 rounded-[1.75rem] border border-slate-300/70 bg-gradient-to-br via-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Timeline
           </p>

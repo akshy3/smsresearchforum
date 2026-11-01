@@ -9,7 +9,7 @@ export default function Hero() {
     <section className="relative overflow-hidden rounded-[2rem] border border-slate-200/70 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.5)]">
       <div className="absolute inset-0">
         <Image
-          className="animate-slow-zoom h-full w-full object-cover"
+          className="animate-slow-zoom h-full w-full object-cover saturate-[0.55]"
           src="/static/images/SMS.jpg"
           alt="SMS research forum scholars collaborating"
           width={1600}
@@ -17,8 +17,8 @@ export default function Hero() {
           sizes="(max-width: 1280px) 100vw, 1280px"
           priority
         />
-        <div className="from-navy-950/90 via-navy-900/65 to-navy-800/30 absolute inset-0 bg-gradient-to-r" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(228,176,84,0.2),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(70,98,143,0.35),transparent_35%)]" />
+        {/* Cool navy only: a gold wash over the red brick photo turned muddy brown */}
+        <div className="from-navy-950/90 via-navy-900/70 to-navy-800/35 absolute inset-0 bg-gradient-to-r" />
       </div>
 
       <div className="relative px-5 py-10 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
