@@ -99,7 +99,7 @@ const MobileNav = () => {
                       />
                     </div>
                     <div className="min-w-0">
-                      <p className="truncate text-sm font-black tracking-[0.2em] text-slate-900 uppercase dark:text-white">
+                      <p className="truncate text-sm font-black tracking-[0.14em] text-slate-900 uppercase dark:text-white">
                         SMS Research Forum
                       </p>
                       <p className="mt-0.5 truncate text-[11px] font-medium tracking-[0.12em] text-slate-500 uppercase dark:text-gray-400">
@@ -127,7 +127,7 @@ const MobileNav = () => {
                   </button>
                 </div>
                 <div className="to-gold-50 dark:to-gold-950/30 mt-4 rounded-2xl bg-gradient-to-r from-sky-50 px-4 py-3 dark:from-sky-950/40">
-                  <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+                  <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                     Navigation
                   </p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-gray-300">

@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <p className="text-gold-300 text-sm font-semibold tracking-[0.2em] uppercase">
+            <p className="text-gold-300 text-sm font-semibold tracking-[0.14em] uppercase">
               SMS Research Forum
             </p>
-            <h2 className="mt-3 text-2xl font-extrabold tracking-tight sm:text-3xl">
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
               Research culture, academic exchange, and scholar support at SMS.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-gold-300 text-sm font-semibold tracking-[0.18em] uppercase">
+            <p className="text-gold-300 text-sm font-semibold tracking-[0.14em] uppercase">
               Quick Links
             </p>
             <div className="mt-5 space-y-3 text-sm text-slate-300">
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-gold-300 text-sm font-semibold tracking-[0.18em] uppercase">
+            <p className="text-gold-300 text-sm font-semibold tracking-[0.14em] uppercase">
               Connect
             </p>
             <p className="mt-5 text-sm text-slate-300">Email</p>

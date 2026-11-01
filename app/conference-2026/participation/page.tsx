@@ -16,10 +16,10 @@ export default function ConferenceParticipationPage() {
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Participation Archive
           </p>
-          <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Participation and Presentation Details
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
@@ -55,10 +55,10 @@ export default function ConferenceParticipationPage() {
         </article>
 
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Fee Structure
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Registration Fees
           </h2>
           <div className="mt-6 space-y-3">
@@ -85,10 +85,10 @@ export default function ConferenceParticipationPage() {
       </section>
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Contacts
         </p>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
           Organizing Team Contacts
         </h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">

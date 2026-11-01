@@ -41,7 +41,7 @@ export default function NextEvent({ events }: { events: EventSummary[] }) {
         className="group border-gold-300 from-gold-50 to-navy-50 hover:border-gold-400 dark:border-gold-900/60 dark:from-gold-950/40 dark:to-navy-950/40 flex flex-col gap-4 rounded-2xl border bg-gradient-to-r via-white p-5 shadow-sm transition hover:shadow-md sm:flex-row sm:items-center sm:justify-between sm:p-6 dark:via-gray-900"
       >
         <div className="min-w-0">
-          <p className="text-gold-700 dark:text-gold-300 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase">
+          <p className="text-gold-700 dark:text-gold-300 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.14em] uppercase">
             <span className="bg-gold-500 h-2 w-2 rounded-full" aria-hidden="true" />
             Next event
           </p>

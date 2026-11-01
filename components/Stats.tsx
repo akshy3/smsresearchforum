@@ -42,10 +42,10 @@ export default function Stats() {
         <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
           <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 xl:items-start">
             <div>
-              <p className="text-gold-300 text-sm font-semibold tracking-[0.2em] uppercase">
+              <p className="text-gold-300 text-sm font-semibold tracking-[0.14em] uppercase">
                 Forum Structure
               </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 How the Forum Works
               </h2>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-200">

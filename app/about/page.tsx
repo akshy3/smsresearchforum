@@ -37,10 +37,10 @@ export default function Page() {
       <section className="overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50 shadow-sm dark:border-gray-700 dark:from-gray-900 dark:to-gray-900/70">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="p-6 sm:p-8 lg:p-10">
-            <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+            <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
               About Us
             </p>
-            <h1 className="mt-3 text-3xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+            <h1 className="mt-3 text-3xl leading-tight font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
               SMS Research Forum
             </h1>
             <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
@@ -92,7 +92,7 @@ export default function Page() {
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Vision
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
@@ -102,7 +102,7 @@ export default function Page() {
         </article>
 
         <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Mission
           </h2>
           <ul className="mt-3 space-y-2 text-sm text-slate-600 sm:text-base dark:text-gray-300">
@@ -127,7 +127,7 @@ export default function Page() {
             />
           </div>
           <div className="p-6 lg:col-span-3 lg:p-8">
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
               Community and Leadership
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
@@ -149,10 +149,10 @@ export default function Page() {
         className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
       >
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Forum Structure
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Committees
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
@@ -168,10 +168,10 @@ export default function Page() {
               key={committee.name}
               className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 dark:border-gray-700 dark:bg-gray-950/40"
             >
-              <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+              <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                 Committee
               </p>
-              <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
                 {committee.name}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">

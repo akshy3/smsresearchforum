@@ -21,10 +21,10 @@ export default function ConferenceProgrammePage() {
       <ConferenceSectionNav />
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dde6f1_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Featured Sessions
         </p>
-        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
           Workshops and Meet the Editors
         </h1>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -35,10 +35,10 @@ export default function ConferenceProgrammePage() {
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf2f8_0%,#e3ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
         <div className="max-w-4xl">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Featured Sessions
           </p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Meet the Editors and Workshops
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -63,10 +63,10 @@ export default function ConferenceProgrammePage() {
               )}
 
               <div className="p-6">
-                <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+                <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                   Lead Session
                 </p>
-                <h3 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                <h3 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
                   {meetTheEditors.title}
                 </h3>
                 {meetTheEditors.subtitle && (
@@ -103,7 +103,7 @@ export default function ConferenceProgrammePage() {
 
                 {meetTheEditors.speakers && (
                   <div className="mt-6">
-                    <p className="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase dark:text-gray-400">
+                    <p className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase dark:text-gray-400">
                       Journal Editors
                     </p>
                     <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -129,7 +129,7 @@ export default function ConferenceProgrammePage() {
 
                 {meetTheEditors.moderator && (
                   <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 dark:border-gray-700 dark:bg-gray-900/70">
-                    <p className="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase dark:text-gray-400">
+                    <p className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase dark:text-gray-400">
                       Moderator
                     </p>
                     <h4 className="mt-2 text-base font-bold text-slate-900 dark:text-white">
@@ -151,10 +151,10 @@ export default function ConferenceProgrammePage() {
         {workshops?.sessions && (
           <div className="mt-8">
             <div className="max-w-4xl">
-              <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+              <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                 Workshops
               </p>
-              <h3 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              <h3 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
                 Workshop Sessions
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -181,10 +181,10 @@ export default function ConferenceProgrammePage() {
                     </div>
                   )}
                   <div className="p-5">
-                    <p className="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase dark:text-gray-400">
+                    <p className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase dark:text-gray-400">
                       Workshop
                     </p>
-                    <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                    <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
                       {session.title}
                     </h3>
                     <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -206,7 +206,7 @@ export default function ConferenceProgrammePage() {
                       </div>
                     </div>
                     <div className="mt-5 rounded-2xl bg-slate-50 px-4 py-4 dark:bg-gray-900/70">
-                      <p className="text-xs font-semibold tracking-[0.18em] text-slate-500 uppercase dark:text-gray-400">
+                      <p className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase dark:text-gray-400">
                         Resource Person
                       </p>
                       <h4 className="mt-2 text-lg font-bold text-slate-900 dark:text-white">

@@ -17,17 +17,17 @@ export default function ConferenceCallForPapersPage() {
 
       <section className="mt-8 grid grid-cols-1 gap-6 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dde6f1_100%)] p-6 shadow-sm lg:grid-cols-[1.05fr_0.95fr] dark:border-gray-700 dark:bg-gray-900">
         <article>
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Papers
           </p>
-          <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Conference Papers and Submission Guidelines
           </h1>
           <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
             {conference2026.callForAbstracts}
           </p>
           <div className="mt-6 rounded-[1.25rem] border border-fuchsia-200 bg-[linear-gradient(135deg,#fff7fb_0%,#f4ecff_48%,#eef5ff_100%)] p-4 shadow-[0_12px_28px_-18px_rgba(91,33,182,0.45)] dark:border-fuchsia-900/50 dark:bg-[linear-gradient(135deg,rgba(80,7,36,0.35)_0%,rgba(59,7,100,0.25)_48%,rgba(8,47,73,0.25)_100%)]">
-            <p className="text-xs font-semibold tracking-[0.18em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
+            <p className="text-xs font-semibold tracking-[0.14em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
               Conference Archive
             </p>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -81,10 +81,10 @@ export default function ConferenceCallForPapersPage() {
             key={track.slug}
             className="rounded-[1.75rem] border border-slate-400/70 bg-[linear-gradient(135deg,#dbe5f0_0%,#ccd9e8_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
           >
-            <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+            <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
               Track {index + 1}
             </p>
-            <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
               {track.title}
             </h2>
             <p className="mt-2 text-lg font-semibold text-slate-800 dark:text-gray-200">
@@ -111,10 +111,10 @@ export default function ConferenceCallForPapersPage() {
         id="guidelines"
         className="mt-8 scroll-mt-28 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
       >
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Submission Guidelines
         </p>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
           International Conference Submission Guidelines
         </h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-2">
@@ -141,10 +141,10 @@ export default function ConferenceCallForPapersPage() {
       </section>
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf3f8_0%,#e2ebf5_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Publication Opportunities
         </p>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
           Journal Consideration for Selected Full Papers
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">

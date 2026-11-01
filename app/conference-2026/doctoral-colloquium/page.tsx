@@ -15,10 +15,10 @@ export default function ConferenceDoctoralColloquiumPage() {
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1fr]">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Doctoral Colloquium
           </p>
-          <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Doctoral Colloquium Submission Guidelines
           </h1>
           <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
@@ -29,10 +29,10 @@ export default function ConferenceDoctoralColloquiumPage() {
         </article>
 
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Submission Structure
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Abstract Should Include
           </h2>
           <ul className="mt-5 space-y-3">
@@ -50,10 +50,10 @@ export default function ConferenceDoctoralColloquiumPage() {
       </section>
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Focus Areas
         </p>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
           Research Areas Welcomed in the Colloquium
         </h2>
         <div className="mt-6 grid gap-3 md:grid-cols-2">
@@ -69,10 +69,10 @@ export default function ConferenceDoctoralColloquiumPage() {
       </section>
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Submission Guidelines
         </p>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
           Doctoral Colloquium Submission Guidelines
         </h2>
         <div className="mt-6 grid gap-4 lg:grid-cols-2">

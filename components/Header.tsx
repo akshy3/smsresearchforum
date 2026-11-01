@@ -84,7 +84,7 @@ const Header = () => {
                       >
                         <MenuItems className="absolute top-[calc(100%+0.75rem)] left-1/2 z-[80] w-80 -translate-x-1/2 rounded-3xl border border-slate-200/80 bg-white p-3 shadow-[0_24px_60px_-28px_rgba(15,23,42,0.45)] outline-none dark:border-gray-800 dark:bg-gray-900">
                           <div className="to-gold-50 dark:to-gold-950/30 rounded-2xl bg-gradient-to-r from-sky-50 px-4 py-3 dark:from-sky-950/40">
-                            <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+                            <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                               {link.title}
                             </p>
                             {link.description && (

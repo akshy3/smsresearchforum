@@ -34,10 +34,10 @@ export default function Features() {
   return (
     <section className="px-4 pt-10 md:px-10">
       <div className="mb-6 max-w-3xl">
-        <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Explore
         </p>
-        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
           Around the Forum
         </h2>
       </div>

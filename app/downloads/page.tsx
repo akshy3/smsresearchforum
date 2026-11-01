@@ -41,7 +41,7 @@ export default function DownloadsPage() {
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <section className="to-gold-50 rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:via-gray-900 dark:to-sky-950/20">
-        <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           SMS Research Forum
         </p>
         <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl dark:text-white">
@@ -58,7 +58,7 @@ export default function DownloadsPage() {
             key={resource.title}
             className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
           >
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
               {resource.title}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-gray-300">

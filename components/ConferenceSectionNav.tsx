@@ -12,10 +12,10 @@ export default function ConferenceSectionNav() {
     <section className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e5ebf4_100%)] p-5 shadow-sm backdrop-blur dark:border-gray-700 dark:bg-gray-900/90">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Section
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             {conference2026.title}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-gray-300">

@@ -96,10 +96,10 @@ export default function ListLayoutWithTags({
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="rounded-2xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:to-gray-900/70">
-        <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Updates Hub
         </p>
-        <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
           {title}
         </h1>
         <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base dark:text-gray-300">
@@ -138,7 +138,7 @@ export default function ListLayoutWithTags({
       <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
         <aside className="lg:sticky lg:top-20 lg:w-[280px] lg:flex-shrink-0">
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-            <h2 className="text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase dark:text-gray-400">
+            <h2 className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase dark:text-gray-400">
               Categories
             </h2>
             <div className="mt-4">

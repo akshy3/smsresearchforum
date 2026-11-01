@@ -26,7 +26,7 @@ export default function Hero() {
           <span className="border-gold-300/30 text-gold-100 inline-flex items-center rounded-full border bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide uppercase backdrop-blur-sm">
             A golden jubilee initiative of the School of Management Studies, CUSAT
           </span>
-          <h1 className="mt-5 text-4xl leading-tight font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 text-4xl leading-tight font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
             Empowering Scholars.
             <span className="from-gold-200 to-gold-400 block bg-gradient-to-r bg-clip-text text-transparent">
               Fostering Innovation.

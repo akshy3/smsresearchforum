@@ -27,12 +27,12 @@ export default function Conference2026Page() {
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
               {conference2026.subtitle}
             </p>
-            <p className="mt-3 text-sm font-semibold tracking-[0.18em] text-slate-600 uppercase dark:text-gray-400">
+            <p className="mt-3 text-sm font-semibold tracking-[0.14em] text-slate-600 uppercase dark:text-gray-400">
               {conference2026.tagline}
             </p>
 
             <div className="dark:to-gold-950/20 mt-6 rounded-3xl bg-[linear-gradient(135deg,#d8e2ef_0%,#e8eef7_52%,#dbe6f2_100%)] p-5 dark:from-sky-950/30 dark:via-gray-900">
-              <p className="text-xs font-semibold tracking-[0.18em] text-sky-800 uppercase dark:text-sky-300">
+              <p className="text-xs font-semibold tracking-[0.14em] text-sky-800 uppercase dark:text-sky-300">
                 Conference Theme
               </p>
               <p className="mt-2 text-lg font-bold text-slate-900 dark:text-white">
@@ -68,10 +68,10 @@ export default function Conference2026Page() {
             </div>
 
             <div className="mt-6 rounded-[1.75rem] border border-fuchsia-200 bg-[linear-gradient(135deg,#fff7fb_0%,#f4ecff_48%,#eef5ff_100%)] p-5 shadow-[0_18px_40px_-28px_rgba(91,33,182,0.5)] dark:border-fuchsia-900/50 dark:bg-[linear-gradient(135deg,rgba(80,7,36,0.35)_0%,rgba(59,7,100,0.25)_48%,rgba(8,47,73,0.25)_100%)]">
-              <p className="text-xs font-semibold tracking-[0.18em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
+              <p className="text-xs font-semibold tracking-[0.14em] text-fuchsia-700 uppercase dark:text-fuchsia-300">
                 Conference Concluded
               </p>
-              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
                 Proceedings are now available
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-gray-300">
@@ -131,12 +131,12 @@ export default function Conference2026Page() {
         id="proceedings"
         className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef3f8_0%,#e4edf6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
       >
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Conference Archive
         </p>
         <div className="mt-2 grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
               {conference2026.proceedings.title}
             </h2>
             <p className="mt-3 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -154,7 +154,7 @@ export default function Conference2026Page() {
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.15fr_0.85fr]">
         <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Overview
           </p>
           <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -173,10 +173,10 @@ export default function Conference2026Page() {
         </article>
 
         <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Papers
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Tracks and Submission Guidance
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -212,10 +212,10 @@ export default function Conference2026Page() {
 
       <section className="mt-8">
         <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#f7f7fb_0%,#eef2ff_52%,#fdf2f8_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Timeline
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Key Submission and Registration Dates
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -239,10 +239,10 @@ export default function Conference2026Page() {
         <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf2f8_0%,#e1e9f3_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+              <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                 Key Dates
               </p>
-              <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
                 Important Timeline
               </h2>
             </div>
@@ -273,10 +273,10 @@ export default function Conference2026Page() {
         </article>
 
         <article className="rounded-[1.75rem] border border-slate-400/70 bg-[linear-gradient(135deg,#d6e0ed_0%,#cad7e6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Papers
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Tracks and Submission Areas
           </h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
@@ -298,10 +298,10 @@ export default function Conference2026Page() {
       </section>
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef3f8_0%,#e4edf6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Publication Opportunities
         </p>
-        <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
           Journals Associated with Selected Full Papers
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -327,10 +327,10 @@ export default function Conference2026Page() {
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Featured Sessions
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             What Participants Can Expect
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
@@ -373,10 +373,10 @@ export default function Conference2026Page() {
         </article>
 
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Registration Fees
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Participation Snapshot
           </h2>
           <div className="mt-6 space-y-3">
@@ -416,10 +416,10 @@ export default function Conference2026Page() {
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Doctoral Colloquium
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             For Advanced Doctoral Scholars
           </h2>
           <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-700 dark:text-gray-300">
@@ -445,10 +445,10 @@ export default function Conference2026Page() {
         </article>
 
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Doctoral Focus Areas
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Areas Welcomed in the Colloquium
           </h2>
           <div className="mt-6 grid gap-3">
@@ -466,10 +466,10 @@ export default function Conference2026Page() {
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Navigation
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Explore the Conference Section
           </h2>
           <div className="mt-5 grid gap-3">
@@ -495,10 +495,10 @@ export default function Conference2026Page() {
         </article>
 
         <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Contact
           </p>
-          <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             Stay in Touch
           </h2>
           <div className="mt-5 space-y-3">

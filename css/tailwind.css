@@ -8,8 +8,9 @@
 @theme {
   /* Font families */
   --font-sans:
-    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: var(--font-source-serif), ui-serif, Georgia, Cambria, 'Times New Roman', serif;
 
   /* Colors */
   /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
@@ -97,6 +98,13 @@
     outline-color: var(--color-primary-500);
   }
 
+  /* Headings use the serif; body text stays in Inter */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+  }
+
   a:focus-visible,
   button:focus-visible {
     outline: 2px solid;
@@ -117,7 +125,7 @@
       }
     }
     & :where(h1, h2) {
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: var(--tracking-tight);
     }
     & h3 {

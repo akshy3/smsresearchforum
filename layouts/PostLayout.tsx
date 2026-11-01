@@ -46,10 +46,10 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
       <article>
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
           <header className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 p-6 text-center shadow-sm sm:p-10 dark:border-gray-700 dark:from-gray-900 dark:to-gray-900/70">
-            <p className="text-xs font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+            <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
               Forum Update
             </p>
-            <h1 className="mt-3 text-3xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+            <h1 className="mt-3 text-3xl leading-tight font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
               {title}
             </h1>
             <time

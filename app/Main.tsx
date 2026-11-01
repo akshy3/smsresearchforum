@@ -33,10 +33,10 @@ export default function Home({ posts }) {
         <div className="border-navy-800 from-navy-900 via-navy-900 to-navy-950 rounded-2xl border bg-gradient-to-br p-6 shadow-[0_24px_50px_-24px_rgba(12,19,37,0.45)] sm:p-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="space-y-2 md:space-y-4">
-              <p className="text-gold-300 text-sm font-semibold tracking-[0.2em] uppercase">
+              <p className="text-gold-300 text-sm font-semibold tracking-[0.14em] uppercase">
                 Newsroom
               </p>
-              <h2 className="text-3xl leading-tight font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl leading-tight font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
                 Latest Updates
               </h2>
               <p className="max-w-3xl text-sm leading-relaxed text-slate-100 sm:text-base">
@@ -118,10 +118,10 @@ export default function Home({ posts }) {
         <div className="rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-sky-50/70 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:via-gray-900 dark:to-sky-950/20">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+              <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                 Gallery
               </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
                 Moments from SMS Research Forum
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
@@ -163,10 +163,10 @@ export default function Home({ posts }) {
         <div className="rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-sky-50/70 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:via-gray-900 dark:to-sky-950/20">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <div>
-              <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+              <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
                 Past Programme · {conference2026.eventDates}
               </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
                 {conference2026.title}
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">

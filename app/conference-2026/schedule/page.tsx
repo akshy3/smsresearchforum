@@ -136,10 +136,10 @@ function DaySchedule({ day }: { day: Day }) {
     <section className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf2f8_0%,#e3ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+          <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             {day.label}
           </p>
-          <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="mt-1 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
             {day.date}
           </h2>
         </div>
@@ -165,10 +165,10 @@ export default function ConferenceSchedulePage() {
       <ConferenceSectionNav />
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#e8eef7_0%,#dde6f1_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-        <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase dark:text-sky-300">
+        <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Programme
         </p>
-        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">
           Programme Schedule
         </h1>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
