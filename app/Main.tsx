@@ -39,7 +39,7 @@ export default function Home({ posts }) {
               <h2 className="text-3xl leading-tight font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
                 Latest Updates
               </h2>
-              <p className="max-w-3xl text-sm leading-relaxed text-slate-100 sm:text-base">
+              <p className="hidden max-w-3xl text-sm leading-relaxed text-slate-100 sm:block sm:text-base">
                 Recent announcements, workshops, programme notes, and forum activities from SMS
                 Research Forum.
               </p>
@@ -54,7 +54,7 @@ export default function Home({ posts }) {
             )}
           </div>
 
-          <ul className="mt-8 space-y-4">
+          <ul className="mt-6 space-y-3 sm:mt-8 sm:space-y-4">
             {!posts.length && (
               <li className="rounded-2xl border border-dashed border-white/20 bg-white/10 px-5 py-8 text-center text-sm text-sky-50/90">
                 Updates will appear here as the forum publishes announcements and event notes.
@@ -65,18 +65,18 @@ export default function Home({ posts }) {
               return (
                 <li
                   key={slug}
-                  className="rounded-2xl border border-white/65 bg-white/92 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="relative rounded-2xl border border-white/65 bg-white/92 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:p-5"
                 >
-                  <article className="space-y-4">
-                    <div className="flex flex-wrap items-center gap-3">
+                  <article className="space-y-3 sm:space-y-4">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                       <time
                         dateTime={date}
-                        className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700"
+                        className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-[13px] font-semibold text-slate-700 sm:text-xs"
                       >
                         Posted {formatDate(date, siteMetadata.locale)}
                       </time>
                       <EventDate start={eventDate} end={eventEndDate} />
-                      <div className="flex flex-wrap">
+                      <div className="hidden flex-wrap sm:flex">
                         {tags.map((tag) => (
                           <Tag key={tag} text={tag} />
                         ))}
@@ -87,17 +87,17 @@ export default function Home({ posts }) {
                       <h2 className="text-xl leading-snug font-semibold tracking-tight text-slate-900 sm:text-2xl">
                         <Link
                           href={`/updates/${slug}`}
-                          className="text-slate-900 dark:text-gray-100"
+                          className="text-slate-900 after:absolute after:inset-0 after:rounded-2xl dark:text-gray-100"
                         >
                           {title}
                         </Link>
                       </h2>
-                      <div className="prose mt-3 max-w-none text-slate-700 dark:text-gray-300">
+                      <div className="prose mt-3 hidden max-w-none text-slate-700 sm:block dark:text-gray-300">
                         {summary}
                       </div>
                     </div>
 
-                    <div className="text-sm font-semibold">
+                    <div className="hidden text-sm font-semibold sm:block">
                       <Link
                         href={`/updates/${slug}`}
                         className="text-sky-700 hover:text-sky-800 dark:hover:text-sky-600"
@@ -124,7 +124,7 @@ export default function Home({ posts }) {
               <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
                 Moments from SMS Research Forum
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base dark:text-gray-300">
+              <p className="mt-4 hidden text-sm leading-relaxed text-slate-600 sm:block sm:text-base dark:text-gray-300">
                 Browse photos from forum events, including the International Conference and Doctoral
                 Colloquium 2026.
               </p>
@@ -137,17 +137,17 @@ export default function Home({ posts }) {
             </Link>
           </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <div className="-mx-6 mt-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-2 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:px-0 sm:pb-0">
             {featuredGalleryPhotos.map((photo, index) => (
               <div
                 key={photo.src}
-                className="group relative aspect-[3/2] overflow-hidden rounded-[1.25rem] border border-white/70 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+                className="group relative aspect-[3/2] w-[78%] shrink-0 snap-center overflow-hidden rounded-[1.25rem] border border-white/70 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md sm:w-auto dark:border-gray-700 dark:bg-gray-800"
               >
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  sizes="(min-width: 640px) 33vw, 100vw"
+                  sizes="(min-width: 640px) 33vw, 80vw"
                   className="object-cover transition duration-700 ease-out group-hover:scale-105"
                   priority={index === 0}
                 />
@@ -189,7 +189,7 @@ export default function Home({ posts }) {
                 </Link>
               </div>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="hidden gap-3 sm:grid sm:grid-cols-2">
               <div className="rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-4 dark:border-gray-700 dark:bg-gray-800/70">
                 <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
                   Theme

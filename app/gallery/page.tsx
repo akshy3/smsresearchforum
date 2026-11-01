@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { genPageMetadata } from 'app/seo'
+import GalleryGrid from '@/components/GalleryGrid'
 import { galleryPhotos } from '@/data/galleryData'
 
 export const metadata = genPageMetadata({
@@ -21,28 +21,12 @@ export default function GalleryPage() {
         </h1>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base dark:text-gray-300">
           A visual archive of research forum programmes, academic sessions, participant moments, and
-          event highlights from SMS, CUSAT.
+          event highlights from SMS, CUSAT. Tap a photo to view it full screen.
         </p>
       </section>
 
       <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf2f8_0%,#e3ebf4_100%)] p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-900">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {galleryPhotos.map((photo, index) => (
-            <div
-              key={photo.src}
-              className="group relative aspect-[3/2] overflow-hidden rounded-[1.25rem] border border-white/70 bg-slate-100 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover transition duration-700 ease-out group-hover:scale-105"
-                priority={index < 3}
-              />
-            </div>
-          ))}
-        </div>
+        <GalleryGrid photos={galleryPhotos} />
       </section>
     </div>
   )

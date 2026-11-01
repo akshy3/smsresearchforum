@@ -32,9 +32,11 @@ type SocialIconProps = {
   kind: keyof typeof components
   href: string | undefined
   size?: number
+  /** 'light' for icons on dark backgrounds such as the footer */
+  tone?: 'default' | 'light'
 }
 
-const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
+const SocialIcon = ({ kind, href, size = 8, tone = 'default' }: SocialIconProps) => {
   if (
     !href ||
     (kind === 'mail' && !/^mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(href))
@@ -45,14 +47,19 @@ const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
 
   return (
     <a
-      className="text-sm text-gray-500 transition hover:text-gray-600"
+      // Padding with a matching negative margin gives a 44px tap area without moving the icon
+      className="-m-2.5 inline-flex p-2.5 text-sm text-gray-500 transition hover:text-gray-600"
       target="_blank"
       rel="noopener noreferrer"
       href={href}
     >
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`hover:text-primary-500 dark:hover:text-primary-400 fill-current text-gray-700 dark:text-gray-200 h-${size} w-${size}`}
+        className={`fill-current ${
+          tone === 'light'
+            ? 'hover:text-gold-300 text-slate-300'
+            : 'hover:text-primary-500 dark:hover:text-primary-400 text-gray-700 dark:text-gray-200'
+        } h-${size} w-${size}`}
       />
     </a>
   )

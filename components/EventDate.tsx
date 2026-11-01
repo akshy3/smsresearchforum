@@ -21,7 +21,7 @@ export default function EventDate({ start, end }: EventDateProps) {
 
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold tracking-wide ${
+      className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[13px] font-semibold tracking-wide sm:text-xs ${
         upcoming
           ? 'bg-gold-100 text-gold-800 dark:bg-gold-900/40 dark:text-gold-200'
           : 'bg-slate-100 text-slate-600 dark:bg-gray-800 dark:text-gray-300'

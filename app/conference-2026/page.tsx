@@ -3,6 +3,7 @@ import Link from '@/components/Link'
 import { genPageMetadata } from 'app/seo'
 import { conference2026 } from '@/data/conferenceData'
 import ConferenceSectionNav from '@/components/ConferenceSectionNav'
+import Fold from '@/components/Fold'
 
 export const metadata = genPageMetadata({
   title: conference2026.title,
@@ -153,7 +154,7 @@ export default function Conference2026Page() {
       </section>
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-        <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Overview
           </p>
@@ -170,9 +171,9 @@ export default function Conference2026Page() {
               {conference2026.formatSummary}
             </p>
           </div>
-        </article>
+        </Fold>
 
-        <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef2f8_0%,#e4ebf4_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Papers
           </p>
@@ -207,11 +208,11 @@ export default function Conference2026Page() {
               </Link>
             </div>
           </div>
-        </article>
+        </Fold>
       </section>
 
       <section className="mt-8">
-        <article className="from-navy-50 to-gold-50 rounded-[1.75rem] border border-slate-300/70 bg-gradient-to-br via-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="from-navy-50 to-gold-50 rounded-[1.75rem] border border-slate-300/70 bg-gradient-to-br via-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Timeline
           </p>
@@ -232,11 +233,11 @@ export default function Conference2026Page() {
               </p>
             </div>
           </div>
-        </article>
+        </Fold>
       </section>
 
       <section className="mt-8 grid grid-cols-1 gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-        <article className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf2f8_0%,#e1e9f3_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#edf2f8_0%,#e1e9f3_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <div className="flex items-center justify-between gap-3">
             <div>
               <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
@@ -270,9 +271,9 @@ export default function Conference2026Page() {
               </div>
             ))}
           </div>
-        </article>
+        </Fold>
 
-        <article className="rounded-[1.75rem] border border-slate-400/70 bg-[linear-gradient(135deg,#d6e0ed_0%,#cad7e6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-400/70 bg-[linear-gradient(135deg,#d6e0ed_0%,#cad7e6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Papers
           </p>
@@ -294,10 +295,13 @@ export default function Conference2026Page() {
               </div>
             ))}
           </div>
-        </article>
+        </Fold>
       </section>
 
-      <section className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef3f8_0%,#e4edf6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+      <Fold
+        as="section"
+        className="mt-8 rounded-[1.75rem] border border-slate-300/70 bg-[linear-gradient(135deg,#eef3f8_0%,#e4edf6_100%)] p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900"
+      >
         <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Publication Opportunities
         </p>
@@ -323,10 +327,10 @@ export default function Conference2026Page() {
             </article>
           ))}
         </div>
-      </section>
+      </Fold>
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Featured Sessions
           </p>
@@ -370,9 +374,9 @@ export default function Conference2026Page() {
               View Featured Sessions
             </Link>
           </div>
-        </article>
+        </Fold>
 
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Registration Fees
           </p>
@@ -411,11 +415,11 @@ export default function Conference2026Page() {
               View Participation Details
             </Link>
           </div>
-        </article>
+        </Fold>
       </section>
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Doctoral Colloquium
           </p>
@@ -442,9 +446,9 @@ export default function Conference2026Page() {
               View Colloquium Guidelines
             </Link>
           </div>
-        </article>
+        </Fold>
 
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Doctoral Focus Areas
           </p>
@@ -461,11 +465,11 @@ export default function Conference2026Page() {
               </div>
             ))}
           </div>
-        </article>
+        </Fold>
       </section>
 
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Conference Navigation
           </p>
@@ -492,9 +496,9 @@ export default function Conference2026Page() {
               Participation
             </Link>
           </div>
-        </article>
+        </Fold>
 
-        <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <Fold className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
           <p className="text-xs font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
             Contact
           </p>
@@ -554,7 +558,7 @@ export default function Conference2026Page() {
               </div>
             ))}
           </div>
-        </article>
+        </Fold>
       </section>
     </div>
   )

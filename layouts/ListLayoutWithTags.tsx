@@ -95,18 +95,18 @@ export default function ListLayoutWithTags({
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="rounded-2xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50 p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:to-gray-900/70">
+      <div className="rounded-2xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50 p-5 shadow-sm sm:p-8 dark:border-gray-700 dark:from-gray-900 dark:to-gray-900/70">
         <p className="text-sm font-semibold tracking-[0.14em] text-sky-700 uppercase dark:text-sky-300">
           Updates Hub
         </p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
           {title}
         </h1>
-        <p className="mt-3 max-w-3xl text-sm text-slate-600 sm:text-base dark:text-gray-300">
+        <p className="mt-3 hidden max-w-3xl text-sm text-slate-600 sm:block sm:text-base dark:text-gray-300">
           Explore announcements, activities, and academic milestones from the SMS Research Forum.
         </p>
 
-        <div className="relative mt-6 max-w-xl">
+        <div className="relative mt-4 max-w-xl sm:mt-6">
           <label>
             <span className="sr-only">Search updates</span>
             <input
@@ -135,38 +135,38 @@ export default function ListLayoutWithTags({
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start">
+      <div className="mt-4 flex flex-col gap-4 lg:mt-8 lg:flex-row lg:items-start lg:gap-6">
         <aside className="lg:sticky lg:top-20 lg:w-[280px] lg:flex-shrink-0">
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-900">
-            <h2 className="text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase dark:text-gray-400">
+          <div className="-mx-4 lg:mx-0 lg:rounded-2xl lg:border lg:border-slate-200 lg:bg-white lg:p-5 lg:shadow-sm dark:lg:border-gray-700 dark:lg:bg-gray-900">
+            <h2 className="hidden text-xs font-semibold tracking-[0.14em] text-slate-500 uppercase lg:block dark:text-gray-400">
               Categories
             </h2>
-            <div className="mt-4">
+            <div className="flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] lg:mt-4 lg:block lg:overflow-visible lg:px-0 lg:pb-0">
               {pathname.startsWith('/updates') ? (
-                <h3 className="rounded-lg bg-sky-50 px-3 py-2 text-sm font-semibold text-sky-700 uppercase dark:bg-sky-900/30 dark:text-sky-300">
+                <h3 className="inline-flex min-h-11 shrink-0 items-center rounded-full border border-slate-200 bg-sky-50 px-3 py-2 text-sm font-semibold whitespace-nowrap text-sky-700 uppercase lg:min-h-0 lg:rounded-lg lg:border-0 dark:bg-sky-900/30 dark:text-sky-300">
                   All Updates
                 </h3>
               ) : (
                 <Link
                   href={`/updates`}
-                  className="block rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 uppercase hover:bg-slate-100 hover:text-sky-700 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-sky-300"
+                  className="inline-flex min-h-11 shrink-0 items-center rounded-full border border-slate-200 bg-white px-3 py-2 text-sm font-semibold whitespace-nowrap text-gray-700 uppercase hover:bg-slate-100 hover:text-sky-700 lg:flex lg:min-h-0 lg:rounded-lg lg:border-0 lg:bg-transparent dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-sky-300"
                 >
                   All Updates
                 </Link>
               )}
-              <ul className="mt-2 space-y-1">
+              <ul className="flex gap-2 lg:mt-2 lg:block lg:space-y-1">
                 {sortedTags.map((t) => {
                   const active = decodeURI(pathname.split('/tags/')[1] || '') === slug(t)
                   return (
-                    <li key={t}>
+                    <li key={t} className="shrink-0">
                       {active ? (
-                        <h3 className="inline-block rounded-lg bg-sky-50 px-3 py-2 text-sm font-semibold text-sky-700 uppercase dark:bg-sky-900/30 dark:text-sky-300">
+                        <h3 className="inline-flex min-h-11 shrink-0 items-center rounded-full border border-slate-200 bg-sky-50 px-3 py-2 text-sm font-semibold whitespace-nowrap text-sky-700 uppercase lg:min-h-0 lg:rounded-lg lg:border-0 dark:bg-sky-900/30 dark:text-sky-300">
                           {`${t} (${tagCounts[t]})`}
                         </h3>
                       ) : (
                         <Link
                           href={`/tags/${slug(t)}`}
-                          className="inline-block rounded-lg px-3 py-2 text-sm font-medium text-gray-600 uppercase hover:bg-slate-100 hover:text-sky-700 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-sky-300"
+                          className="inline-flex min-h-11 shrink-0 items-center rounded-full border border-slate-200 bg-white px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-600 uppercase hover:bg-slate-100 hover:text-sky-700 lg:min-h-0 lg:rounded-lg lg:border-0 lg:bg-transparent dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-sky-300"
                           aria-label={`View posts tagged ${t}`}
                         >
                           {`${t} (${tagCounts[t]})`}
@@ -192,7 +192,7 @@ export default function ListLayoutWithTags({
               const { path, date, title, summary, tags, eventDate, eventEndDate } = post
               return (
                 <li key={path}>
-                  <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-sky-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-900">
+                  <article className="relative rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-sky-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-900">
                     <div className="flex flex-wrap items-center gap-3">
                       <time
                         dateTime={date}
@@ -210,7 +210,10 @@ export default function ListLayoutWithTags({
                     </div>
 
                     <h2 className="mt-4 text-xl leading-snug font-semibold tracking-tight text-slate-900 sm:text-2xl dark:text-white">
-                      <Link href={`/${path}`} className="text-slate-900 dark:text-white">
+                      <Link
+                        href={`/${path}`}
+                        className="text-slate-900 after:absolute after:inset-0 after:rounded-2xl dark:text-white"
+                      >
                         {title}
                       </Link>
                     </h2>

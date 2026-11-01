@@ -220,18 +220,7 @@ const MobileNav = () => {
                         }`}
                         onClick={closeNav}
                       >
-                        <div>
-                          <span>{link.title}</span>
-                          <p
-                            className={`mt-1 text-xs font-medium tracking-wide ${
-                              isActive ? 'text-sky-50/90' : 'text-slate-500 dark:text-gray-400'
-                            }`}
-                          >
-                            {link.href === '/'
-                              ? 'Return to the main landing page'
-                              : `Open the ${link.title.toLowerCase()} page`}
-                          </p>
-                        </div>
+                        <span>{link.title}</span>
                         <span
                           className={`text-sm transition ${
                             isActive

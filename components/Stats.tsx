@@ -69,7 +69,7 @@ export default function Stats() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="hidden gap-4 sm:grid sm:grid-cols-2">
               {metrics.map((item) => (
                 <div
                   key={item.id}

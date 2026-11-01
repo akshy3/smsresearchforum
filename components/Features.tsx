@@ -42,23 +42,23 @@ export default function Features() {
         </h2>
       </div>
 
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {features.map((feature) => (
           <li key={feature.name}>
             <Link
               href={feature.href}
-              className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
+              className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-md sm:p-5 dark:border-gray-700 dark:bg-gray-900"
             >
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition group-hover:bg-sky-600 group-hover:text-white dark:bg-sky-900/40 dark:text-sky-300">
                 <feature.icon className="h-6 w-6" aria-hidden="true" />
               </span>
-              <span className="mt-4 text-lg leading-6 font-semibold text-slate-900 dark:text-white">
+              <span className="mt-3 text-base leading-6 font-semibold text-slate-900 sm:mt-4 sm:text-lg dark:text-white">
                 {feature.name}
               </span>
-              <span className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
+              <span className="mt-2 hidden flex-1 text-sm leading-relaxed text-slate-600 sm:block dark:text-gray-300">
                 {feature.description}
               </span>
-              <span className="mt-4 text-sm font-semibold text-sky-700 dark:text-sky-300">
+              <span className="mt-4 hidden text-sm font-semibold text-sky-700 sm:block dark:text-sky-300">
                 Open &rarr;
               </span>
             </Link>

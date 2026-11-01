@@ -8,6 +8,7 @@ import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import Comments from '@/components/Comments'
 import EventDate from '@/components/EventDate'
+import EventActions from '@/components/EventActions'
 import { formatEventDate } from '@/lib/events'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
@@ -37,8 +38,18 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
     eventTime,
     eventMode,
     eventSpeakers,
+    summary,
   } = content
   const basePath = path.split('/')[0]
+  const actions = {
+    title,
+    url: `${siteMetadata.siteUrl}/${path}`,
+    summary,
+    eventDate,
+    eventEndDate,
+    eventTime,
+    eventMode,
+  }
 
   return (
     <SectionContainer>
@@ -105,7 +116,16 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                   </div>
                 )}
               </dl>
+              <div className="mt-5 border-t border-slate-200 pt-5 dark:border-gray-700">
+                <EventActions {...actions} />
+              </div>
             </section>
+          )}
+
+          {!eventDate && (
+            <div className="mt-6">
+              <EventActions {...actions} />
+            </div>
           )}
 
           <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:bg-gray-900">

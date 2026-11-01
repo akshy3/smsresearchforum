@@ -39,24 +39,36 @@ export default function Footer() {
             <p className="text-gold-300 text-sm font-semibold tracking-[0.14em] uppercase">
               Quick Links
             </p>
-            <div className="mt-5 space-y-3 text-sm text-slate-300">
+            <div className="mt-4 text-sm text-slate-300">
               <div>
-                <Link href="/updates" className="transition hover:text-white">
+                <Link
+                  href="/updates"
+                  className="inline-flex min-h-11 items-center transition hover:text-white"
+                >
                   Updates
                 </Link>
               </div>
               <div>
-                <Link href="/about#committees" className="transition hover:text-white">
+                <Link
+                  href="/about#committees"
+                  className="inline-flex min-h-11 items-center transition hover:text-white"
+                >
                   Committees
                 </Link>
               </div>
               <div>
-                <Link href="/downloads" className="transition hover:text-white">
+                <Link
+                  href="/downloads"
+                  className="inline-flex min-h-11 items-center transition hover:text-white"
+                >
                   Downloads
                 </Link>
               </div>
               <div>
-                <Link href="/conference-2026/participation" className="transition hover:text-white">
+                <Link
+                  href="/conference-2026/participation"
+                  className="inline-flex min-h-11 items-center transition hover:text-white"
+                >
                   Participation Guide
                 </Link>
               </div>
@@ -69,13 +81,18 @@ export default function Footer() {
             </p>
             <p className="mt-5 text-sm text-slate-300">Email</p>
             <p className="mt-1 text-sm font-semibold text-white">
-              <Link href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</Link>
+              <Link
+                href={`mailto:${siteMetadata.email}`}
+                className="inline-flex min-h-11 items-center break-all"
+              >
+                {siteMetadata.email}
+              </Link>
             </p>
-            <div className="mt-6 flex flex-wrap gap-4">
-              <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
-              <SocialIcon kind="facebook" href={siteMetadata.facebook} size={6} />
-              <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
-              <SocialIcon kind="instagram" href={siteMetadata.instagram} size={6} />
+            <div className="mt-6 flex flex-wrap gap-6">
+              <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} tone="light" />
+              <SocialIcon kind="facebook" href={siteMetadata.facebook} size={6} tone="light" />
+              <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} tone="light" />
+              <SocialIcon kind="instagram" href={siteMetadata.instagram} size={6} tone="light" />
             </div>
           </div>
         </div>
@@ -83,10 +100,16 @@ export default function Footer() {
         <div className="mt-10 border-t border-white/10 pt-4 text-sm text-slate-300">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              © {new Date().getFullYear()} <Link href="/">{siteMetadata.title}</Link>
+              © {new Date().getFullYear()}{' '}
+              <Link href="/" className="inline-flex min-h-11 items-center">
+                {siteMetadata.title}
+              </Link>
             </div>
             <div>
-              Developed by <Link href="http://digitalsoup.in">digitalsoup</Link>
+              Developed by{' '}
+              <Link href="http://digitalsoup.in" className="inline-flex min-h-11 items-center">
+                digitalsoup
+              </Link>
             </div>
           </div>
         </div>
