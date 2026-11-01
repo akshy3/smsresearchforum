@@ -105,6 +105,9 @@ export const Updates = defineDocumentType(() => ({
     // When the event itself happens (date is when the update was posted)
     eventDate: { type: 'date' },
     eventEndDate: { type: 'date' },
+    eventTime: { type: 'string' },
+    eventMode: { type: 'string' },
+    eventSpeakers: { type: 'list', of: { type: 'string' } },
     draft: { type: 'boolean' },
     summary: { type: 'string' },
     images: { type: 'json' },

@@ -7,6 +7,8 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import Comments from '@/components/Comments'
+import EventDate from '@/components/EventDate'
+import { formatEventDate } from '@/lib/events'
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -24,7 +26,18 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, next, prev, children }: LayoutProps) {
-  const { path, slug, date, title, tags } = content
+  const {
+    path,
+    slug,
+    date,
+    title,
+    tags,
+    eventDate,
+    eventEndDate,
+    eventTime,
+    eventMode,
+    eventSpeakers,
+  } = content
   const basePath = path.split('/')[0]
 
   return (
@@ -41,9 +54,9 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
             </h1>
             <time
               dateTime={date}
-              className="mt-4 inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold tracking-wide text-slate-700 uppercase dark:bg-gray-800 dark:text-gray-300"
+              className="mt-4 inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 dark:bg-gray-800 dark:text-gray-300"
             >
-              {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+              Posted {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
             </time>
             {tags && tags.length > 0 && (
               <div className="mt-5 flex flex-wrap justify-center">
@@ -54,8 +67,48 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
             )}
           </header>
 
+          {eventDate && (
+            <section
+              aria-label="Event details"
+              className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-900"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h2 className="text-lg font-bold text-slate-900 dark:text-white">Event details</h2>
+                <EventDate start={eventDate} end={eventEndDate} />
+              </div>
+              <dl className="mt-4 grid grid-cols-1 gap-4 text-sm sm:grid-cols-3">
+                <div>
+                  <dt className="font-semibold text-slate-500 dark:text-gray-400">When</dt>
+                  <dd className="mt-1 text-slate-900 dark:text-gray-100">
+                    {formatEventDate(eventDate, eventEndDate)}
+                    {eventTime && <span className="block">{eventTime}</span>}
+                  </dd>
+                </div>
+                {eventMode && (
+                  <div>
+                    <dt className="font-semibold text-slate-500 dark:text-gray-400">Where</dt>
+                    <dd className="mt-1 text-slate-900 dark:text-gray-100">{eventMode}</dd>
+                  </div>
+                )}
+                {eventSpeakers && eventSpeakers.length > 0 && (
+                  <div>
+                    <dt className="font-semibold text-slate-500 dark:text-gray-400">
+                      {eventSpeakers.length > 1 ? 'Resource persons' : 'Resource person'}
+                    </dt>
+                    {eventSpeakers.map((speaker) => (
+                      <dd key={speaker} className="mt-1 text-slate-900 dark:text-gray-100">
+                        {speaker}
+                      </dd>
+                    ))}
+                  </div>
+                )}
+              </dl>
+            </section>
+          )}
+
           <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-gray-700 dark:bg-gray-900">
-            <div className="prose dark:prose-invert max-w-none text-black dark:text-white">
+            {/* Posters are capped in height so the text after them isn't a full screen away */}
+            <div className="prose dark:prose-invert max-w-none text-black dark:text-white [&_img]:mx-auto [&_img]:max-h-[70vh] [&_img]:w-auto">
               {children}
             </div>
           </div>

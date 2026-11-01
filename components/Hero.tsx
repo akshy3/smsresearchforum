@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.35),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(251,191,36,0.2),transparent_35%)]" />
       </div>
 
-      <div className="relative px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <div className="relative px-5 py-10 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="max-w-4xl">
           <span className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-sky-100 uppercase backdrop-blur-sm">
             A golden jubilee initiative of the School of Management Studies, CUSAT
@@ -33,10 +33,13 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-100 sm:text-lg">
-            SMS Research Forum is a collaborative academic space for scholars, faculty, and
-            research-oriented initiatives at the School of Management Studies, CUSAT. From workshops
-            and colloquia to flagship programmes like {conference2026.title}, the forum supports
-            rigorous, connected, and future-facing scholarship.
+            A collaborative academic space for scholars and faculty at the School of Management
+            Studies, CUSAT
+            <span className="hidden sm:inline">
+              . From workshops and colloquia to flagship programmes like {conference2026.title}, the
+              forum supports rigorous, connected, and future-facing scholarship
+            </span>
+            .
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -47,26 +50,11 @@ export default function Hero() {
               About the Forum
             </Link>
             <Link
-              href="/conference-2026"
+              href="/updates"
               className="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
             >
-              Conference & Colloquium&apos;26
+              Events &amp; Updates
             </Link>
-          </div>
-
-          <div className="mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur-sm">
-              <p className="text-xs text-sky-100 uppercase">Forum Mission</p>
-              <p className="mt-1 text-lg font-bold text-white">Research Excellence</p>
-            </div>
-            <div className="rounded-2xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur-sm">
-              <p className="text-xs text-sky-100 uppercase">Community</p>
-              <p className="mt-1 text-lg font-bold text-white">Scholars + Faculty</p>
-            </div>
-            <div className="rounded-2xl border border-cyan-300/25 bg-gradient-to-br from-white/14 to-sky-400/10 px-4 py-4 backdrop-blur-sm">
-              <p className="text-xs text-sky-100 uppercase">Flagship Programme</p>
-              <p className="mt-1 text-lg font-bold text-white">Conference & Colloquium&apos;26</p>
-            </div>
           </div>
         </div>
       </div>

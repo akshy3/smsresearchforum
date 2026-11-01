@@ -1,137 +1,70 @@
-import { GlobeAltIcon, LightningBoltIcon, MailIcon, ScaleIcon } from '@heroicons/react/outline'
+import { BookOpenIcon, DownloadIcon, MailIcon, UserGroupIcon } from '@heroicons/react/outline'
 import Link from '@/components/Link'
-import { conference2026 } from '@/data/conferenceData'
 
 const features = [
   {
     name: 'Quarterly Newsletter',
     description:
       'Stay updated with the latest research, scholar achievements, and upcoming academic opportunities.',
-    icon: GlobeAltIcon,
+    icon: MailIcon,
     href: '/newsletters',
   },
   {
     name: 'Committees and Community',
     description:
       'See how the forum is organized through committees that support programmes, editorial work, careers, and scholar wellbeing.',
-    icon: ScaleIcon,
+    icon: UserGroupIcon,
     href: '/about#committees',
   },
   {
-    name: "Conference and Colloquium '26",
-    description:
-      'Our flagship academic programme brought together conference presentations and a doctoral colloquium.',
-    icon: LightningBoltIcon,
-    href: '/conference-2026',
+    name: 'Synopsis Library',
+    description: 'Browse PhD synopses from SMS research scholars by stream, year, and advisor.',
+    icon: BookOpenIcon,
+    href: '/synopsis',
   },
   {
-    name: 'Research Resources',
-    description:
-      'Access the synopsis library, updates, and other supporting resources for SMS research scholars.',
-    icon: MailIcon,
+    name: 'Downloads',
+    description: 'Proceedings, newsletters, and other supporting material for research scholars.',
+    icon: DownloadIcon,
     href: '/downloads',
   },
 ]
 
 export default function Features() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-50 via-white to-sky-50/30" />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 max-w-3xl">
-          <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase">
-            Forum Highlights
-          </p>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Key Forum Activities and Support
-          </h2>
-          <p className="mt-4 text-base text-slate-600 sm:text-lg">
-            Explore the main areas through which the forum supports research scholars, builds
-            academic community, and shares important opportunities through the year.
-          </p>
-        </div>
-
-        <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-6">
-          {features.map((feature) => {
-            const isFeaturedProgramme = feature.href === '/conference-2026'
-
-            return (
-              <div
-                key={feature.name}
-                className={`group rounded-2xl border p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
-                  isFeaturedProgramme
-                    ? 'border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50/80 hover:border-sky-300'
-                    : 'border-slate-200/80 bg-white/90 hover:border-sky-300'
-                }`}
-              >
-                <dt className="flex items-center gap-4">
-                  <span
-                    className={`inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl text-sky-700 transition group-hover:bg-sky-600 group-hover:text-white ${
-                      isFeaturedProgramme ? 'bg-white shadow-sm' : 'bg-sky-100'
-                    }`}
-                  >
-                    <feature.icon className="h-6 w-6" aria-hidden="true" />
-                  </span>
-                  <p className="text-lg leading-6 font-semibold text-slate-900">{feature.name}</p>
-                </dt>
-                <dd className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
-                  {feature.description}
-                </dd>
-                <div className="mt-5">
-                  <Link
-                    href={feature.href}
-                    className="text-sm font-semibold text-sky-700 hover:text-sky-800 dark:hover:text-sky-300"
-                  >
-                    Open section &rarr;
-                  </Link>
-                </div>
-              </div>
-            )
-          })}
-        </dl>
-
-        <div className="mt-8 rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-6 shadow-sm">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_1fr]">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase">
-                Flagship Programme
-              </p>
-              <h3 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">
-                {conference2026.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-                {conference2026.tagline}. This year&apos;s flagship programme invites scholars and
-                researchers to engage with current questions in management and interdisciplinary
-                research. The official proceedings are now available.
-              </p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl bg-slate-50 px-4 py-4">
-                <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
-                  Event Dates
-                </p>
-                <p className="mt-2 text-sm font-semibold text-slate-900">
-                  {conference2026.eventDates}
-                </p>
-              </div>
-              <div className="rounded-2xl bg-slate-50 px-4 py-4">
-                <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
-                  Proceedings
-                </p>
-                <p className="mt-2 text-sm font-semibold text-slate-900">Published</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-5">
-            <Link
-              href="/conference-2026"
-              className="text-sm font-semibold text-sky-700 hover:text-sky-800 dark:hover:text-sky-300"
-            >
-              Visit conference section &rarr;
-            </Link>
-          </div>
-        </div>
+    <section className="px-4 pt-10 md:px-10">
+      <div className="mb-6 max-w-3xl">
+        <p className="text-sm font-semibold tracking-[0.2em] text-sky-700 uppercase dark:text-sky-300">
+          Explore
+        </p>
+        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+          Around the Forum
+        </h2>
       </div>
+
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {features.map((feature) => (
+          <li key={feature.name}>
+            <Link
+              href={feature.href}
+              className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
+            >
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700 transition group-hover:bg-sky-600 group-hover:text-white dark:bg-sky-900/40 dark:text-sky-300">
+                <feature.icon className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <span className="mt-4 text-lg leading-6 font-semibold text-slate-900 dark:text-white">
+                {feature.name}
+              </span>
+              <span className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
+                {feature.description}
+              </span>
+              <span className="mt-4 text-sm font-semibold text-sky-700 dark:text-sky-300">
+                Open &rarr;
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

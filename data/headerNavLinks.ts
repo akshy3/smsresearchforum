@@ -3,15 +3,15 @@ import { downloadNavLinks } from './downloadNavLinks'
 
 const headerNavLinks = [
   { href: '/', title: 'Home' },
+  { href: '/updates', title: 'Updates' },
+  { href: '/gallery', title: 'Gallery' },
+  { href: '/newsletters', title: 'Newsletters' },
   {
     href: '/conference-2026',
     title: "Conference '26",
-    description: 'International Conference and Doctoral Colloquium 2026',
+    description: 'International Conference and Doctoral Colloquium 2026 (15-16 May 2026)',
     children: conferenceNavLinks,
   },
-  { href: '/gallery', title: 'Gallery' },
-  { href: '/updates', title: 'Updates' },
-  { href: '/newsletters', title: 'Newsletters' },
   // { href: '/tags', title: 'Tags' },
   { href: '/about', title: 'About' },
   {

@@ -197,9 +197,9 @@ export default function ListLayoutWithTags({
                       <time
                         dateTime={date}
                         suppressHydrationWarning
-                        className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold tracking-wide text-slate-700 uppercase dark:bg-gray-800 dark:text-gray-300"
+                        className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 dark:bg-gray-800 dark:text-gray-300"
                       >
-                        {formatDate(date, siteMetadata.locale)}
+                        Posted {formatDate(date, siteMetadata.locale)}
                       </time>
                       <EventDate start={eventDate} end={eventEndDate} />
                       <div className="flex flex-wrap">
