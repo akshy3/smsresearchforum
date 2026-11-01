@@ -49,6 +49,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
     eventEndDate,
     eventTime,
     eventMode,
+    icsHref: eventDate ? `/calendar/${slug}.ics` : undefined,
   }
 
   return (

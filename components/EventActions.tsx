@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { eventEndsAt } from '@/lib/events'
+import { eventEndsAt, googleCalendarUrl } from '@/lib/events'
 
 interface EventActionsProps {
   title: string
@@ -11,77 +11,15 @@ interface EventActionsProps {
   eventEndDate?: string
   eventTime?: string
   eventMode?: string
-}
-
-const IST_OFFSET_MINUTES = 330
-
-const ymd = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, '')
-const stamp = (d: Date) =>
-  d
-    .toISOString()
-    .replace(/[-:]/g, '')
-    .replace(/\.\d{3}/, '')
-
-/** "11:00 AM – 12:00 PM (IST)" on a single-day event becomes a timed UTC range;
- *  anything else (no time, or a multi-day event) becomes an all-day entry. */
-function eventTimes(eventDate: string, eventEndDate?: string, eventTime?: string) {
-  const day = new Date(eventDate)
-  const m = !eventEndDate
-    ? /(\d{1,2})[.:](\d{2})\s*([AP])\.?M\.?\s*[–-]\s*(\d{1,2})[.:](\d{2})\s*([AP])\.?M/i.exec(
-        eventTime || ''
-      )
-    : null
-  if (m) {
-    const at = (h: string, min: string, ap: string) => {
-      const hours = (Number(h) % 12) + (ap.toUpperCase() === 'P' ? 12 : 0)
-      return new Date(day.getTime() + (hours * 60 + Number(min) - IST_OFFSET_MINUTES) * 60_000)
-    }
-    return { timed: true, start: at(m[1], m[2], m[3]), end: at(m[4], m[5], m[6]) }
-  }
-  const end = new Date(new Date(eventEndDate || eventDate).getTime() + 24 * 60 * 60 * 1000)
-  return { timed: false, start: day, end }
-}
-
-function googleCalendarUrl(p: EventActionsProps) {
-  const t = eventTimes(p.eventDate!, p.eventEndDate, p.eventTime)
-  const dates = t.timed ? `${stamp(t.start)}/${stamp(t.end)}` : `${ymd(t.start)}/${ymd(t.end)}`
-  const params = new URLSearchParams({
-    action: 'TEMPLATE',
-    text: p.title,
-    dates,
-    details: `${p.summary ? p.summary + '\n\n' : ''}${p.url}`,
-    location: p.eventMode || '',
-  })
-  return `https://calendar.google.com/calendar/render?${params}`
-}
-
-function icsDataUrl(p: EventActionsProps) {
-  const t = eventTimes(p.eventDate!, p.eventEndDate, p.eventTime)
-  const esc = (v: string) => v.replace(/[\\,;]/g, (c) => '\\' + c).replace(/\n/g, '\\n')
-  const lines = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//SMS Research Forum//Events//EN',
-    'BEGIN:VEVENT',
-    `UID:${p.url}`,
-    `DTSTAMP:${stamp(new Date())}`,
-    t.timed ? `DTSTART:${stamp(t.start)}` : `DTSTART;VALUE=DATE:${ymd(t.start)}`,
-    t.timed ? `DTEND:${stamp(t.end)}` : `DTEND;VALUE=DATE:${ymd(t.end)}`,
-    `SUMMARY:${esc(p.title)}`,
-    `DESCRIPTION:${esc(p.url)}`,
-    p.eventMode ? `LOCATION:${esc(p.eventMode)}` : '',
-    `URL:${p.url}`,
-    'END:VEVENT',
-    'END:VCALENDAR',
-  ].filter(Boolean)
-  return `data:text/calendar;charset=utf-8,${encodeURIComponent(lines.join('\r\n'))}`
+  /** Link to this event's .ics file (app/calendar/[file]/route.ts) */
+  icsHref?: string
 }
 
 const button =
   'inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition'
 
 export default function EventActions(props: EventActionsProps) {
-  const { title, url, eventDate, eventEndDate } = props
+  const { title, url, eventDate, eventEndDate, icsHref } = props
   const [upcoming, setUpcoming] = useState(false)
   const [canShare, setCanShare] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -106,17 +44,13 @@ export default function EventActions(props: EventActionsProps) {
   }
 
   const whatsapp = `https://wa.me/?text=${encodeURIComponent(`${title}\n${url}`)}`
-  const fileName = `${title
-    .replace(/[^a-z0-9]+/gi, '-')
-    .toLowerCase()
-    .slice(0, 60)}.ics`
 
   return (
     <div className="flex flex-wrap gap-2">
-      {upcoming && eventDate && (
+      {upcoming && eventDate && icsHref && (
         <>
           <a
-            href={googleCalendarUrl(props)}
+            href={googleCalendarUrl({ ...props, eventDate })}
             target="_blank"
             rel="noopener noreferrer"
             className={`${button} bg-navy-900 hover:bg-navy-800 text-white`}
@@ -132,14 +66,13 @@ export default function EventActions(props: EventActionsProps) {
               <rect x="3" y="5" width="18" height="16" rx="2" />
               <path d="M16 3v4M8 3v4M3 11h18" />
             </svg>
-            Add to calendar
+            Google Calendar
           </a>
           <a
-            href={icsDataUrl(props)}
-            download={fileName}
+            href={icsHref}
             className={`${button} border border-slate-300 text-slate-700 hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800`}
           >
-            .ics (iPhone / Outlook)
+            Apple / Outlook Calendar
           </a>
         </>
       )}
