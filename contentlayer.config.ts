@@ -107,6 +107,8 @@ export const Updates = defineDocumentType(() => ({
     eventEndDate: { type: 'date' },
     eventTime: { type: 'string' },
     eventMode: { type: 'string' },
+    // Online meeting link (Teams, Zoom, Meet); shown as a Join button and put in calendar entries
+    eventLink: { type: 'string' },
     eventSpeakers: { type: 'list', of: { type: 'string' } },
     draft: { type: 'boolean' },
     summary: { type: 'string' },

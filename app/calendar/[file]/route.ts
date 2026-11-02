@@ -27,6 +27,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ fil
       eventEndDate: post.eventEndDate,
       eventTime: post.eventTime,
       eventMode: post.eventMode,
+      eventLink: post.eventLink,
     },
     new Date(post.lastmod || post.date)
   )

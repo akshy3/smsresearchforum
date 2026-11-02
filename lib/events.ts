@@ -38,6 +38,7 @@ export interface CalendarEvent {
   eventEndDate?: string
   eventTime?: string
   eventMode?: string
+  eventLink?: string
 }
 
 const ymd = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, '')
@@ -70,14 +71,19 @@ function eventTimes({ eventDate, eventEndDate, eventTime }: CalendarEvent) {
   }
 }
 
+const calendarDetails = (event: CalendarEvent) =>
+  [event.summary, event.eventLink && `Join: ${event.eventLink}`, event.url]
+    .filter(Boolean)
+    .join('\n\n')
+
 export function googleCalendarUrl(event: CalendarEvent) {
   const t = eventTimes(event)
   const params = new URLSearchParams({
     action: 'TEMPLATE',
     text: event.title,
     dates: t.timed ? `${stamp(t.start)}/${stamp(t.end)}` : `${ymd(t.start)}/${ymd(t.end)}`,
-    details: `${event.summary ? event.summary + '\n\n' : ''}${event.url}`,
-    location: event.eventMode || '',
+    details: calendarDetails(event),
+    location: event.eventLink || event.eventMode || '',
   })
   return `https://calendar.google.com/calendar/render?${params}`
 }
@@ -101,8 +107,10 @@ export function buildIcs(event: CalendarEvent, updated: Date) {
     t.timed ? `DTSTART:${stamp(t.start)}` : `DTSTART;VALUE=DATE:${ymd(t.start)}`,
     t.timed ? `DTEND:${stamp(t.end)}` : `DTEND;VALUE=DATE:${ymd(t.end)}`,
     `SUMMARY:${esc(event.title)}`,
-    `DESCRIPTION:${esc(`${event.summary ? event.summary + '\n\n' : ''}${event.url}`)}`,
-    event.eventMode ? `LOCATION:${esc(event.eventMode)}` : '',
+    `DESCRIPTION:${esc(calendarDetails(event))}`,
+    event.eventLink || event.eventMode
+      ? `LOCATION:${esc(event.eventLink || event.eventMode || '')}`
+      : '',
     `URL:${event.url}`,
     'END:VEVENT',
     'END:VCALENDAR',

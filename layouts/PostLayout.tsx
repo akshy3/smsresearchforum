@@ -37,6 +37,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
     eventEndDate,
     eventTime,
     eventMode,
+    eventLink,
     eventSpeakers,
     summary,
   } = content
@@ -49,6 +50,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
     eventEndDate,
     eventTime,
     eventMode,
+    eventLink,
     icsHref: eventDate ? `/calendar/${slug}.ics` : undefined,
   }
 
@@ -102,6 +104,18 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                   <div>
                     <dt className="font-semibold text-slate-500 dark:text-gray-400">Where</dt>
                     <dd className="mt-1 text-slate-900 dark:text-gray-100">{eventMode}</dd>
+                    {eventLink && (
+                      <dd className="mt-2">
+                        <a
+                          href={eventLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-navy-900 hover:bg-navy-800 inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm transition"
+                        >
+                          Join meeting
+                        </a>
+                      </dd>
+                    )}
                   </div>
                 )}
                 {eventSpeakers && eventSpeakers.length > 0 && (

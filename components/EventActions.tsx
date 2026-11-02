@@ -11,6 +11,7 @@ interface EventActionsProps {
   eventEndDate?: string
   eventTime?: string
   eventMode?: string
+  eventLink?: string
   /** Link to this event's .ics file (app/calendar/[file]/route.ts) */
   icsHref?: string
 }
