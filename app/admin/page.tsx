@@ -70,7 +70,6 @@ export default async function AdminPage() {
       title: 'Synopses',
       text: `Upload, edit or replace synopsis files.${c ? ` ${c.synopses} on the site.` : ''}`,
     },
-    { href: '/users', title: 'Users', text: 'Add or remove user records.' },
   ]
 
   const site: Tile[] = [

@@ -10,8 +10,7 @@ function needsAdmin(req: NextRequest) {
   const { pathname } = req.nextUrl
   // /admin, but not /admin-login.
   if (pathname === '/admin' || pathname.startsWith('/admin/')) return true
-  if (pathname.startsWith('/manage-synopsis') || pathname.startsWith('/users')) return true
-  if (pathname.startsWith('/api/users')) return true
+  if (pathname.startsWith('/manage-synopsis')) return true
   if (pathname.startsWith('/api/synopsis')) return req.method !== 'GET' && req.method !== 'HEAD'
   if (pathname.startsWith('/manage-seminars') || pathname.startsWith('/api/seminars/admin')) {
     return true
@@ -58,8 +57,6 @@ export const config = {
     '/admin',
     '/admin/:path*',
     '/manage-synopsis/:path*',
-    '/users/:path*',
-    '/api/users/:path*',
     '/api/synopsis/:path*',
     '/manage-seminars/:path*',
     '/api/seminars/:path*',
