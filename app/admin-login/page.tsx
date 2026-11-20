@@ -10,9 +10,8 @@ function LoginForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   // Only follow same-site paths after login.
-  const nextParam = searchParams.get('next') || '/manage-synopsis'
-  const next =
-    nextParam.startsWith('/') && !nextParam.startsWith('//') ? nextParam : '/manage-synopsis'
+  const nextParam = searchParams.get('next') || '/admin'
+  const next = nextParam.startsWith('/') && !nextParam.startsWith('//') ? nextParam : '/admin'
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()

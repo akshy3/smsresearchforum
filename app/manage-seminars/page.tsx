@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 import { SEMINAR_KIND_LABEL, todayInIndia } from '@/lib/seminarInput'
 
@@ -314,6 +315,9 @@ export default function ManageSeminarsPage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6">
+      <Link href="/admin" className="mb-2 inline-block text-sm text-sky-600 hover:underline">
+        ← Admin
+      </Link>
       <h1 className="text-xl font-semibold sm:text-2xl">Manage seminars</h1>
       <p className="mt-1 text-sm text-gray-600">
         Seminar notices from OFFICE SMS arrive here as drafts each morning. Check each one against

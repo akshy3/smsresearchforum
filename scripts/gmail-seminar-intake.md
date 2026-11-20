@@ -23,7 +23,8 @@ an admin checks the draft and clicks **Publish**.
    allow access (read Gmail, create temporary Drive files for text recognition, connect
    to the website). Approve it. `setUp` creates the daily trigger and runs a first check.
 7. Check **Executions** (left sidebar) for the log, then refresh `/manage-seminars` to
-   see the drafts.
+   see the drafts. The first check only covers the last 4 days; to try it on older mail,
+   run `testOlderNotices` instead (last 30 days).
 
 ## Daily routine
 

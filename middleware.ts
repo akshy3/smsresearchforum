@@ -8,6 +8,8 @@ import { ADMIN_COOKIE, isValidAdminToken, sameText } from '@/lib/adminSession'
 
 function needsAdmin(req: NextRequest) {
   const { pathname } = req.nextUrl
+  // /admin, but not /admin-login.
+  if (pathname === '/admin' || pathname.startsWith('/admin/')) return true
   if (pathname.startsWith('/manage-synopsis') || pathname.startsWith('/users')) return true
   if (pathname.startsWith('/api/users')) return true
   if (pathname.startsWith('/api/synopsis')) return req.method !== 'GET' && req.method !== 'HEAD'
@@ -53,6 +55,8 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
+    '/admin',
+    '/admin/:path*',
     '/manage-synopsis/:path*',
     '/users/:path*',
     '/api/users/:path*',

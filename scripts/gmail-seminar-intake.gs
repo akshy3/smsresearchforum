@@ -33,13 +33,25 @@ function setUp() {
 
 /** The daily job. Safe to run by hand at any time: notices are only sent once. */
 function checkSeminarNotices() {
+  checkMail_(SEARCH)
+}
+
+/**
+ * Run by hand to try the whole pipeline on the last 30 days of notices. Each one becomes
+ * a draft (past seminars show under "Past" on /manage-seminars and can be deleted).
+ */
+function testOlderNotices() {
+  checkMail_('from:' + SENDER + ' newer_than:30d')
+}
+
+function checkMail_(search) {
   var token = PropertiesService.getScriptProperties().getProperty('SEMINAR_INTAKE_TOKEN')
   if (!token) throw new Error('Set the SEMINAR_INTAKE_TOKEN script property first.')
 
   var done = loadDone()
   var sent = 0
 
-  GmailApp.search(SEARCH, 0, 50).forEach(function (thread) {
+  GmailApp.search(search, 0, 50).forEach(function (thread) {
     thread.getMessages().forEach(function (message) {
       var id = message.getId()
       if (done[id] || message.getFrom().toLowerCase().indexOf(SENDER) === -1) return

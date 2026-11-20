@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 type User = {
@@ -58,6 +59,9 @@ export default function UsersPage() {
 
   return (
     <div style={{ padding: 20 }}>
+      <Link href="/admin" className="mb-2 inline-block text-sm text-sky-600 hover:underline">
+        ← Admin
+      </Link>
       <h1>Users CRUD</h1>
 
       <div style={{ marginBottom: 20 }}>

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 import { MAX_FILE_BYTES, MAX_FILE_LABEL } from '@/lib/synopsisInput'
 
@@ -228,6 +229,9 @@ export default function SynopsisPage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6">
+      <Link href="/admin" className="mb-2 inline-block text-sm text-sky-600 hover:underline">
+        ← Admin
+      </Link>
       <h1 className="mb-4 text-xl font-semibold sm:text-2xl">Add PhD Synopsis</h1>
 
       <div className="rounded-lg bg-white p-4 shadow-sm sm:p-6">
