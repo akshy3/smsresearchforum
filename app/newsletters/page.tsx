@@ -1,4 +1,5 @@
 import Link from '@/components/Link'
+import Image from '@/components/Image'
 import { newsletters } from '@/data/newslettersData'
 import { genPageMetadata } from 'app/seo'
 
@@ -23,33 +24,50 @@ export default function NewslettersPage() {
         </p>
       </section>
 
-      <section className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <section className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {newsletters.map((newsletter) => (
           <article
             key={newsletter.href}
-            className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
+            className="flex flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
           >
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold tracking-wide text-sky-700 uppercase dark:bg-sky-900/30 dark:text-sky-300">
-                {newsletter.issue}
-              </span>
-              <span className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
-                {newsletter.dateLabel}
-              </span>
-            </div>
-            <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
-              {newsletter.title}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
-              {newsletter.description}
-            </p>
-            <div className="mt-5">
-              <Link
-                href={newsletter.href}
-                className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
-              >
-                Open PDF
-              </Link>
+            <Link
+              href={newsletter.href}
+              aria-label={`Open ${newsletter.title} (PDF)`}
+              className="group block border-b border-slate-200 bg-slate-100 dark:border-gray-700 dark:bg-gray-800"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={newsletter.cover}
+                  alt={`Cover of ${newsletter.title}`}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover object-top transition duration-300 group-hover:scale-[1.02]"
+                />
+              </div>
+            </Link>
+            <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold tracking-wide text-sky-700 uppercase dark:bg-sky-900/30 dark:text-sky-300">
+                  {newsletter.issue}
+                </span>
+                <span className="text-xs font-semibold tracking-wide text-slate-500 uppercase dark:text-gray-400">
+                  {newsletter.dateLabel}
+                </span>
+              </div>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
+                {newsletter.title}
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-gray-300">
+                {newsletter.description}
+              </p>
+              <div className="mt-auto pt-5">
+                <Link
+                  href={newsletter.href}
+                  className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+                >
+                  Open PDF
+                </Link>
+              </div>
             </div>
           </article>
         ))}

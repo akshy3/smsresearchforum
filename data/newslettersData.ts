@@ -6,6 +6,7 @@ export const newsletters = [
     description:
       'The October 2026 issue of the SMS Research Forum newsletter, featuring a message from the Dean of Social Sciences, recent events at SMS, and scholar achievements and creative pursuits.',
     href: '/static/files/newsletters/sms-research-forum-newsletter-issue-3-october-2026.pdf',
+    cover: '/static/images/newsletters/sms-research-forum-newsletter-issue-3-october-2026.jpg',
   },
   {
     title: 'SMS Research Forum Newsletter - Issue 2',
@@ -14,14 +15,16 @@ export const newsletters = [
     description:
       'The July 2026 issue of the SMS Research Forum newsletter, featuring forum updates, research activities, and scholar highlights.',
     href: '/static/files/newsletters/sms-research-forum-newsletter-issue-2-july-2026.pdf',
+    cover: '/static/images/newsletters/sms-research-forum-newsletter-issue-2-july-2026.jpg',
   },
   {
     title: 'SMS Research Forum Newsletter - Issue 1',
     issue: 'Issue 1',
-    dateLabel: '2026',
+    dateLabel: 'April 2026',
     description:
       'The first issue of the SMS Research Forum newsletter, documenting forum activities, research engagement, and community updates.',
     href: '/static/files/newsletters/sms-research-forum-newsletter-issue-1.pdf',
+    cover: '/static/images/newsletters/sms-research-forum-newsletter-issue-1.jpg',
   },
 ] as const
 
