@@ -1,6 +1,23 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { MAX_FILE_BYTES, MAX_FILE_LABEL } from '@/lib/synopsisInput'
+
+const FILE_ACCEPT =
+  '.pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+
+// Returns an error message for a file the server would reject, or '' if it looks fine.
+function fileProblem(file: File | null) {
+  if (!file) return ''
+  if (!/\.(pdf|docx?)$/i.test(file.name)) return 'Only PDF, DOC or DOCX files are allowed.'
+  if (file.size > MAX_FILE_BYTES) return `This file is larger than ${MAX_FILE_LABEL}.`
+  return ''
+}
+
+async function errorFrom(res: Response) {
+  const body = await res.json().catch(() => null)
+  return body?.error || `Something went wrong (error ${res.status}).`
+}
 
 type Synopsis = {
   id: number
@@ -32,6 +49,9 @@ export default function SynopsisPage() {
   const [editYear, setEditYear] = useState(new Date().getFullYear())
   const [editResearchArea, setEditResearchArea] = useState('')
   const [editAdvisor, setEditAdvisor] = useState('')
+  const [editFile, setEditFile] = useState<File | null>(null)
+  const [editError, setEditError] = useState('')
+  const [formError, setFormError] = useState('')
   const [isEditing, setIsEditing] = useState(false)
   const [deletingId, setDeletingId] = useState<number | null>(null)
   const [isDeleting, setIsDeleting] = useState(false)
@@ -68,8 +88,14 @@ export default function SynopsisPage() {
 
   async function handleSubmit() {
     if (!file) return
+    const problem = fileProblem(file)
+    if (problem) {
+      setFormError(problem)
+      return
+    }
 
     setIsSubmitting(true)
+    setFormError('')
     try {
       const formData = new FormData()
       formData.append('title', title)
@@ -80,10 +106,14 @@ export default function SynopsisPage() {
       formData.append('advisor', advisor)
       formData.append('file', file)
 
-      await fetch('/api/synopsis', {
+      const res = await fetch('/api/synopsis', {
         method: 'POST',
         body: formData,
       })
+      if (!res.ok) {
+        setFormError(await errorFrom(res))
+        return
+      }
 
       setTitle('')
       setStudentName('')
@@ -93,6 +123,8 @@ export default function SynopsisPage() {
       setAdvisor('')
       setFile(null)
       fetchData()
+    } catch {
+      setFormError('Could not reach the server. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -106,34 +138,53 @@ export default function SynopsisPage() {
     setEditYear(item.year)
     setEditResearchArea(item.researchArea || '')
     setEditAdvisor(item.advisor || '')
+    setEditFile(null)
+    setEditError('')
   }
 
   async function handleEdit() {
     if (!editingId) return
+    const problem = fileProblem(editFile)
+    if (problem) {
+      setEditError(problem)
+      return
+    }
 
     setIsEditing(true)
+    setEditError('')
     try {
-      await fetch(`/api/synopsis/${editingId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: editTitle,
-          studentName: editStudentName,
-          stream: editStream,
-          year: editYear,
-          researchArea: editResearchArea,
-          advisor: editAdvisor,
-        }),
-      })
+      const fields = {
+        title: editTitle,
+        studentName: editStudentName,
+        stream: editStream,
+        year: String(editYear),
+        researchArea: editResearchArea,
+        advisor: editAdvisor,
+      }
 
-      setEditingId(null)
-      setEditTitle('')
-      setEditStudentName('')
-      setEditStream('')
-      setEditYear(new Date().getFullYear())
-      setEditResearchArea('')
-      setEditAdvisor('')
+      let res: Response
+      if (editFile) {
+        // Multipart when a replacement file is attached.
+        const formData = new FormData()
+        Object.entries(fields).forEach(([key, value]) => formData.append(key, value))
+        formData.append('file', editFile)
+        res = await fetch(`/api/synopsis/${editingId}`, { method: 'PUT', body: formData })
+      } else {
+        res = await fetch(`/api/synopsis/${editingId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fields),
+        })
+      }
+      if (!res.ok) {
+        setEditError(await errorFrom(res))
+        return
+      }
+
+      closeEdit()
       fetchData()
+    } catch {
+      setEditError('Could not reach the server. Please try again.')
     } finally {
       setIsEditing(false)
     }
@@ -143,6 +194,12 @@ export default function SynopsisPage() {
     setEditingId(null)
     setEditTitle('')
     setEditStudentName('')
+    setEditStream('')
+    setEditYear(new Date().getFullYear())
+    setEditResearchArea('')
+    setEditAdvisor('')
+    setEditFile(null)
+    setEditError('')
   }
 
   async function handleDelete() {
@@ -254,8 +311,12 @@ export default function SynopsisPage() {
             <input
               id="synopsis-file"
               type="file"
-              accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-              onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+              accept={FILE_ACCEPT}
+              onChange={(e) => {
+                const picked = e.target.files?.[0] ?? null
+                setFile(picked)
+                setFormError(fileProblem(picked))
+              }}
               className="hidden"
             />
 
@@ -279,7 +340,7 @@ export default function SynopsisPage() {
               <div className="truncate text-sm text-gray-600">
                 {file ? file.name : 'No file selected'}
               </div>
-              <div className="text-xs text-gray-400">PDF, DOC, DOCX only, max 10MB</div>
+              <div className="text-xs text-gray-400">PDF, DOC, DOCX only, max {MAX_FILE_LABEL}</div>
             </div>
 
             {file && (
@@ -293,6 +354,12 @@ export default function SynopsisPage() {
             )}
           </div>
         </div>
+
+        {formError && (
+          <p role="alert" className="mt-4 text-sm text-red-600">
+            {formError}
+          </p>
+        )}
 
         <div className="mt-6">
           <button
@@ -458,7 +525,58 @@ export default function SynopsisPage() {
                   ))}
                 </datalist>
               </label>
+
+              <div className="flex flex-col sm:col-span-2">
+                <span className="mb-1 text-sm font-medium text-gray-700">Replace file</span>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+                  <input
+                    id="edit-synopsis-file"
+                    type="file"
+                    accept={FILE_ACCEPT}
+                    onChange={(e) => {
+                      const picked = e.target.files?.[0] ?? null
+                      setEditFile(picked)
+                      setEditError(fileProblem(picked))
+                      e.target.value = ''
+                    }}
+                    className="hidden"
+                  />
+                  <label
+                    htmlFor="edit-synopsis-file"
+                    className="inline-flex cursor-pointer items-center justify-center rounded-md bg-gray-100 px-3 py-2 text-sm text-gray-700 hover:bg-gray-200"
+                  >
+                    Choose new file
+                  </label>
+                  <div className="min-w-0 flex-1">
+                    <div className="truncate text-sm text-gray-600">
+                      {editFile ? editFile.name : 'Keep the current file'}
+                    </div>
+                    <div className="text-xs text-gray-400">
+                      PDF, DOC, DOCX only, max {MAX_FILE_LABEL}. The old file is deleted when you
+                      save.
+                    </div>
+                  </div>
+                  {editFile && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEditFile(null)
+                        setEditError('')
+                      }}
+                      className="text-sm text-red-500 hover:text-red-600"
+                    >
+                      Remove
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
+
+            {editError && (
+              <p role="alert" className="mb-4 text-sm text-red-600">
+                {editError}
+              </p>
+            )}
 
             <div className="flex flex-col gap-2 sm:flex-row">
               <button

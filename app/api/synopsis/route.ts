@@ -2,46 +2,39 @@ import { prisma } from '@/lib/prisma'
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { cookies } from 'next/headers'
+import { checkSynopsisFile, readSynopsisFields, storageFileName } from '@/lib/synopsisInput'
 
 export async function POST(req: Request) {
-  const supabase = createClient(cookies())
   const formData = await req.formData()
-  const title = formData.get('title') as string
-  const studentName = formData.get('studentName') as string
-  const stream = formData.get('stream') as string
-  const year = parseInt(formData.get('year') as string)
-  const researchArea = formData.get('researchArea') as string
-  const advisor = formData.get('advisor') as string
-  const file = formData.get('file') as File
 
-  if (!file) {
-    return NextResponse.json({ error: 'No file' }, { status: 400 })
+  const { data, error } = readSynopsisFields((key) => formData.get(key))
+  if (error) return NextResponse.json({ error }, { status: 400 })
+
+  const file = formData.get('file')
+  const check = await checkSynopsisFile(file)
+  if (!check.ok) return NextResponse.json({ error: check.error }, { status: 400 })
+
+  const supabase = createClient(cookies())
+  const fileName = storageFileName((file as File).name, check.ext)
+  const { error: uploadError } = await supabase.storage
+    .from('synopsis')
+    .upload(fileName, file as File, { contentType: check.mime })
+
+  if (uploadError) {
+    console.error('Supabase Storage Error:', uploadError)
+    return NextResponse.json({ error: uploadError.message }, { status: 500 })
   }
-
-  if (!title || !studentName || !stream || !year) {
-    return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
-  }
-
-  let filePath = `${Date.now()}-${file.name}`
-
-  const { data, error } = await supabase.storage.from('synopsis').upload(filePath, file)
-
-  if (error) {
-    console.error('Supabase Storage Error:', error)
-    return NextResponse.json({ error: error.message }, { status: 500 })
-  }
-  filePath = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/synopsis/${filePath}`
 
   const synopsis = await prisma.synopsis.create({
     data: {
-      title,
-      studentName,
-      stream,
-      year,
-      researchArea: researchArea || null,
-      advisor: advisor || null,
+      title: data.title!,
+      studentName: data.studentName!,
+      stream: data.stream!,
+      year: data.year!,
+      researchArea: data.researchArea ?? null,
+      advisor: data.advisor ?? null,
       status: 'submitted',
-      filePath,
+      filePath: `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/synopsis/${fileName}`,
     },
   })
 
