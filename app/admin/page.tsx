@@ -22,7 +22,7 @@ async function counts() {
   }
 }
 
-type Tile = { href: string; title: string; text: string; badge?: string; external?: boolean }
+type Tile = { href: string; title: string; text: string; badge?: string }
 
 function TileGrid({ tiles }: { tiles: Tile[] }) {
   return (
@@ -31,10 +31,7 @@ function TileGrid({ tiles }: { tiles: Tile[] }) {
         const body = (
           <>
             <div className="flex items-center justify-between gap-2">
-              <span className="font-semibold text-gray-900 dark:text-gray-100">
-                {t.title}
-                {t.external && <span aria-hidden> ↗</span>}
-              </span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">{t.title}</span>
               {t.badge && (
                 <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-900/40 dark:text-amber-200">
                   {t.badge}
@@ -44,14 +41,12 @@ function TileGrid({ tiles }: { tiles: Tile[] }) {
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{t.text}</p>
           </>
         )
-        const cls =
-          'block rounded-lg border border-gray-200 p-4 transition hover:border-sky-500 hover:shadow-sm dark:border-gray-700'
-        return t.external ? (
-          <a key={t.href} href={t.href} target="_blank" rel="noopener noreferrer" className={cls}>
-            {body}
-          </a>
-        ) : (
-          <Link key={t.href} href={t.href} className={cls}>
+        return (
+          <Link
+            key={t.href}
+            href={t.href}
+            className="block rounded-lg border border-gray-200 p-4 transition hover:border-sky-500 hover:shadow-sm dark:border-gray-700"
+          >
             {body}
           </Link>
         )
@@ -90,33 +85,6 @@ export default async function AdminPage() {
     { href: '/', title: 'Home page', text: 'Includes the upcoming seminars section.' },
   ]
 
-  const services: Tile[] = [
-    {
-      href: 'https://script.google.com/home',
-      title: 'Gmail script',
-      text: 'Apps Script: the daily seminar check and its run log.',
-      external: true,
-    },
-    {
-      href: 'https://supabase.com/dashboard/project/ufrfeeyzkennxkvcylms',
-      title: 'Supabase',
-      text: 'Database and synopsis file storage.',
-      external: true,
-    },
-    {
-      href: 'https://vercel.com/dashboard',
-      title: 'Vercel',
-      text: 'Deploys and hosting.',
-      external: true,
-    },
-    {
-      href: 'https://github.com/akshy3/smsresearchforum',
-      title: 'GitHub',
-      text: 'Code and the database keep-alive job.',
-      external: true,
-    },
-  ]
-
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-6 sm:px-6">
       <div className="flex items-center justify-between gap-3">
@@ -126,7 +94,7 @@ export default async function AdminPage() {
       {!c && (
         <p className="mt-3 rounded-md bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-900/30 dark:text-amber-200">
           Couldn&apos;t reach the database, so counts are hidden. If Supabase paused the project,
-          restore it from the Supabase link below.
+          restore it from the Supabase dashboard.
         </p>
       )}
 
@@ -139,11 +107,6 @@ export default async function AdminPage() {
         Public pages
       </h2>
       <TileGrid tiles={site} />
-
-      <h2 className="mt-8 mb-3 text-sm font-semibold tracking-wide text-gray-500 uppercase">
-        Services
-      </h2>
-      <TileGrid tiles={services} />
     </div>
   )
 }
