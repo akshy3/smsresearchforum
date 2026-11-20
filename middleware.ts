@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { ADMIN_COOKIE, isValidAdminToken, sameText } from '@/lib/adminSession'
 
-// Admin pages and API writes need the ADMIN_PASSWORD (any username) through the
-// browser's own login prompt. Without ADMIN_PASSWORD set, they stay locked.
+// Admin pages and API writes need the ADMIN_PASSWORD. People sign in on /admin-login,
+// which sets a signed cookie; scripts can still send it as HTTP Basic auth (any username).
+// Without ADMIN_PASSWORD set, they stay locked.
 // Reading synopses (GET /api/synopsis) stays public for the /synopsis page.
-
-const REALM = 'SMS Research Forum admin'
 
 function needsAdmin(req: NextRequest) {
   const { pathname } = req.nextUrl
@@ -14,17 +14,9 @@ function needsAdmin(req: NextRequest) {
   return false
 }
 
-function sameText(a: string, b: string) {
-  if (a.length !== b.length) return false
-  let diff = 0
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i)
-  return diff === 0
-}
-
-function isAdmin(req: NextRequest) {
-  const expected = process.env.ADMIN_PASSWORD
+function hasBasicAuth(req: NextRequest, expected: string) {
   const header = req.headers.get('authorization') || ''
-  if (!expected || !header.startsWith('Basic ')) return false
+  if (!header.startsWith('Basic ')) return false
   try {
     const decoded = atob(header.slice(6))
     return sameText(decoded.slice(decoded.indexOf(':') + 1), expected)
@@ -33,12 +25,24 @@ function isAdmin(req: NextRequest) {
   }
 }
 
-export function middleware(req: NextRequest) {
-  if (!needsAdmin(req) || isAdmin(req)) return NextResponse.next()
-  return new NextResponse('Admin login required', {
-    status: 401,
-    headers: { 'WWW-Authenticate': `Basic realm="${REALM}", charset="UTF-8"` },
-  })
+async function isAdmin(req: NextRequest) {
+  const expected = process.env.ADMIN_PASSWORD
+  if (!expected) return false
+  if (await isValidAdminToken(req.cookies.get(ADMIN_COOKIE)?.value, expected)) return true
+  return hasBasicAuth(req, expected)
+}
+
+export async function middleware(req: NextRequest) {
+  if (!needsAdmin(req) || (await isAdmin(req))) return NextResponse.next()
+
+  const { pathname, search } = req.nextUrl
+  if (pathname.startsWith('/api/')) {
+    return NextResponse.json({ error: 'Admin login required' }, { status: 401 })
+  }
+
+  const login = new URL('/admin-login', req.url)
+  login.searchParams.set('next', pathname + search)
+  return NextResponse.redirect(login)
 }
 
 export const config = {
