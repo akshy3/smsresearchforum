@@ -5,6 +5,7 @@ import { formatDate } from 'pliny/utils/formatDate'
 import Hero from '@/components/Hero'
 import EventDate from '@/components/EventDate'
 import NextEvent, { type EventSummary } from '@/components/NextEvent'
+import UpcomingSeminars from '@/components/UpcomingSeminars'
 import Features from '@/components/Features'
 import Stats from '@/components/Stats'
 import { conference2026 } from '@/data/conferenceData'
@@ -28,6 +29,7 @@ export default function Home({ posts }) {
     <>
       <Hero />
       <NextEvent events={events} />
+      <UpcomingSeminars limit={4} />
 
       <section className="px-4 pt-10 md:px-10">
         <div className="border-navy-800 from-navy-900 via-navy-900 to-navy-950 rounded-2xl border bg-gradient-to-br p-6 shadow-[0_24px_50px_-24px_rgba(12,19,37,0.45)] sm:p-8">

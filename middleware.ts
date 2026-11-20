@@ -4,13 +4,19 @@ import { ADMIN_COOKIE, isValidAdminToken, sameText } from '@/lib/adminSession'
 // Admin pages and API writes need the ADMIN_PASSWORD. People sign in on /admin-login,
 // which sets a signed cookie; scripts can still send it as HTTP Basic auth (any username).
 // Without ADMIN_PASSWORD set, they stay locked.
-// Reading synopses (GET /api/synopsis) stays public for the /synopsis page.
+// Reading synopses (GET /api/synopsis) and published seminars (GET /api/seminars) stays public.
 
 function needsAdmin(req: NextRequest) {
   const { pathname } = req.nextUrl
   if (pathname.startsWith('/manage-synopsis') || pathname.startsWith('/users')) return true
   if (pathname.startsWith('/api/users')) return true
   if (pathname.startsWith('/api/synopsis')) return req.method !== 'GET' && req.method !== 'HEAD'
+  if (pathname.startsWith('/manage-seminars') || pathname.startsWith('/api/seminars/admin')) {
+    return true
+  }
+  // The Gmail script checks in with its own token (see app/api/seminars/intake).
+  if (pathname.startsWith('/api/seminars/intake')) return false
+  if (pathname.startsWith('/api/seminars')) return req.method !== 'GET' && req.method !== 'HEAD'
   return false
 }
 
@@ -51,5 +57,7 @@ export const config = {
     '/users/:path*',
     '/api/users/:path*',
     '/api/synopsis/:path*',
+    '/manage-seminars/:path*',
+    '/api/seminars/:path*',
   ],
 }

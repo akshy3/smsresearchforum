@@ -7,7 +7,7 @@ export const ADMIN_SESSION_SECONDS = 7 * 24 * 60 * 60
 
 const encoder = new TextEncoder()
 
-async function sign(value: string, secret: string) {
+export async function sign(value: string, secret: string) {
   const key = await crypto.subtle.importKey(
     'raw',
     encoder.encode(secret),
@@ -29,6 +29,15 @@ export function sameText(a: string, b: string) {
 export async function createAdminToken(secret: string) {
   const expiry = String(Date.now() + ADMIN_SESSION_SECONDS * 1000)
   return `${expiry}.${await sign(expiry, secret)}`
+}
+
+/**
+ * The token the Gmail script sends with seminar notices. It is derived from
+ * ADMIN_PASSWORD, so admins can read it on /manage-seminars, and changing the
+ * password changes it.
+ */
+export async function seminarIntakeToken(secret: string | undefined) {
+  return secret ? sign('seminar-intake-v1', secret) : null
 }
 
 export async function isValidAdminToken(token: string | undefined, secret: string | undefined) {

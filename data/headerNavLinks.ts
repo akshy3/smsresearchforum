@@ -4,6 +4,7 @@ import { downloadNavLinks } from './downloadNavLinks'
 const headerNavLinks = [
   { href: '/', title: 'Home' },
   { href: '/updates', title: 'Updates' },
+  { href: '/seminars', title: 'Seminars' },
   { href: '/gallery', title: 'Gallery' },
   { href: '/newsletters', title: 'Newsletters' },
   {

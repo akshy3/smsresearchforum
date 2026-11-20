@@ -35,3 +35,25 @@ model Synopsis {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+// PhD seminars (pre-synopsis / pre-submission seminars and open defences).
+// Gmail-fed entries arrive as drafts and only show on the site once published.
+model Seminar {
+  id          Int      @id @default(autoincrement())
+  kind        String   // "pre-synopsis" | "open-defence"
+  scholar     String
+  title       String
+  guide       String?
+  date        String?  // YYYY-MM-DD (IST); drafts may not have one yet
+  time        String?  // as written on the notice, e.g. "2.30 PM"
+  venue       String?
+  meetingLink String?
+  status      String   @default("draft") // "draft" | "published" | "rejected"
+  source      String   @default("manual") // "manual" | "gmail"
+  sourceId    String?  @unique // Gmail message id, so a notice is only added once
+  rawText     String?  // text read from the notice, kept for checking drafts
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([status, date])
+}
