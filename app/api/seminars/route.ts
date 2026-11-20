@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import { ensureSeminarTable } from '@/lib/seminarTable'
 import { NextResponse } from 'next/server'
 import { readSeminarFields, todayInIndia } from '@/lib/seminarInput'
 
@@ -6,6 +7,7 @@ export const dynamic = 'force-dynamic'
 
 // Public: published seminars from today onwards, soonest first.
 export async function GET() {
+  await ensureSeminarTable()
   const seminars = await prisma.seminar.findMany({
     where: { status: 'published', date: { gte: todayInIndia() } },
     orderBy: [{ date: 'asc' }, { time: 'asc' }],
@@ -28,6 +30,7 @@ export async function GET() {
 
 // Admin (checked in middleware): add a seminar by hand.
 export async function POST(req: Request) {
+  await ensureSeminarTable()
   const body = await req.json().catch(() => ({}))
   const { data, error } = readSeminarFields((key) => body[key])
   if (error) return NextResponse.json({ error }, { status: 400 })

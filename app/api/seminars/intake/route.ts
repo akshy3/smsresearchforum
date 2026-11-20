@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma'
+import { ensureSeminarTable } from '@/lib/seminarTable'
 import { NextResponse } from 'next/server'
 import { sameText, seminarIntakeToken } from '@/lib/adminSession'
 import { parseNotice, pickNoticeText, seminarKind } from '@/lib/seminarNotice'
@@ -17,6 +18,7 @@ export async function POST(req: Request) {
   if (!expected || !token || !sameText(token, expected)) {
     return NextResponse.json({ error: 'Invalid token' }, { status: 401 })
   }
+  await ensureSeminarTable()
 
   const body = await req.json().catch(() => null)
   const messageId = cleanText(body?.messageId)
