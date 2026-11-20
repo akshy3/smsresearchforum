@@ -1,0 +1,36 @@
+# Pings the Supabase project regularly so the free plan doesn't pause it
+# for inactivity (it pauses after about a week without requests).
+name: Supabase keep-alive
+
+on:
+  schedule:
+    - cron: '17 3 * * *' # daily at 03:17 UTC
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping Supabase storage
+        env:
+          # Requesting a missing file from the public bucket needs no API key,
+          # but makes storage look the file up in the database.
+          PING_URL: https://ufrfeeyzkennxkvcylms.supabase.co/storage/v1/object/public/synopsis/__keepalive__
+        run: |
+          for attempt in 1 2 3; do
+            body=$(curl -s -m 30 -w '\n%{http_code}' "$PING_URL") || body=$'\n000'
+            code=$(echo "$body" | tail -n1)
+            echo "Attempt $attempt: HTTP $code"
+            echo "$body" | head -n -1
+            # "Object not found" means the request reached the database.
+            if echo "$body" | grep -q '"NoSuchKey"'; then
+              echo "Supabase is awake."
+              exit 0
+            fi
+            sleep 20
+          done
+          echo "::error::Supabase did not respond normally. The project may be paused; restore it from the Supabase dashboard."
+          exit 1
